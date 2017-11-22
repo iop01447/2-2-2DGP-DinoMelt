@@ -4,6 +4,9 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Lab10 - Scroll and Tiling" />
+    <orderEntry type="module" module-name="Lab12 - Scroll Fixed BG" />
+    <orderEntry type="module" module-name="Lab07 - Character Controller" />
   </component>
   <component name="TestRunnerService">
     <option name="PROJECT_TEST_RUNNER" value="Unittests" />

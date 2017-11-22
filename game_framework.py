@@ -1,4 +1,4 @@
-from pico2d import *
+import time
 
 
 class GameState:
@@ -30,15 +30,14 @@ class TestGameState:
     def resume(self):
         print("State [%s] Resumed" % self.name)
 
-    def handle_events(self):
-        print("State [%s] handle_events" % self.name)
+    def handle_events(self, frame_time):
+        print("State [%s] handle_events(%f)" % (self.name, frame_time))
 
-    def update(self):
-        print("State [%s] update" % self.name)
+    def update(self, frame_time):
+        print("State [%s] update(%f)" % (self.name, frame_time))
 
-    def draw(self):
-        print("State [%s] draw" % self.name)
-
+    def draw(self, frame_time):
+        print("State [%s] draw(%f)" % (self.name, frame_time))
 
 
 running = None
@@ -52,14 +51,12 @@ def change_state(state):
     state.enter()
 
 
-
 def push_state(state):
     global stack
     if (len(stack) > 0):
         stack[-1].pause()
     stack.append(state)
     state.enter()
-
 
 
 def pop_state():
@@ -75,23 +72,9 @@ def pop_state():
         stack[-1].resume()
 
 
-
 def quit():
     global running
     running = False
-
-
-current_time = 0.0
-
-
-def get_frame_time():
-
-    global current_time
-
-    frame_time = get_time() - current_time
-    current_time += frame_time
-    return frame_time
-
 
 
 def run(start_state):
@@ -99,12 +82,11 @@ def run(start_state):
     running = True
     stack = [start_state]
     start_state.enter()
-
-    global current_time
-    current_time = get_time()
+    current_time = time.time()
 
     while (running):
-        frame_time = get_frame_time()
+        frame_time = time.time() - current_time
+        current_time += frame_time
         stack[-1].handle_events(frame_time)
         stack[-1].update(frame_time)
         stack[-1].draw()
@@ -113,6 +95,11 @@ def run(start_state):
     while (len(stack) > 0):
         stack[-1].exit()
         stack.pop()
+
+
+def reset_time():
+    global current_time
+    current_time = time.clock()
 
 
 def test_game_framework():
