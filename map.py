@@ -1,21 +1,19 @@
 from pico2d import *
 import json
-import Tile
-import Player
 
-class Map():
+class Map:
     def __init__(self):
       #  filename = '"map.json", "r"'
         self.tilesize = 130//2
 
         try:
-            with open("map.json", "r") as mapfile:
+            with open("Map\map.json", "r") as mapfile:
                 self.mapdict = json.loads(mapfile.read())
                 self.layers = self.mapdict["layers"]
                 self.mapheight = self.mapdict["height"] * self.tilesize
                 self.mapwidth = self.mapdict["width"] * self.tilesize
         except IOError:
-            print("Cannot open map file {}".format("map.json", "r"))
+            print("Cannot open map file {}".format("Map\map.json", "r"))
 
         self.image = load_image('Graphics\map.png')
         #self.canvas_width = self.tilesize * 11

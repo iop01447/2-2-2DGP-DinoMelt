@@ -38,7 +38,7 @@ def destroy_world():
 
 
 def enter():
-    open_canvas(11 * tile_width, 7 * tile_height)
+    open_canvas(9 * tile_width, 5 * tile_height)
     hide_cursor()
     game_framework.reset_time()
     create_world()
@@ -77,9 +77,14 @@ def update(frame_time):
     background.update(frame_time)
 
 
+def debugging_draw_scene():
+    player.draw_bb()
+
+
 def draw_scene():
     background.draw()
     player.draw()
+    debugging_draw_scene()
 
 
 def draw():
