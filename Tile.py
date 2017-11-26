@@ -1,102 +1,43 @@
-__author__ = 'dustinlee'
-
-import json
-
 from pico2d import *
 
 
-class TileMap:
+class Tile:
+    tile_width = 130 // 2
+    tile_height = 130 // 2
+    tile_map_image_h = 3640
 
-    # def get_tile_image_rect(self, id):
-    #     y = self.tile_rows - id // self.tile_cols - 1
-    #     x = id % self.tile_cols
-    #     return self.image_margin+x*(self.tile_width+self.image_spacing), \
-    #            self.image_margin+y*(self.tile_height+self.image_spacing), \
-    #            self.tile_width, self.tile_height
-
-    def get_tile_image_rect(self, id):
-        return 0, 0, self.tile_width, self.tile_height
-
-    # def draw_to_origin(self, left, bottom, w=None, h=None):
-    #     if w == None and h == None:
-    #         w,h = self.map_width, self.map_height
-    #
-    #     for y in range(h):
-    #         for x in range(w):
-    #             id = self.map2d[y][x]
-    #             self.tileset_image.clip_draw_to_origin(*self.get_tile_image_rect(id), x=(x+left)*self.tile_width, y=(y+bottom)*self.tile_height)
-
-    def clip_draw_to_origin(self, left, bottom, width, height, target_left, target_bottom, w=None, h=None):
-        if w == None and h == None:
-            w,h = width, height
-
-        for y in range(h):
-            for x in range(w):
-                id = self.map2d[bottom+y][left+x]
-                if id == 0: continue
-                self.tileset_image[str(id)].clip_draw_to_origin(*self.get_tile_image_rect(id), x=(x+target_left)*self.tile_width, y=(y+target_bottom)*self.tile_height)
-               # self.tileset_image[str(id)].draw_to_origin(*self.get_tile_image_rect(id), x=(x+target_left)*self.tile_width, y=(y+target_bottom)*self.tile_height)
-
-def load_tile_map(map_name, tileset_name):
-    with open(map_name) as f:
-        data = json.load(f)
-
-    tile_map = TileMap()
-
-    layers = data['layers']
-    layer = layers[0]
-    #print(layer['type'])
-    #print(data['renderorder'])
-    map_height = layer['height']
-    map_width = layer['width']
-    tile_data = layer['data']
-    render_order = data['renderorder']
+    def __init__(self, line, row, value):
+        self.line = line
+        self.row = row
+        self.value = value
+        self.canvas_width = get_canvas_width()
+        self.canvas_height = get_canvas_height()
+        self.window_left = 0
+        self.window_bottom = 0
+        self.line = 56 - self.line - 1
 
 
-    with open(tileset_name) as f:
-        tileset = json.load(f)
-
-    tiles = tileset['tiles']
-    # tileset_image_file_name = tileset['image']
-
-    # image_height = tileset['tileheight']
-    # image_width = tileset['tilewidth']
-    image_margin = tileset['margin']  # 필요가 있나?
-    image_spacing = tileset['spacing']  # 필요가 있나?
-    tile_height = tileset['tileheight']
-    tile_width = tileset['tilewidth']
-    #  first_gid = tileset['firstgid']
-    num_tiles = len(tileset['tiles'])
+    def draw_bb(self):
+        draw_rectangle(*self.get_bb())
 
 
-    '''
-    h = 4
-    w = 8
-    tile_data = [i for i in range(h*w)]
-    '''
+    def get_bb(self):
+        min_x, min_y = self.row * self.tile_width, self.line * self.tile_height
+        max_x, max_y = (self.row + 1) * self.tile_width, (self.line + 1) * self.tile_height
+        min_x -= self.window_left
+        max_x -= self.window_left
+        min_y = self.tile_map_image_h - self.window_bottom - min_y
+        max_y = self.tile_map_image_h - self.window_bottom - max_y
+        min_y, max_y = max_y, min_y
 
-    map2d = []
+        if self.value in range(2, 7):
+            pass
+        else:
+            max_y -= Tile.tile_height//2
 
-    if render_order == 'right-up':
-        for i in range(map_height):
-            line = [x for x in tile_data[i*map_width:i*map_width+map_width]]
-            map2d.append(line)
-    else:
-        for i in reversed(range(map_height)):
-            line = [x for x in tile_data[i*map_width:i*map_width+map_width]]
-            map2d.append(line)
+        return min_x, min_y, max_x, max_y
 
-  #  tile_map.tileset_image = load_image(tileset_image_file_name)
-    tile_map.tileset_image = {}
-    for key in tiles.keys():
-        tile_map.tileset_image[key] = load_image(tiles[key]['image'])
-    tile_map.map2d = map2d
-    tile_map.image_margin = image_margin
-    tile_map.image_spacing = image_spacing
-    tile_map.map_width = map_width
-    tile_map.map_height = map_height
-    tile_map.tile_width = tile_width
-    tile_map.tile_height = tile_height
-   # tile_map.tile_rows = tile_rows
-   # tile_map.tile_cols = tile_cols
-    return tile_map
+
+    def update(self, window_left, window_bottom):
+        self.window_left = window_left
+        self.window_bottom = window_bottom

@@ -7,6 +7,8 @@ import pause_state
 
 from player import Player
 from background import TileBackground as Background
+from tile import Tile
+from stdafx import *
 
 
 name = "MainState"
@@ -14,19 +16,20 @@ name = "MainState"
 
 background_width = 73   # in tiles
 background_height = 56  # in tiles
-tile_width = 130
-tile_height = 130
+tile_width = 130 // 2
+tile_height = 130 // 2
 
 
 player = None
 background = None
+debugging_draw = False
+minimap_draw = False
 
 
 def create_world():
     global player, background
     player = Player()
-    background = Background(background_width, background_height)
-  #  background = Background()
+    background = Background()
     background.set_center_object(player)
     player.set_background(background)
 
@@ -38,7 +41,7 @@ def destroy_world():
 
 
 def enter():
-    open_canvas(9 * tile_width, 5 * tile_height)
+    open_canvas(1280, 720)
     hide_cursor()
     game_framework.reset_time()
     create_world()
@@ -57,6 +60,8 @@ def resume():
 
 
 def handle_events(frame_time):
+    global debugging_draw
+    global minimap_draw
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT:
@@ -67,6 +72,10 @@ def handle_events(frame_time):
                 game_framework.quit()
             elif event.type == SDL_KEYUP and event.key == SDLK_p:
                 game_framework.push_state(pause_state)
+            elif event.type == SDL_KEYUP and event.key == SDLK_g:
+                debugging_draw = not debugging_draw
+            elif event.type == SDL_KEYUP and event.key == SDLK_m:
+                minimap_draw = not minimap_draw
             else:
                 player.handle_event(event)
                 background.handle_event(event)
@@ -79,12 +88,16 @@ def update(frame_time):
 
 def debugging_draw_scene():
     player.draw_bb()
+    background.draw_bb()
 
 
 def draw_scene():
     background.draw()
     player.draw()
-    debugging_draw_scene()
+    if debugging_draw:
+        debugging_draw_scene()
+    if minimap_draw:
+        background.draw_minimap()
 
 
 def draw():
