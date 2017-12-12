@@ -93,7 +93,9 @@ def debugging_draw_scene():
 
 def draw_scene():
     background.draw()
+    background.objects_draw()
     player.draw()
+    player.life_draw()
     if debugging_draw:
         debugging_draw_scene()
     if minimap_draw:

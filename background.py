@@ -2,11 +2,12 @@ from pico2d import *
 from tile_map import load_tile_map
 from tile import Tile
 from stdafx import *
-
+from object import Object
 
 class TileBackground:
     image = None
     tile_map = None
+    bgm = None
 
     def __init__(self):
         if self.image == None:
@@ -25,6 +26,23 @@ class TileBackground:
         for i in range(self.tile_map.map_height):
             for j in range(self.tile_map.map_width):
                 self.tiles.append(Tile(i, j, self.tile_map.map2d[i][j]))
+        # tile map ㅠㅠ 수정해야되는데 시간이 없다
+        name = 'map.json'
+        f = open(name)
+        info = json.load(f)
+        f.close()
+
+        self.__dict__.update(info)
+        print(self.tilesets[0])
+        self.firstgid = self.tilesets[0]['firstgid']
+        self.data = self.layers[0]['data']
+        self.object_data = self.layers[1]['objects']
+        self.objects = [Object(object['x']//2, (self.height * 130 - object['y'] - object['height'])//2, object['width']//2,
+                           object['height']//2, object['type'], object['properties']['x limited']) for object in self.object_data]
+        # sound
+        self.bgm = load_music('Sound\/Plepur.mp3')
+        self.bgm.set_volume(64)
+        self.bgm.repeat_play()
 
     def set_center_object(self, player):
         self.center_object = player
@@ -34,6 +52,10 @@ class TileBackground:
             self.window_left, self.window_bottom,
             self.canvas_width, self.canvas_height, 0, 0
         )
+
+    def objects_draw(self):
+        for object in self.objects:
+            object.draw(self.window_left, self.window_bottom)
 
     def draw_bb(self):
         for tile in self.tiles:

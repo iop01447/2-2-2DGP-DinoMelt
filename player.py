@@ -17,6 +17,7 @@ class Player:
     FRAMES_PER_ACTION = 1
 
     image = {}
+    life_image = []
 
     LEFT, RIGHT = -1, 1
     JUMPING_UP, JUMPING_DOWN, JUMPED = 0, 1, 2
@@ -36,6 +37,8 @@ class Player:
         self.button = {'left': False, 'right': False}
         self.attack_active = False
 
+        self.life = 3
+
         with open("data.json") as f:
             self.data = json.load(f)
         self.data = self.data['player']
@@ -52,6 +55,11 @@ class Player:
             Player.image['jumped'] = {self.LEFT: load_image(self.data['jumped']['image']['left']),
                                     self.RIGHT: load_image(self.data['jumped']['image']['right'])}
 
+        if not Player.life_image:
+            Player.life_image.append(load_image('Graphics\/life_level1.png'))
+            Player.life_image.append(load_image('Graphics\/life_level2.png'))
+            Player.life_image.append(load_image('Graphics\/life_level3.png'))
+
         # jump
         self.jump_active = False
         self.double_jump = False
@@ -63,10 +71,8 @@ class Player:
         self.x_change = '0'
         self.y_change = '0'
 
-
     def set_background(self, bg):
         self.bg = bg
-
 
     def background_collide_check(self):
         for tile in self.bg.tiles:
@@ -79,14 +85,12 @@ class Player:
                 return True
         return False
 
-
     def jump_initialize(self):
         self.jump_direction = self.JUMPING_UP
         self.jump_state = 'jump'
         self.total_frames = 0
         if not self.double_jump:
             self.y_base = self.y
-
 
     def jump(self, distance):
         y = self.y
@@ -114,7 +118,6 @@ class Player:
            self.jump_state = 'jumped'
            self.total_frames = 0
 
-
     def update_image_date(self):
         state = self.state
         if self.jump_active:
@@ -123,7 +126,6 @@ class Player:
         self.frame_cnt = self.data[state]['image']['frame_cnt']
         self.width = self.data[state]['image']['width'] // self.frame_cnt
         self.height = self.data[state]['image']['height']
-
 
     def update(self, frame_time):
         x, y = self.x, self.y
@@ -176,7 +178,6 @@ class Player:
         self.x = clamp(0, self.x, self.bg.w)
         self.y = clamp(0, self.y, self.bg.h)
 
-
     def draw(self):
         sx = self.x - self.bg.window_left
         sy = self.y - self.bg.window_bottom
@@ -191,16 +192,17 @@ class Player:
         #print('state = %s, frame = %d, frame_cnt = %d, width = %d, height = %d, data_widht = %d'
         #      % (state, self.frame, self.frame_cnt, self.width, self.height, self.data[state]['image']['width']))
 
+    def life_draw(self):
+        # 362 131
+        Player.life_image[self.life - 1].draw(self.canvas_width/2, self.canvas_height - 50, 145, 52)
 
     def draw_bb(self):
         draw_rectangle(*self.get_bb())
-
 
     def get_bb(self):
         sx = self.x - self.bg.window_left
         sy = self.y - self.bg.window_bottom
         return sx - 25, sy - 30, sx + 25, sy + 30
-
 
     def handle_event(self, event):
 

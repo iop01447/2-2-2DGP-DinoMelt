@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/DinoMelt.iml" filepath="$PROJECT_DIR$/.idea/DinoMelt.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../2017-2DGP/Labs/Lab07 - Character Controller/.idea/Lab07 - Character Controller.iml" filepath="$PROJECT_DIR$/../2017-2DGP/Labs/Lab07 - Character Controller/.idea/Lab07 - Character Controller.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../2016-2DGP/Labs/Lab10 - Scroll and Tiling/.idea/Lab10 - Scroll and Tiling.iml" filepath="$PROJECT_DIR$/../2016-2DGP/Labs/Lab10 - Scroll and Tiling/.idea/Lab10 - Scroll and Tiling.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../2016-2DGP/Labs/Lab12 - Scroll Fixed BG/.idea/Lab12 - Scroll Fixed BG.iml" filepath="$PROJECT_DIR$/../2016-2DGP/Labs/Lab12 - Scroll Fixed BG/.idea/Lab12 - Scroll Fixed BG.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../2017-2DGP/Labs/Lab10 - Map Scrolling/.idea/Lab10 - Map Scrolling.iml" filepath="$PROJECT_DIR$/../2017-2DGP/Labs/Lab10 - Map Scrolling/.idea/Lab10 - Map Scrolling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../2017-2DGP/Labs/Lab11 - Sound/.idea/Lab11 - Sound.iml" filepath="$PROJECT_DIR$/../2017-2DGP/Labs/Lab11 - Sound/.idea/Lab11 - Sound.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../2017-2DGP/Labs/Lab12 - Tiling/.idea/Lab12 - Tiling.iml" filepath="$PROJECT_DIR$/../2017-2DGP/Labs/Lab12 - Tiling/.idea/Lab12 - Tiling.iml" />
     </modules>
   </component>
 </project>
