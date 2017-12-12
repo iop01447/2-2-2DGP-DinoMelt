@@ -10,15 +10,12 @@ from background import TileBackground as Background
 from tile import Tile
 from stdafx import *
 
-
 name = "MainState"
 
-
-background_width = 73   # in tiles
-background_height = 56  # in tiles
-tile_width = 130 // 2
-tile_height = 130 // 2
-
+# background_width = 73   # in tiles
+# background_height = 56  # in tiles
+# tile_width = 130 // 2
+# tile_height = 130 // 2
 
 player = None
 background = None
@@ -41,10 +38,11 @@ def destroy_world():
 
 
 def enter():
-    open_canvas(1280, 720)
+    open_canvas(1280, 720, sync=True)
     hide_cursor()
     game_framework.reset_time()
     create_world()
+
 
 def exit():
     destroy_world()
@@ -93,7 +91,6 @@ def debugging_draw_scene():
 
 def draw_scene():
     background.draw()
-    background.objects_draw()
     player.draw()
     player.life_draw()
     if debugging_draw:

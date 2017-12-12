@@ -38,7 +38,7 @@ class Object:
         sy = self.y - window_bottom
 
         if self.type in ('blue', ):
-            self.image['monster'][self.type]['left'].clip_draw(self.frame * self.width*2, 0, 292, 188, sx, sy, self.width, self.height)
+            self.image['monster'][self.type]['right'].clip_draw_to_origin(self.frame * self.width*2, 0, 292, 188, sx, sy, self.width, self.height)
 
         pass
 

@@ -75,7 +75,7 @@ class Player:
         self.bg = bg
 
     def background_collide_check(self):
-        for tile in self.bg.tiles:
+        for tile in self.bg.tile_map.tiles:
             if collide(self, tile) and tile.value != 0:
                 min_x, min_y, max_x, max_y = tile.get_bb()
                 # if self.x_change == '+': self.x = min_x + self.bg.window_left - 30

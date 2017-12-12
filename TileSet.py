@@ -16,15 +16,11 @@ class TileSet:
         f.close()
         self.__dict__.update(data)
         print(self.__dict__)
-        self.base_image = load_image(self.image)
         self.tile_images = []
-        for i in range(self.tilecount):
-            col, row = i % self.columns, i // self.columns # 열, 행
-            left = col * self.tilewidth
-            bottom = self.base_image.h - (row + 1) * self.tileheight
-            image = self.base_image.clip_image(left, bottom, self.tilewidth, self.tileheight)
-            self.tile_images.append(image)
-
+        for i in range(1, self.tilecount + 1):
+            self.tile_images.append(load_image(self.tiles[str(i)]['image']))
+        self.tileheight = self.tileheight // 2
+        self.tilewidth  = self.tilewidth // 2
 
 def load_tile_set(file_name):
     # fill here
@@ -37,14 +33,16 @@ if __name__ =='__main__':
     # fill here
     open_canvas(800, 600)
 
-    tile_set = load_tile_set('desert_tileset.json')
+    tile_set = load_tile_set('tileset.json')
+    columns = 5
 
     for i in range(tile_set.tilecount):
-        col = i % tile_set.columns # 열
-        row = i // tile_set.columns # 행
-        tile_set.tile_images[i].draw_to_origin(400 + col * tile_set.tilewidth,
-                                               300 + row * tile_set.tileheight)
-    # 300 - row * tile_set.tileheight 쓰면 행 반전 안되게 출력됨
+        col = i % columns  # 열
+        row = i // columns  # 행
+        tile_set.tile_images[i].draw_to_origin(0 + col * tile_set.tilewidth,
+                                               400 - row * tile_set.tileheight,
+                                               tile_set.tilewidth, tile_set.tileheight)
+
     update_canvas()
     delay(5)
     close_canvas()
