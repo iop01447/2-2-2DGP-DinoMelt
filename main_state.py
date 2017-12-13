@@ -7,7 +7,6 @@ import pause_state
 
 from player import Player
 from background import TileBackground as Background
-from tile import Tile
 from stdafx import *
 
 name = "MainState"
@@ -92,7 +91,7 @@ def debugging_draw_scene():
 def draw_scene():
     background.draw()
     player.draw()
-    player.life_draw()
+    player.draw_life()
     if debugging_draw:
         debugging_draw_scene()
     if minimap_draw:

@@ -6,8 +6,7 @@ from pico2d import *
 
 
 from TileSet import load_tile_set
-from object import Object
-from tile import Tile
+from stdafx import *
 
 
 class TileMap:
@@ -24,9 +23,6 @@ class TileMap:
         self.firstgid = self.tilesets[0]['firstgid']
         self.data = self.layers[0]['data']
         self.object_data = self.layers[1]['objects']
-        self.objects = [Object(object['x']//2, (self.height * self.tileheight - object['y'])//2
-                               , object['width']//2, object['height']//2,
-                               object['type'], object['properties']['x limited']) for object in self.object_data]
         self.tilewidth = self.tilewidth // 2
         self.tileheight = self.tileheight // 2
 
@@ -35,13 +31,8 @@ class TileMap:
             new_data.append(self.data[row * self.width : row * self.width + self.width])
         self.data = new_data
 
-        self.tiles = []
-        for i in range(self.height):
-            for j in range(self.width):
-                self.tiles.append(Tile(i, j, self.data[i][j]))
-
-
-    def clip_draw_to_origin(self, l, b, w, h, dx, dy):
+    # self.window_left, self.window_bottom, self.canvas_width, self.canvas_height
+    def clip_draw_to_origin(self, l, b, w, h):
         # fill here
         tl = l // self.tilewidth
         tb = b // self.tileheight
@@ -59,10 +50,46 @@ class TileMap:
                     self.tilewidth, self.tileheight
                     )
 
-    def objects_draw(self, window_left, window_bottom):
-        for object in self.objects:
-            object.draw(window_left, window_bottom)
-        pass
+    def draw_bb(self, l, b, w, h):
+        tl = l // self.tilewidth
+        tb = b // self.tileheight
+        tw = (l + w) // self.tilewidth - tl + 1
+        th = (b + h) // self.tileheight - tb + 1
+
+        lo = l % self.tilewidth
+        bo = b % self.tileheight
+
+        for x in range(tl, min(tl + tw, self.width)):
+            for y in range(tb, min(tb + th, self.height)):
+                if not self.data[y][x] == 0:
+                    sx = (x - tl) * self.tilewidth - lo
+                    sy = (y - tb) * self.tileheight - bo
+                    if self.data[y][x] in range(2, 7):
+                        draw_rectangle(sx, sy, sx + self.tilewidth, sy + self.tileheight)
+                    else:
+                        draw_rectangle(sx, sy, sx + self.tilewidth, sy + self.tileheight//2)
+
+    def collide_check(self, l, b, w, h, player):
+        tl = l // self.tilewidth
+        tb = b // self.tileheight
+        tw = (l + w) // self.tilewidth - tl + 1
+        th = (b + h) // self.tileheight - tb + 1
+
+        lo = l % self.tilewidth
+        bo = b % self.tileheight
+
+        for x in range(tl, min(tl + tw, self.width)):
+            for y in range(tb, min(tb + th, self.height)):
+                if not self.data[y][x] == 0:
+                    sx = (x - tl) * self.tilewidth - lo
+                    sy = (y - tb) * self.tileheight - bo
+                    if self.data[y][x] in range(2, 7):
+                        aabb = AABB(sx, sy, sx + self.tilewidth, sy + self.tileheight)
+                    else:
+                        aabb = AABB(sx, sy, sx + self.tilewidth, sy + self.tileheight//2)
+                    if collide(player.aabb, aabb):
+                        return True
+        return False
 
 
 def load_tile_map(name):
