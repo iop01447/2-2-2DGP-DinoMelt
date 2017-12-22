@@ -3,6 +3,7 @@ import random
 from pico2d import *
 from stdafx import *
 import math
+from bullet import Player_Bullet as Bullet
 
 class Player:
     # run speed
@@ -20,7 +21,6 @@ class Player:
     # image
     image = {}
     life_image = []
-
     # enum
     LEFT, RIGHT = -1, 1
     JUMPING_UP, JUMPING_DOWN, JUMPED = 0, 1, 2
@@ -41,7 +41,6 @@ class Player:
         self.state = 'idle' # idle, walk
         self.direction = self.RIGHT
         self.button = {'left': False, 'right': False}
-        self.attack_active = False
 
         # image
         with open("data.json") as f:
@@ -59,6 +58,8 @@ class Player:
                                     self.RIGHT: load_image(self.data['jumping']['image']['right'])}
             Player.image['jumped'] = {self.LEFT: load_image(self.data['jumped']['image']['left']),
                                     self.RIGHT: load_image(self.data['jumped']['image']['right'])}
+            Player.image['attack'] = {self.LEFT: load_image(self.data['attack']['image']['left']),
+                                      self.RIGHT: load_image(self.data['attack']['image']['right'])}
 
         if not Player.life_image:
             Player.life_image.append(load_image('Graphics\/life_level1.png'))
@@ -69,6 +70,11 @@ class Player:
         self.jump_active = False
         self.jump_direction = self.JUMPING_UP
         self.jump_state = 'jump' # jump, jumping, jumped (image)
+
+        # attack
+        self.attack_active = False
+        self.bullet_active = False
+        self.bullet = Bullet()
 
         # collide
         self.aabb = AABB(self.x - 25, self.y - 30, self.x + 25, self.y + 10)
@@ -81,6 +87,11 @@ class Player:
         return self.bg.tile_map.collide_check(self.bg.window_left, self.bg.window_bottom,
                                             self.canvas_width, self.canvas_height, self)
 
+    def bullet_tile_map_collide_check(self):
+        return self.bg.tile_map.collide_check(self.bg.window_left, self.bg.window_bottom,
+                                              self.canvas_width, self.canvas_height, self.bullet)
+
+    # jump
     def jump_initialize(self):
         self.jump_direction = self.JUMPING_UP
         self.jump_state = 'jump'
@@ -124,10 +135,19 @@ class Player:
         elif self.jump_direction == self.JUMPED:
             pass
 
+    # attack
+    def attack_initialize(self):
+        self.total_frames = 0
+        self.bullet_active = True
+        self.bullet.initialize(self.x, self.y, self.direction, self.bg)
+
+    # update
     def update_image_date(self):
         state = self.state
         if self.jump_active:
             state = self.jump_state
+        if self.attack_active:
+            state = 'attack'
 
         self.frame_cnt = self.data[state]['image']['frame_cnt']
         self.width = self.data[state]['image']['width'] // self.frame_cnt
@@ -164,20 +184,38 @@ class Player:
             if self.tile_map_collide_check():
                 self.y += distance
 
+        # 공격
+        if self.bullet_active:
+            self.bullet.update(frame_time)
+            if self.bullet_tile_map_collide_check():
+                self.bullet_active = False
+        if self.attack_active:
+            if int(self.total_frames) ==  self.frame_cnt:
+                self.attack_active = False
+
         self.x = clamp(0, self.x, self.bg.w)
         self.y = clamp(0, self.y, self.bg.h)
 
+    # draw
     def draw(self):
+        self.draw_life()
+
         sx = self.x - self.bg.window_left
         sy = self.y - self.bg.window_bottom
         state = self.state
 
         if self.jump_active:
             state = self.jump_state
+        if self.attack_active:
+            state = 'attack'
 
+      #  debug_print('state = %s, direction = %d, frame = %d, width = %d' % (state, self.direction, self.frame, self.width))
+      #  print(state, self.direction, self.width, self.height, sx, sy)
         Player.image[state][self.direction].clip_draw(
             self.frame * self.width, 0, self.width, self.height, sx, sy)
-        #debug_print('x=%d, y=%d, sx=%d, sy=%d' % (self.x, self.y, sx, sy))
+
+        if self.bullet_active:
+            self.bullet.draw()
 
     def draw_life(self):
         # 362 x 131
@@ -185,7 +223,10 @@ class Player:
 
     def draw_bb(self):
         draw_rectangle(*self.aabb.get_bb())
+        if self.bullet_active:
+            self.bullet.draw_bb()
 
+    # handle_event
     def handle_event(self, event):
         if event.type == SDL_KEYDOWN:
             if event.key == SDLK_LEFT: self.button['left'] = True
@@ -194,7 +235,10 @@ class Player:
                 if not self.jump_active:
                     self.jump_active = True
                     self.jump_initialize()
-            elif event.key == SDLK_s: pass
+            elif event.key == SDLK_s:
+                if not self.attack_active:
+                    self.attack_active = True
+                    self.attack_initialize()
 
         if event.type == SDL_KEYUP:
             if event.key == SDLK_LEFT: self.button['left'] = False

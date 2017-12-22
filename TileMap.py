@@ -69,7 +69,7 @@ class TileMap:
                     else:
                         draw_rectangle(sx, sy, sx + self.tilewidth, sy + self.tileheight//2)
 
-    def collide_check(self, l, b, w, h, player):
+    def collide_check(self, l, b, w, h, object):
         tl = l // self.tilewidth
         tb = b // self.tileheight
         tw = (l + w) // self.tilewidth - tl + 1
@@ -87,7 +87,7 @@ class TileMap:
                         aabb = AABB(sx, sy, sx + self.tilewidth, sy + self.tileheight)
                     else:
                         aabb = AABB(sx, sy, sx + self.tilewidth, sy + self.tileheight//2)
-                    if collide(player.aabb, aabb):
+                    if collide(object.aabb, aabb):
                         return True
         return False
 

@@ -37,6 +37,8 @@ class TileBackground:
 
     def set_center_object(self, player):
         self.center_object = player
+        for object in self.objects:
+            object.set_player(player)
         self.max_window_left = self.w - self.canvas_width
         self.max_window_bottom = self.h - self.canvas_height
 

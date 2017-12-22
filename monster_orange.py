@@ -6,6 +6,7 @@ from monster_red import MonsterRed
 class MonsterOrange(MonsterRed):
     IDLE, ATTACK = 0, 1
     image = [[0,0],[0,0]]
+    bullet_image = None
     type = 'orange'
 
     def __init__(self, x, y, width, height, state, bg):
@@ -23,8 +24,11 @@ class MonsterOrange(MonsterRed):
         # image
         if self.image == [[0,0],[0,0]]:
             self.image_load()
+        if self.bullet_image == None:
+            self.bullet_image = load_image('Graphics\/monster\/monster_bullet.png')
         # collide
         self.aabb = AABB(0, 0, 0, 0)
+        self.big_aabb = AABB(0, 0, 0, 0)
 
     def image_load(self):
         self.image[self.IDLE][self.LEFT] = load_image(
@@ -46,10 +50,20 @@ class MonsterOrange(MonsterRed):
         w = round(self.width * 0.2)
         h = round(self.height * 0.3)
         self.aabb = AABB(sx - w, sy - h, sx + w, sy + h)
+        if self.state[1] == self.LEFT:
+            self.big_aabb = AABB(sx - 500, sy - h, sx + w, sy + h)
+        else:
+            self.big_aabb = AABB(sx - w, sy - h, sx + 500, sy + h)
 
     def update(self, frame_time):
         self.total_frames += self.FRAMES_PER_ACTION * self.ACTION_PER_TIME * frame_time
         self.frame = int(self.total_frames) % self.frame_cnt
+
+        if not self.player == None and collide(self.player.aabb, self.big_aabb):
+            self.state[0] = self.ATTACK
+        else:
+            self.state[0] = self.IDLE
+
         self.update_aabb()
 
     def draw(self):
@@ -75,6 +89,6 @@ class MonsterOrange(MonsterRed):
             row = self.frame // self.img_col
 
             self.image[self.state[0]][self.state[1]].clip_draw(
-                col * self.img_w, self.img_h - (row + 1) * self.img_h, self.img_w, self.img_h,
+                col * self.img_w, self.img_h - row * self.img_h, self.img_w, self.img_h,
                 sx, sy, self.width, self.height)
 

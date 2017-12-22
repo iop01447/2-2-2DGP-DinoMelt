@@ -20,6 +20,8 @@ class MonsterRed:
 
     image = [0,0]
 
+    player = None
+
     def __init__(self, x, y, width, height, x_limited, bg):
         self.width, self.height = width, height
         self.min_x = x + self.width//2
@@ -39,6 +41,11 @@ class MonsterRed:
         self.img_h = self.image[self.LEFT].h//2
         # collide
         self.aabb = AABB(0,0,0,0)
+        self.big_aabb = AABB(0,0,0,0)
+
+    def set_player(self, player):
+        if self.player == None:
+            self.player = player
 
     def image_load(self):
         self.image[self.LEFT] = load_image('Graphics\/monster\/monster_red_left.png')
@@ -50,6 +57,7 @@ class MonsterRed:
         w = round(self.width * 0.3)
         h = round(self.height * 0.3)
         self.aabb = AABB(sx - w, sy - h, sx + w, sy + h)
+        self.big_aabb = AABB(sx - 300, sy - h, sx + 300, sy + h)
 
     def update(self, frame_time):
         distance = self.WALK_SPEED_PPS * frame_time
@@ -69,6 +77,14 @@ class MonsterRed:
                 self.state = self.LEFT
             self.x = clamp(self.min_x, self.x, self.max_x)
 
+        if not self.player == None and collide(self.player.aabb, self.big_aabb):
+            if self.player.x < self.x:
+                self.state = self.LEFT
+                self.x -= distance*1.5
+            else:
+                self.state = self.RIGHT
+                self.x += distance*1.5
+
         self.update_aabb()
 
     def draw(self):
@@ -83,12 +99,8 @@ class MonsterRed:
 
     def draw_bb(self):
         draw_rectangle(*self.aabb.get_bb())
+        draw_rectangle(*self.big_aabb.get_bb())
 
     def after_collide(self):
         pass
-
-    # 플레이어 발견
-    def attack(self):
-        pass
-
 

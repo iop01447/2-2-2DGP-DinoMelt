@@ -7,6 +7,8 @@ from clay_orb import ClayOrb
 
 class Object:
     def __init__(self, x, y, width, height, type, x_limited, state, bg):
+        self.type = type
+
         if type == 'red':
             self.object = MonsterRed(x, y, width, height, x_limited, bg)
         elif type == 'blue':
@@ -27,3 +29,7 @@ class Object:
 
     def get_bb(self):
         return self.object.aabb.get_bb()
+
+    def set_player(self, player):
+        if self.type in ('red', 'blue', 'orange',):
+            self.object.set_player(player)
