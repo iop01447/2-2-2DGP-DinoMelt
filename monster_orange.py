@@ -6,6 +6,7 @@ from monster_red import MonsterRed
 class MonsterOrange(MonsterRed):
     IDLE, ATTACK = 0, 1
     image = [[0,0],[0,0]]
+    type = 'orange'
 
     def __init__(self, x, y, width, height, state, bg):
         self.width, self.height = width, height
@@ -18,6 +19,7 @@ class MonsterOrange(MonsterRed):
         self.frame = 0
         self.total_frames = 0.0
         self.frame_cnt = 4
+        self.life = 2
         # image
         if self.image == [[0,0],[0,0]]:
             self.image_load()

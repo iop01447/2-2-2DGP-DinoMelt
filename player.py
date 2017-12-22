@@ -76,7 +76,7 @@ class Player:
     def set_background(self, bg):
         self.bg = bg
 
-    def background_collide_check(self):
+    def tile_map_collide_check(self):
         self.update_aabb()
         return self.bg.tile_map.collide_check(self.bg.window_left, self.bg.window_bottom,
                                             self.canvas_width, self.canvas_height, self)
@@ -108,14 +108,14 @@ class Player:
                 self.jump_state = 'jumping'
             if self.y >= self.y_base + self.height * 1.2:
                 self.jump_direction = self.JUMPING_DOWN
-            if self.background_collide_check():
+            if self.tile_map_collide_check():
                 self.y -= height
                 self.jump_state = 'jumping'
                 self.jump_direction = self.JUMPING_DOWN
 
         elif self.jump_direction == self.JUMPING_DOWN:
             self.y = self.y0 + height
-            if self.background_collide_check():
+            if self.tile_map_collide_check():
                 self.y -= height
                 self.jump_direction = self.JUMPED
                 self.jump_state = 'jumped'
@@ -155,13 +155,13 @@ class Player:
         # 이동
         if not self.state == 'idle':
             self.x += self.direction * distance
-            if self.background_collide_check():
+            if self.tile_map_collide_check():
                 self.x -= self.direction * distance
 
         # 중력
         if not self.jump_active:
             self.y -= distance
-            if self.background_collide_check():
+            if self.tile_map_collide_check():
                 self.y += distance
 
         self.x = clamp(0, self.x, self.bg.w)

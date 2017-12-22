@@ -4,6 +4,7 @@ from monster_red import MonsterRed
 
 class Monsterblue(MonsterRed):
     image = [0, 0]
+    type = 'blue'
 
     def __init__(self, x, y, width, height, x_limited, bg):
         self.width, self.height = width, height
@@ -15,6 +16,7 @@ class Monsterblue(MonsterRed):
         self.frame = 0
         self.total_frames = 0.0
         self.frame_cnt = 8
+        self.life = 1
         # image
         if self.image == [0, 0]:
             self.image_load()

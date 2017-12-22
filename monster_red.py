@@ -3,6 +3,7 @@ from stdafx import *
 
 class MonsterRed:
     LEFT, RIGHT = 0, 1
+    type = 'red'
 
     # run speed
     PIXEL_PER_METER = (130.0 / 1.5)  # 130 pixel 1.5 m
@@ -29,6 +30,7 @@ class MonsterRed:
         self.frame = 0
         self.total_frames = 0.0
         self.frame_cnt = 8
+        self.life = 2
         # image
         if self.image == [0,0]:
             self.image_load()
@@ -81,6 +83,9 @@ class MonsterRed:
 
     def draw_bb(self):
         draw_rectangle(*self.aabb.get_bb())
+
+    def after_collide(self):
+        pass
 
     # 플레이어 발견
     def attack(self):
