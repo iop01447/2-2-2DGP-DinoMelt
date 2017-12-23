@@ -36,7 +36,7 @@ def main():
     # game framerate.  Higher number is faster
     FPS = 40
 
-    # change the file names to your player graphic and map file
+    # change the file names to your Player graphic and Map file
     player_image_file = "img/girl.png"
     map_file = "maps/scroller.json"
 
@@ -44,14 +44,14 @@ def main():
     # collision rectangles
     TESTING = False
 
-    #initialize json loader, build tileset list, load player graphic
+    #initialize json loader, build tileset list, load Player graphic
     initial = json_loader.Initialize(screen, TESTING, map_file, player_image_file)
 
-    # set player to start lower on the screen for the scroller
+    # set Player to start lower on the screen for the scroller
     initial.player.rect.bottom = 250
     initial.player.rect.left = 20
 
-    # initialize position of player when game first starts
+    # initialize position of Player when game first starts
     map = json_loader.Map(initial)
     map.move(0, 0)
 

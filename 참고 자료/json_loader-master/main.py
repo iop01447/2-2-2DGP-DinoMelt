@@ -35,7 +35,7 @@ def main():
     # game framerate.  Higher number is faster
     FPS = 40
 
-    # change the file names to your player graphic and map file
+    # change the file names to your Player graphic and Map file
     player_image_file = "img/girl.png"
     map_file = "maps/larger_map.json"
 
@@ -43,10 +43,10 @@ def main():
     # collision rectangles
     TESTING = True
 
-    #initialize json loader, build tileset list, load player graphic
+    #initialize json loader, build tileset list, load Player graphic
     initial = json_loader.Initialize(screen, TESTING, map_file, player_image_file)
 
-    # initialize position of player when game first starts
+    # initialize position of Player when game first starts
     map = json_loader.Map(initial)
     map.move(-200, 0)
 

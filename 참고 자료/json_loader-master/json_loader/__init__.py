@@ -1,4 +1,4 @@
-from player import *
-from map import *
+from Player import *
+from Map import *
 from initialize import *
 from event import *

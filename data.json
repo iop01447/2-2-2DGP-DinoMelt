@@ -2,8 +2,8 @@
   "player": {
     "idle": {
       "image": {
-        "left": "Graphics\/player\/idle\/idle_left.png",
-        "right": "Graphics\/player\/idle\/idle_right.png",
+        "left": "..\/Graphics\/player\/idle\/idle_left.png",
+        "right": "..\/Graphics\/player\/idle\/idle_right.png",
         "frame_cnt": 9,
         "width": 1004,
         "height": 72
@@ -11,8 +11,8 @@
     },
     "walk": {
       "image": {
-        "left": "Graphics\/player\/walk\/walk_left.png",
-        "right": "Graphics\/player\/walk\/walk_right.png",
+        "left": "..\/Graphics\/player\/walk\/walk_left.png",
+        "right": "..\/Graphics\/player\/walk\/walk_right.png",
         "frame_cnt": 8,
         "width": 927,
         "height": 102
@@ -20,8 +20,8 @@
     },
     "jump": {
       "image": {
-        "left": "Graphics\/player\/jump\/jump_left.png",
-        "right": "Graphics\/player\/jump\/jump_right.png",
+        "left": "..\/Graphics\/player\/jump\/jump_left.png",
+        "right": "..\/Graphics\/player\/jump\/jump_right.png",
         "frame_cnt": 4,
         "width": 430,
         "height": 102
@@ -29,8 +29,8 @@
     },
     "jumping": {
       "image": {
-        "left": "Graphics\/player\/jump\/jumping_left.png",
-        "right": "Graphics\/player\/jump\/jumping_right.png",
+        "left": "..\/Graphics\/player\/jump\/jumping_left.png",
+        "right": "..\/Graphics\/player\/jump\/jumping_right.png",
         "frame_cnt": 1,
         "width": 118,
         "height": 102
@@ -38,8 +38,8 @@
     },
     "jumped": {
       "image": {
-        "left": "Graphics\/player\/jump\/jumped_left.png",
-        "right": "Graphics\/player\/jump\/jumped_right.png",
+        "left": "..\/Graphics\/player\/jump\/jumped_left.png",
+        "right": "..\/Graphics\/player\/jump\/jumped_right.png",
         "frame_cnt": 1,
         "width": 118,
         "height": 102
@@ -47,8 +47,8 @@
     },
     "attack": {
       "image": {
-        "left": "Graphics\/player\/attack\/attack_left.png",
-        "right": "Graphics\/player\/attack\/attack_right.png",
+        "left": "..\/Graphics\/player\/attack\/attack_left.png",
+        "right": "..\/Graphics\/player\/attack\/attack_right.png",
         "frame_cnt": 3,
         "width": 361,
         "height": 91

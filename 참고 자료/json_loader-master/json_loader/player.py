@@ -8,6 +8,6 @@ class Player(pygame.sprite.Sprite):
         try:
             self.image = pygame.image.load(filename).convert_alpha()
         except IOError:
-            print("Cannot find player file {}".format(filename))
+            print("Cannot find Player file {}".format(filename))
         self.rect = self.image.get_rect()
         self.rect.center = center

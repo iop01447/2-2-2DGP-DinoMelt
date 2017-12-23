@@ -2,8 +2,8 @@ __author__ = 'craig'
 
 import pygame
 import json
-from player import *
-from map import *
+from Player import *
+from Map import *
 
 
 class Initialize():
@@ -15,7 +15,7 @@ class Initialize():
                 self.mapheight = self.layers[0]["height"] * 32
                 self.mapwidth = self.layers[0]["width"] * 32
         except IOError:
-            print("Cannot open map file {}".format(filename))
+            print("Cannot open Map file {}".format(filename))
 
         self.test = testing
         self.phone_rect = phone_screen.get_rect()

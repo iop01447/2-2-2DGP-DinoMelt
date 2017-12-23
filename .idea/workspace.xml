@@ -2,24 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af0779c1-141e-459e-a4b9-ffd02ad2f6b8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Graphics/life_level1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Graphics/life_level2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Graphics/life_level3.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Graphics/photothumb.db" afterPath="$PROJECT_DIR$/Graphics/photothumb.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/원작 자료/photothumb.db" afterPath="$PROJECT_DIR$/원작 자료/photothumb.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/제작.pptx" afterPath="$PROJECT_DIR$/제작.pptx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/DinoMelt.iml" afterPath="$PROJECT_DIR$/.idea/DinoMelt.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TileMap.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TileSet.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/map.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/mygame.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/background.py" afterPath="$PROJECT_DIR$/Map/background.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/bullet.py" afterPath="$PROJECT_DIR$/SourceFiles/bullet.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/clay_orb.py" afterPath="$PROJECT_DIR$/Object/clay_orb.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/game_framework.py" afterPath="$PROJECT_DIR$/Framework/game_framework.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/main_state.py" afterPath="$PROJECT_DIR$/State/main_state.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/monster_blue.py" afterPath="$PROJECT_DIR$/Monster/monster_blue.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/monster_orange.py" afterPath="$PROJECT_DIR$/Monster/monster_orange.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/monster_red.py" afterPath="$PROJECT_DIR$/Monster/monster_red.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/object.py" afterPath="$PROJECT_DIR$/Object/object.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/pause_state.py" afterPath="$PROJECT_DIR$/State/pause_state.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/player.py" afterPath="$PROJECT_DIR$/Player/player.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/start_state.py" afterPath="$PROJECT_DIR$/State/start_state.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/stdafx.py" afterPath="$PROJECT_DIR$/SourceFiles/stdafx.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/title_state.py" afterPath="$PROJECT_DIR$/State/title_state.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/background.py" afterPath="$PROJECT_DIR$/background.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bullet.py" afterPath="$PROJECT_DIR$/bullet.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/game_framework.py" afterPath="$PROJECT_DIR$/game_framework.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main_state.py" afterPath="$PROJECT_DIR$/main_state.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/monster_orange.py" afterPath="$PROJECT_DIR$/monster_orange.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mygame.py" afterPath="$PROJECT_DIR$/mygame.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/player.py" afterPath="$PROJECT_DIR$/player.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/start_state.py" afterPath="$PROJECT_DIR$/start_state.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/title_state.py" afterPath="$PROJECT_DIR$/title_state.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.json" afterPath="$PROJECT_DIR$/data.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/map.json" afterPath="$PROJECT_DIR$/map.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tileset.json" afterPath="$PROJECT_DIR$/tileset.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/참고 자료/json_loader-master/json_loader/__init__.py" afterPath="$PROJECT_DIR$/참고 자료/json_loader-master/json_loader/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/참고 자료/json_loader-master/json_loader/initialize.py" afterPath="$PROJECT_DIR$/참고 자료/json_loader-master/json_loader/initialize.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/참고 자료/json_loader-master/json_loader/player.py" afterPath="$PROJECT_DIR$/참고 자료/json_loader-master/json_loader/player.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/참고 자료/json_loader-master/main.py" afterPath="$PROJECT_DIR$/참고 자료/json_loader-master/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/참고 자료/json_loader-master/scroller_example.py" afterPath="$PROJECT_DIR$/참고 자료/json_loader-master/scroller_example.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,24 +38,26 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.46254927">
+    <splitter split-orientation="horizontal" split-proportion="0.47317073">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="game_framework.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/game_framework.py">
+          <file leaf-file-name="object.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Object/object.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="89" column="32" lean-forward="false" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
-                  <folding />
+                <state relative-caret-position="434">
+                  <caret line="31" column="21" lean-forward="true" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+                  <folding>
+                    <element signature="e#0#42#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="monster_orange.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/monster_orange.py">
+          <file leaf-file-name="clay_orb.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Object/clay_orb.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="545">
-                  <caret line="94" column="78" lean-forward="false" selection-start-line="94" selection-start-column="78" selection-end-line="94" selection-end-column="78" />
+                <state relative-caret-position="242">
+                  <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
                   </folding>
@@ -54,63 +65,89 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="stdafx.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/stdafx.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="220">
-                  <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="monster_blue.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/monster_blue.py">
+            <entry file="file://$PROJECT_DIR$/Monster/monster_blue.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="792">
-                  <caret line="38" column="56" lean-forward="false" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="object.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/object.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="352">
-                  <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="242">
+                  <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+                  <folding>
+                    <element signature="e#0#20#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file leaf-file-name="TileMap.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/TileMap.py">
+            <entry file="file://$PROJECT_DIR$/Map/TileMap.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="140">
-                  <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
+                <state relative-caret-position="225">
+                  <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#26#46#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="map.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/map.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="201">
+                  <caret line="790" column="23" lean-forward="false" selection-start-line="790" selection-start-column="23" selection-end-line="790" selection-end-column="23" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="TileSet.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Map/TileSet.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="225">
+                  <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#26#37#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tileset.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tileset.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="418">
+                  <caret line="130" column="22" lean-forward="false" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
           <file leaf-file-name="player.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/player.py">
+            <entry file="file://$PROJECT_DIR$/Player/player.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-4884">
-                  <caret line="18" column="25" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="18" selection-end-column="25" />
+                <state relative-caret-position="401">
+                  <caret line="261" column="0" lean-forward="true" selection-start-line="261" selection-start-column="0" selection-end-line="261" selection-end-column="0" />
                   <folding>
-                    <element signature="e#0#13#0" expanded="true" />
+                    <element signature="e#0#20#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="main_state.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/main_state.py">
+          <file leaf-file-name="main_state.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/State/main_state.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="401">
-                  <caret line="73" column="28" lean-forward="false" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+                <state relative-caret-position="-1364">
+                  <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="pause_state.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/State/pause_state.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -120,21 +157,45 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file leaf-file-name="background.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/background.py">
+          <file leaf-file-name="player.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Player/player.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="88" column="16" lean-forward="false" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
+                <state relative-caret-position="132">
+                  <caret line="72" column="56" lean-forward="false" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
+                  <folding>
+                    <element signature="e#0#20#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="game_framework.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Framework/game_framework.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="89" column="32" lean-forward="false" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="bullet.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/bullet.py">
+          <file leaf-file-name="background.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Map/background.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-396">
-                  <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+                <state relative-caret-position="115">
+                  <caret line="84" column="18" lean-forward="false" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
+                  <folding>
+                    <element signature="e#0#20#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="bullet.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/SourceFiles/bullet.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-94">
+                  <caret line="24" column="57" lean-forward="false" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
                   </folding>
@@ -143,69 +204,59 @@
             </entry>
           </file>
           <file leaf-file-name="start_state.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/start_state.py">
+            <entry file="file://$PROJECT_DIR$/State/start_state.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="198">
-                  <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+                <state relative-caret-position="-556">
+                  <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
                   <folding>
-                    <element signature="e#0#21#0" expanded="true" />
+                    <element signature="e#0#20#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="title_state.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/title_state.py">
+          <file leaf-file-name="title_state.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/State/title_state.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="269">
-                  <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+                <state relative-caret-position="-402">
+                  <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
                   <folding>
-                    <element signature="e#0#21#0" expanded="true" />
+                    <element signature="e#0#20#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file leaf-file-name="mygame.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/mygame.py">
+            <entry file="file://$PROJECT_DIR$/SourceFiles/mygame.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="308">
-                  <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
-                  <folding />
+                <state relative-caret-position="132">
+                  <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+                  <folding>
+                    <element signature="e#0#9#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="pico2d.py" pinned="false" current-in-tab="false">
-            <entry file="file://C:/Python36/Lib/site-packages/pico2d/pico2d.py">
+          <file leaf-file-name="monster_red.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Monster/monster_red.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="171">
-                  <caret line="264" column="0" lean-forward="false" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="monster_red.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/monster_red.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="748">
-                  <caret line="101" column="47" lean-forward="false" selection-start-line="99" selection-start-column="4" selection-end-line="101" selection-end-column="47" />
-                  <folding />
+                <state relative-caret-position="-110">
+                  <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#20#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file leaf-file-name="monster_orange.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/monster_orange.py">
+            <entry file="file://$PROJECT_DIR$/Monster/monster_orange.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1540">
-                  <caret line="106" column="21" lean-forward="false" selection-start-line="106" selection-start-column="21" selection-end-line="106" selection-end-column="21" />
-                  <folding>
-                    <marker date="1514013983087" expanded="true" signature="137:4655" ph="..." />
-                    <marker date="1514013983087" expanded="true" signature="288:1072" ph="..." />
-                    <marker date="1514013983087" expanded="true" signature="3660:4655" ph="..." />
-                  </folding>
+                <state relative-caret-position="198">
+                  <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -248,9 +299,14 @@
       <find>time</find>
       <find>time(</find>
       <find>clip_draw</find>
+      <find>width</find>
+      <find>Graphics</find>
+      <find>..\/Graphics</find>
+      <find>source</find>
     </findStrings>
     <replaceStrings>
       <replace />
+      <replace>Graphics</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -259,21 +315,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/참고 자료/pause_state.py" />
-        <option value="$PROJECT_DIR$/참고 자료/json_loader-master/json_loader/initialize.py" />
-        <option value="$PROJECT_DIR$/pause_state.py" />
-        <option value="$PROJECT_DIR$/참고 자료/tile.py" />
-        <option value="$PROJECT_DIR$/Map.py" />
-        <option value="$PROJECT_DIR$/Player.py" />
-        <option value="$PROJECT_DIR$/../2016-2DGP/Labs/Lab10 - Scroll and Tiling/mygame.py" />
-        <option value="$PROJECT_DIR$/../2016-2DGP/Labs/Lab10 - Scroll and Tiling/background.py" />
-        <option value="$PROJECT_DIR$/../2016-2DGP/Labs/Lab12 - Scroll Fixed BG/scroll_state.py" />
-        <option value="$PROJECT_DIR$/../2016-2DGP/Labs/Lab12 - Scroll Fixed BG/boy.py" />
-        <option value="$PROJECT_DIR$/../2016-2DGP/Labs/Lab12 - Scroll Fixed BG/background.py" />
-        <option value="$PROJECT_DIR$/../2016-2DGP/Labs/Lab10 - Scroll and Tiling/boy.py" />
-        <option value="$PROJECT_DIR$/../2017-2DGP/Labs/Lab07 - Character Controller/json_players.py" />
-        <option value="$PROJECT_DIR$/map.py" />
-        <option value="$PROJECT_DIR$/../2017-2DGP/Labs/Lab10 - Map Scrolling/background.py" />
         <option value="$PROJECT_DIR$/../2017-2DGP/Labs/Lab11 - Sound/grass.py" />
         <option value="$PROJECT_DIR$/../2017-2DGP/Labs/Lab11 - Sound/main_state.py" />
         <option value="$PROJECT_DIR$/../2017-2DGP/Labs/Lab11 - Sound/boy.py" />
@@ -291,25 +332,40 @@
         <option value="$PROJECT_DIR$/2016182042.txt" />
         <option value="$PROJECT_DIR$/../2017-2DGP/Labs/Lab12 - Tiling/scroll_state.py" />
         <option value="$PROJECT_DIR$/TileSet.py" />
-        <option value="$PROJECT_DIR$/map.json" />
         <option value="$PROJECT_DIR$/tile.py" />
         <option value="$PROJECT_DIR$/stdafx.py" />
-        <option value="$PROJECT_DIR$/clay_orb.py" />
         <option value="$PROJECT_DIR$/../2017-2DGP/Labs/Lab13 - Packaging/mygame.py" />
-        <option value="$PROJECT_DIR$/data.json" />
         <option value="$PROJECT_DIR$/TileMap.py" />
         <option value="$PROJECT_DIR$/object.py" />
         <option value="$PROJECT_DIR$/monster_red.py" />
         <option value="$PROJECT_DIR$/monster_blue.py" />
         <option value="$PROJECT_DIR$/bullet.py" />
-        <option value="$PROJECT_DIR$/monster_orange.py" />
-        <option value="$PROJECT_DIR$/background.py" />
-        <option value="$PROJECT_DIR$/player.py" />
-        <option value="$PROJECT_DIR$/mygame.py" />
         <option value="$PROJECT_DIR$/game_framework.py" />
-        <option value="$PROJECT_DIR$/main_state.py" />
         <option value="$PROJECT_DIR$/start_state.py" />
         <option value="$PROJECT_DIR$/title_state.py" />
+        <option value="$PROJECT_DIR$/background.py" />
+        <option value="$PROJECT_DIR$/monster_orange.py" />
+        <option value="$PROJECT_DIR$/clay_orb.py" />
+        <option value="$PROJECT_DIR$/player.py" />
+        <option value="$PROJECT_DIR$/main_state.py" />
+        <option value="$PROJECT_DIR$/mygame.py" />
+        <option value="$PROJECT_DIR$/map/background.py" />
+        <option value="$PROJECT_DIR$/State/main_state.py" />
+        <option value="$PROJECT_DIR$/SourceFiles/mygame.py" />
+        <option value="$PROJECT_DIR$/data.json" />
+        <option value="$PROJECT_DIR$/SourceFiles/bullet.py" />
+        <option value="$PROJECT_DIR$/Map/TileSet.py" />
+        <option value="$PROJECT_DIR$/State/start_state.py" />
+        <option value="$PROJECT_DIR$/State/title_state.py" />
+        <option value="$PROJECT_DIR$/map.json" />
+        <option value="$PROJECT_DIR$/tileset.json" />
+        <option value="$PROJECT_DIR$/Player/player.py" />
+        <option value="$PROJECT_DIR$/Monster/monster_blue.py" />
+        <option value="$PROJECT_DIR$/Monster/monster_orange.py" />
+        <option value="$PROJECT_DIR$/Monster/monster_red.py" />
+        <option value="$PROJECT_DIR$/Map/background.py" />
+        <option value="$PROJECT_DIR$/Object/object.py" />
+        <option value="$PROJECT_DIR$/Object/clay_orb.py" />
       </list>
     </option>
   </component>
@@ -341,6 +397,41 @@
               <item name="DinoMelt" type="b2602c69:ProjectViewProjectNode" />
               <item name="DinoMelt" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="DinoMelt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DinoMelt" type="462c0819:PsiDirectoryNode" />
+              <item name="Framework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DinoMelt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DinoMelt" type="462c0819:PsiDirectoryNode" />
+              <item name="Map" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DinoMelt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DinoMelt" type="462c0819:PsiDirectoryNode" />
+              <item name="Monster" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DinoMelt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DinoMelt" type="462c0819:PsiDirectoryNode" />
+              <item name="Object" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DinoMelt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DinoMelt" type="462c0819:PsiDirectoryNode" />
+              <item name="Player" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DinoMelt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DinoMelt" type="462c0819:PsiDirectoryNode" />
+              <item name="SourceFiles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="DinoMelt" type="b2602c69:ProjectViewProjectNode" />
+              <item name="DinoMelt" type="462c0819:PsiDirectoryNode" />
+              <item name="State" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -354,15 +445,18 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\DinoMelt" />
-      <recent name="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\DinoMelt(notGit)" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\DinoMelt" />
       <recent name="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\2017-2DGP\Labs\Lab12 - Tiling" />
       <recent name="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\2017-2DGP\Labs\Lab10 - Map Scrolling" />
       <recent name="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\DinoMelt\Graphics" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\DinoMelt" />
+      <recent name="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\DinoMelt\Player" />
+      <recent name="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\DinoMelt\source_files" />
+      <recent name="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\DinoMelt\mygame" />
+      <recent name="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\DinoMelt\bullet" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -377,7 +471,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.mygame (3)">
+  <component name="RunManager" selected="Python.mygame">
     <configuration name="TileSet" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -390,7 +484,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="DinoMelt" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TileSet.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\DinoMelt\map\TileSet.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -629,7 +723,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="DinoMelt" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main_state.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\DinoMelt\state\main_state.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -646,7 +740,24 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="DinoMelt" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mygame.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\DinoMelt\source_files\mygame.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="mygame" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SourceFiles" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="DinoMelt" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SourceFiles/mygame.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -663,23 +774,25 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="DinoMelt" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/player.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\DinoMelt\player\player.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="4">
+    <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.main_state" />
       <item index="1" class="java.lang.String" itemvalue="Python.mygame (3)" />
       <item index="2" class="java.lang.String" itemvalue="Python.TileSet" />
       <item index="3" class="java.lang.String" itemvalue="Python.player" />
+      <item index="4" class="java.lang.String" itemvalue="Python.mygame" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.mygame (3)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.player" />
-        <item index="2" class="java.lang.String" itemvalue="Python.TileSet" />
-        <item index="3" class="java.lang.String" itemvalue="Python.main_state" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.mygame" />
+        <item index="1" class="java.lang.String" itemvalue="Python.mygame (3)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.player" />
+        <item index="3" class="java.lang.String" itemvalue="Python.TileSet" />
+        <item index="4" class="java.lang.String" itemvalue="Python.main_state" />
       </list>
     </recent_temporary>
   </component>
@@ -703,14 +816,15 @@
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18259935" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.119226635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290398" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13700235" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16978922" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16978922" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3266979" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -719,29 +833,8 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290398" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17330211" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16004297" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290398" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3290398" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -758,16 +851,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="106" />
+      <option name="time" value="108" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../2017-2DGP/Labs/Lab12 - Tiling/desert_tiles.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../2017-2DGP/Labs/Lab12 - Tiling/Futsal_Tiles.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -862,13 +950,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/monster.py" />
     <entry file="file://$PROJECT_DIR$/2016182042.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -895,13 +976,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tileset.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -941,25 +1015,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/map.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12166">
-          <caret line="553" column="28" lean-forward="false" selection-start-line="553" selection-start-column="28" selection-end-line="553" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tile.py" />
     <entry file="file://C:/Python36/Lib/site-packages/pico2d/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="9" lean-forward="false" selection-start-line="0" selection-start-column="9" selection-end-line="0" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TileSet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="4" selection-end-line="36" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -977,47 +1037,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clay_orb.py">
+    <entry file="file://$PROJECT_DIR$/Map/map.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="34" column="56" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="34" selection-end-column="56" />
+        <state relative-caret-position="440">
+          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="32" column="61" lean-forward="true" selection-start-line="32" selection-start-column="61" selection-end-line="32" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monster_blue.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="38" column="56" lean-forward="false" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
+        <state relative-caret-position="390">
+          <caret line="50" column="22" lean-forward="false" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/object.py">
+    <entry file="file://C:/Python36/Lib/site-packages/pico2d/pico2d.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="338" column="0" lean-forward="false" selection-start-line="338" selection-start-column="0" selection-end-line="338" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bullet.py">
+    <entry file="file://$PROJECT_DIR$/Framework/game_framework.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-396">
-          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="60">
+          <caret line="89" column="32" lean-forward="false" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/stdafx.py">
+    <entry file="file://$PROJECT_DIR$/SourceFiles/stdafx.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
@@ -1025,100 +1077,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/monster_red.py">
+    <entry file="file://$PROJECT_DIR$/SourceFiles/mygame.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="101" column="47" lean-forward="false" selection-start-line="99" selection-start-column="4" selection-end-line="101" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TileMap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monster_orange.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1540">
-          <caret line="106" column="21" lean-forward="false" selection-start-line="106" selection-start-column="21" selection-end-line="106" selection-end-column="21" />
+        <state relative-caret-position="132">
+          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
           <folding>
-            <marker date="1514013983087" expanded="true" signature="137:4655" ph="..." />
-            <marker date="1514013983087" expanded="true" signature="288:1072" ph="..." />
-            <marker date="1514013983087" expanded="true" signature="3660:4655" ph="..." />
+            <element signature="e#0#9#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python36/Lib/site-packages/pico2d/pico2d.py">
+    <entry file="file://$PROJECT_DIR$/State/pause_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="264" column="0" lean-forward="false" selection-start-line="264" selection-start-column="0" selection-end-line="264" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mygame.py">
+    <entry file="file://$PROJECT_DIR$/State/main_state.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="15" column="30" lean-forward="false" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+        <state relative-caret-position="-1364">
+          <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/background.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="88" column="16" lean-forward="false" selection-start-line="88" selection-start-column="16" selection-end-line="88" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/player.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4884">
-          <caret line="18" column="25" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="18" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/game_framework.py">
+    <entry file="file://$PROJECT_DIR$/Map/TileMap.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="89" column="32" lean-forward="false" selection-start-line="89" selection-start-column="32" selection-end-line="89" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/start_state.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#26#46#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_state.py">
+    <entry file="file://$PROJECT_DIR$/map.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="73" column="28" lean-forward="false" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+        <state relative-caret-position="201">
+          <caret line="790" column="23" lean-forward="false" selection-start-line="790" selection-start-column="23" selection-end-line="790" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/title_state.py">
+    <entry file="file://$PROJECT_DIR$/tileset.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="418">
+          <caret line="130" column="22" lean-forward="false" selection-start-line="130" selection-start-column="22" selection-end-line="130" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Map/TileSet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#26#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/State/start_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-556">
+          <caret line="16" column="28" lean-forward="false" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/State/title_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-402">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Monster/monster_orange.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="13" column="26" lean-forward="false" selection-start-line="13" selection-start-column="26" selection-end-line="13" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SourceFiles/bullet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-94">
+          <caret line="24" column="57" lean-forward="false" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Map/background.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="84" column="18" lean-forward="false" selection-start-line="84" selection-start-column="18" selection-end-line="84" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Monster/monster_blue.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Player/player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="72" column="56" lean-forward="false" selection-start-line="72" selection-start-column="56" selection-end-line="72" selection-end-column="56" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Object/object.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="31" column="21" lean-forward="true" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Object/clay_orb.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Monster/monster_red.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-110">
+          <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
