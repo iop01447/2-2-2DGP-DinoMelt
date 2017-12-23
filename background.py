@@ -42,6 +42,7 @@ class TileBackground:
         self.max_window_left = self.w - self.canvas_width
         self.max_window_bottom = self.h - self.canvas_height
 
+    # draw
     def draw(self):
         self.background_image.draw_to_origin(0, 0, self.canvas_width, self.canvas_height)
         self.tile_map.clip_draw_to_origin(self.window_left, self.window_bottom, self.canvas_width, self.canvas_height)
@@ -71,14 +72,21 @@ class TileBackground:
     def get_bb(self):
         return 0, 0, self.canvas_width, self.canvas_height
 
+    # update
     def update(self, frame_time):
         self.window_left = clamp(0, int(self.center_object.x) - self.canvas_width // 2, self.max_window_left)
         self.window_bottom = clamp(0, int(self.center_object.y) - self.canvas_height // 2, self.max_window_bottom)
         self.objects_update(frame_time)
 
+    # object
     def objects_update(self, frame_time):
         for object in self.objects:
             object.update(frame_time)
+
+    def player_monster_collide_check(self):
+        for o in self.objects:
+            if o.type != 'orb' and collide(self.center_object.aabb, o.object.aabb):
+                return True
 
     def handle_event(self, event):
         pass

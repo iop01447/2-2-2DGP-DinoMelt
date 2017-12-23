@@ -1,6 +1,7 @@
 from pico2d import *
 from stdafx import *
 from monster_red import MonsterRed
+from bullet import Bullet
 
 
 class MonsterOrange(MonsterRed):
@@ -12,6 +13,8 @@ class MonsterOrange(MonsterRed):
     def __init__(self, x, y, width, height, state, bg):
         self.width, self.height = width, height
         self.x, self.y = x + width//2, y + height//2
+        self.canvas_width = get_canvas_width()
+        self.canvas_height = get_canvas_height()
         self.bg = bg
         if state == 'left':
             self.state = [self.IDLE, self.LEFT]
@@ -21,14 +24,20 @@ class MonsterOrange(MonsterRed):
         self.total_frames = 0.0
         self.frame_cnt = 4
         self.life = 2
+
         # image
         if self.image == [[0,0],[0,0]]:
             self.image_load()
         if self.bullet_image == None:
             self.bullet_image = load_image('Graphics\/monster\/monster_bullet.png')
+
         # collide
         self.aabb = AABB(0, 0, 0, 0)
         self.big_aabb = AABB(0, 0, 0, 0)
+
+        # attack
+        self.bullet_active = False
+        self.bullet = Bullet()
 
     def image_load(self):
         self.image[self.IDLE][self.LEFT] = load_image(
@@ -40,6 +49,22 @@ class MonsterOrange(MonsterRed):
         self.image[self.ATTACK][self.RIGHT] = load_image(
             'Graphics\/monster\/monster_orange_attack_right.png')
 
+    def bullet_tile_map_collide_check(self):
+        return self.bg.tile_map.collide_check(self.bg.window_left, self.bg.window_bottom,
+                                              self.canvas_width, self.canvas_height, self.bullet)
+
+    # attack
+    def attack_initialize(self):
+        self.total_frames = 0
+        self.bullet_active = True
+        self.state[0] = self.ATTACK
+        if self.state[1] == self.LEFT:
+            direction = -1
+        else:
+            direction = 1
+        self.bullet.initialize(self.x, self.y, direction, self.bg)
+
+    # update
     def update_aabb(self):
         sx = self.x - self.bg.window_left
         sy = self.y - self.bg.window_bottom
@@ -59,10 +84,19 @@ class MonsterOrange(MonsterRed):
         self.total_frames += self.FRAMES_PER_ACTION * self.ACTION_PER_TIME * frame_time
         self.frame = int(self.total_frames) % self.frame_cnt
 
-        if not self.player == None and collide(self.player.aabb, self.big_aabb):
-            self.state[0] = self.ATTACK
-        else:
-            self.state[0] = self.IDLE
+        if self.player != None and collide(self.player.aabb, self.big_aabb):
+            if self.state[0] == self.IDLE and self.bullet_active == False:
+                self.attack_initialize()
+
+        if self.bullet_active:
+            self.bullet.update(frame_time)
+            if self.bullet_tile_map_collide_check()\
+                    or self.bullet.x < self.bg.window_left\
+                    or self.bullet.x > self.bg.window_left + self.canvas_width:
+                self.bullet_active = False
+        if self.state[0] == self.ATTACK:
+            if int(self.total_frames) >= self.frame_cnt:
+                self.state[0] = self.IDLE
 
         self.update_aabb()
 
@@ -91,4 +125,13 @@ class MonsterOrange(MonsterRed):
             self.image[self.state[0]][self.state[1]].clip_draw(
                 col * self.img_w, self.img_h - row * self.img_h, self.img_w, self.img_h,
                 sx, sy, self.width, self.height)
+
+        if self.bullet_active:
+            self.bullet.draw()
+
+    def draw_bb(self):
+        draw_rectangle(*self.aabb.get_bb())
+        draw_rectangle(*self.big_aabb.get_bb())
+        if self.bullet_active:
+            self.bullet.draw_bb()
 

@@ -1,7 +1,7 @@
 from pico2d import *
 from stdafx import *
 
-class Player_Bullet:
+class Bullet:
     image = None
 
     PIXEL_PER_METER = (130.0 / 1.5)  # 130 pixel 1.5 m
@@ -10,14 +10,17 @@ class Player_Bullet:
     RUN_SPEED_MPS = (RUN_SPEED_MPM / 60.0)
     RUN_SPEED_PPS = (RUN_SPEED_MPS * PIXEL_PER_METER)
 
-    def __init__(self):
+    def __init__(self, is_player_bullet = False):
         self.x, self.y = 0, 0
         self.width, self.height = 64,50
         self.aabb = AABB(0, 0, 0, 0)
         self.bg = None
         self.direction = 0
         if self.image == None:
-            self.image = load_image('Graphics\/player\/bullet.png')
+            if is_player_bullet:
+                self.image = load_image('Graphics\/player\/bullet.png')
+            else:
+                self.image = load_image('Graphics\/monster\/monster_bullet.png')
 
     def initialize(self, x, y, direction, bg):
         self.x, self.y = x, y

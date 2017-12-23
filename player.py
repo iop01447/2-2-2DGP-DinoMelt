@@ -3,7 +3,7 @@ import random
 from pico2d import *
 from stdafx import *
 import math
-from bullet import Player_Bullet as Bullet
+from bullet import Bullet
 
 class Player:
     # run speed
@@ -20,7 +20,8 @@ class Player:
 
     # image
     image = {}
-    life_image = []
+    life_image = None
+
     # enum
     LEFT, RIGHT = -1, 1
     JUMPING_UP, JUMPING_DOWN, JUMPED = 0, 1, 2
@@ -62,9 +63,7 @@ class Player:
                                       self.RIGHT: load_image(self.data['attack']['image']['right'])}
 
         if not Player.life_image:
-            Player.life_image.append(load_image('Graphics\/life_level1.png'))
-            Player.life_image.append(load_image('Graphics\/life_level2.png'))
-            Player.life_image.append(load_image('Graphics\/life_level3.png'))
+            Player.life_image = load_image('Graphics\/life.png')
 
         # jump
         self.jump_active = False
@@ -79,9 +78,16 @@ class Player:
         # collide
         self.aabb = AABB(self.x - 25, self.y - 30, self.x + 25, self.y + 10)
 
+        # dead
+        self.dead_effect = False
+        self.dying_time = 0
+        self.total_dying_time = 0
+        self.switch = True
+
     def set_background(self, bg):
         self.bg = bg
 
+    # collide
     def tile_map_collide_check(self):
         self.update_aabb()
         return self.bg.tile_map.collide_check(self.bg.window_left, self.bg.window_bottom,
@@ -90,6 +96,9 @@ class Player:
     def bullet_tile_map_collide_check(self):
         return self.bg.tile_map.collide_check(self.bg.window_left, self.bg.window_bottom,
                                               self.canvas_width, self.canvas_height, self.bullet)
+
+    def monster_collide_check(self):
+        return self.bg.player_monster_collide_check()
 
     # jump
     def jump_initialize(self):
@@ -140,6 +149,31 @@ class Player:
         self.total_frames = 0
         self.bullet_active = True
         self.bullet.initialize(self.x, self.y, self.direction, self.bg)
+
+    # dead
+    def dying(self, frame_time):
+        self.dying_time += frame_time
+        self.total_dying_time += frame_time
+
+        if self.dying_time > 0.1:
+            self.dying_time = 0
+            self.switch = not self.switch
+
+        if self.switch:
+            for key in self.image.keys():
+                for image in self.image[key].values():
+                    image.opacify(0.5)
+        else:
+            for key in self.image.keys():
+                for image in self.image[key].values():
+                    image.opacify(1)
+        if self.total_dying_time > 2:
+            self.dying_time = 0
+            self.total_dying_time = 0
+            self.dead_effect = False
+            for key in self.image.keys():
+                for image in self.image[key].values():
+                    image.opacify(1)
 
     # update
     def update_image_date(self):
@@ -193,6 +227,16 @@ class Player:
             if int(self.total_frames) ==  self.frame_cnt:
                 self.attack_active = False
 
+        # 몬스터와 부딪힐 때
+        if self.monster_collide_check():
+            if not self.dead_effect:
+                self.life -= 1
+                self.dead_effect = True
+            if self.life < 1: self.life = 1
+
+        if self.dead_effect:
+            self.dying(frame_time)
+
         self.x = clamp(0, self.x, self.bg.w)
         self.y = clamp(0, self.y, self.bg.h)
 
@@ -219,7 +263,18 @@ class Player:
 
     def draw_life(self):
         # 362 x 131
-        Player.life_image[self.life - 1].draw(self.canvas_width/2, self.canvas_height - 50, 145, 52)
+        x = self.canvas_width/2 - 48
+        y = self.canvas_height - 50
+        for i in range(3):
+            Player.life_image.opacify(1)
+            if self.life == 1:
+                if i in range(1, 3):
+                    Player.life_image.opacify(0.5)
+            elif self.life == 2:
+                if i == 2:
+                    Player.life_image.opacify(0.5)
+            Player.life_image.draw(x, y, 48, 52)
+            x += 48
 
     def draw_bb(self):
         draw_rectangle(*self.aabb.get_bb())

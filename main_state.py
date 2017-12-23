@@ -56,7 +56,7 @@ def resume():
     pass
 
 
-def handle_events(frame_time):
+def handle_events():
     global debugging_draw
     global minimap_draw
     events = get_events()
