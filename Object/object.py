@@ -33,5 +33,5 @@ class Object:
         return self.object.aabb.get_bb()
 
     def set_player(self, player):
-        if self.type in ('red', 'blue', 'orange',):
+        if self.type in ('red', 'blue', 'orange', 'orb', ):
             self.object.set_player(player)

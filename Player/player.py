@@ -185,6 +185,7 @@ class Player:
             for key in self.image.keys():
                 for image in self.image[key].values():
                     image.opacify(1)
+
         if self.total_dying_time > 2:
             self.dying_time = 0
             self.total_dying_time = 0
@@ -208,7 +209,7 @@ class Player:
     def update_aabb(self):
         sx = self.x - self.bg.window_left
         sy = self.y - self.bg.window_bottom
-        self.aabb = AABB(sx - 25, sy- 30, sx + 25, sy + 10)
+        self.aabb = AABB(sx - 25, sy- 30, sx + 25, sy + 20)
 
     def update(self, frame_time):
         self.update_image_date() # 애니메이션 데이터
@@ -248,6 +249,7 @@ class Player:
         # 몬스터와 부딪힐 때
         if self.monster_collide_check():
             if not self.dead_effect:
+                print('you dead')
                 self.life -= 1
                 self.dead_effect = True
             if self.life < 1: self.life = 1
