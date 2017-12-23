@@ -90,7 +90,8 @@ class TileBackground:
             if o.type != 'orb' and o.object.exsist:
                 if collide(self.center_object.aabb, o.object.aabb):
                     return True
-                if o.type == 'orange' and collide(self.center_object.aabb, o.object.bullet.aabb):
+                if o.type == 'orange' and o.object.bullet_active and collide(self.center_object.aabb, o.object.bullet.aabb):
+                    o.object.bullet_active = False
                     return True
         return False
 
@@ -98,6 +99,7 @@ class TileBackground:
         for o in self.objects:
             if o.type == 'orb' and o.object.exsist:
                 if collide(self.center_object.aabb, o.object.aabb):
+                    o.object.exsist = False
                     return True
         return False
 

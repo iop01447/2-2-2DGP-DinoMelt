@@ -11,6 +11,8 @@ class ClayOrb:
 
     image = None
 
+    player = None
+
     def __init__(self, x, y, width, height, bg):
         self.exsist = True
         self.width, self.height = width, height
@@ -26,6 +28,10 @@ class ClayOrb:
         self.img_h = self.image.h
         # collide
         self.aabb = AABB(0,0,0,0)
+
+    def set_player(self, player):
+        if self.player == None:
+            self.player = player
 
     def image_load(self):
         self.image = load_image('..\/Graphics\/clay_orb.png')

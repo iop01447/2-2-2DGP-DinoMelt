@@ -92,7 +92,6 @@ class MonsterOrange(MonsterRed):
         if self.bullet_active:
             self.bullet.update(frame_time)
             if self.bullet_tile_map_collide_check()\
-                    or collide(self.player.aabb, self.bullet.aabb)\
                     or self.bullet.x < self.bg.window_left\
                     or self.bullet.x > self.bg.window_left + self.canvas_width:
                 self.bullet_active = False
