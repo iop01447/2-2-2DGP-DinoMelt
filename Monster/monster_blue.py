@@ -52,6 +52,12 @@ class MonsterBlue(MonsterRed):
         self.aabb = AABB(sx - w, sy - h, sx + w, sy + h)
 
     def update(self, frame_time):
+        if self.attacked_effect:
+            self.being_attacked(frame_time)
+        if self.dying_effect:
+            self.dying(frame_time)
+            return
+
         distance = self.WALK_SPEED_PPS * frame_time
 
         self.total_frames += self.FRAMES_PER_ACTION * self.ACTION_PER_TIME * frame_time
@@ -68,11 +74,6 @@ class MonsterBlue(MonsterRed):
             else:
                 self.state = self.LEFT
             self.x = clamp(self.min_x, self.x, self.max_x)
-
-        if self.attacked_effect:
-            self.being_attacked(frame_time)
-        if self.dying_effect:
-            self.dying(frame_time)
 
         self.update_aabb()
 

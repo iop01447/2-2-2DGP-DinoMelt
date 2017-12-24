@@ -45,6 +45,7 @@ class Player:
         self.state = 'idle' # idle, walk
         self.direction = self.RIGHT
         self.button = {'left': False, 'right': False}
+        self.unbeatable = True
 
         # image
         with open("../data.json") as f:
@@ -80,7 +81,7 @@ class Player:
         # attack
         self.attack_active = False
         self.bullet_active = False
-        self.bullet = Bullet()
+        self.bullet = Bullet(True)
 
         # collide
         self.aabb = AABB(self.x - 25, self.y - 30, self.x + 25, self.y + 10)
@@ -257,7 +258,8 @@ class Player:
                 print('player dead')
                 self.life -= 1
                 self.dead_effect = True
-            if self.life < 1: self.life = 1
+            if self.life < 1:
+                if self.unbeatable: self.life = 1
 
         if self.dead_effect:
             self.dying(frame_time)
@@ -334,6 +336,8 @@ class Player:
                 if not self.attack_active:
                     self.attack_active = True
                     self.attack_initialize()
+            elif event.key == SDLK_u:
+                self.unbeatable = not self.unbeatable
 
         if event.type == SDL_KEYUP:
             if event.key == SDLK_LEFT: self.button['left'] = False

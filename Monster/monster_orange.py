@@ -93,6 +93,12 @@ class MonsterOrange(MonsterRed):
             self.big_aabb = AABB(sx - w, sy - h, sx + 500, sy + h)
 
     def update(self, frame_time):
+        if self.attacked_effect:
+            self.being_attacked(frame_time)
+        if self.dying_effect:
+            self.dying(frame_time)
+            return
+
         self.total_frames += self.FRAMES_PER_ACTION * self.ACTION_PER_TIME * frame_time
         self.frame = int(self.total_frames) % self.frame_cnt
 
@@ -109,11 +115,6 @@ class MonsterOrange(MonsterRed):
         if self.state[0] == self.ATTACK:
             if int(self.total_frames) >= self.frame_cnt:
                 self.state[0] = self.IDLE
-
-        if self.attacked_effect:
-            self.being_attacked(frame_time)
-        if self.dying_effect:
-            self.dying(frame_time)
 
         self.update_aabb()
 

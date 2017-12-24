@@ -27,6 +27,7 @@ class Object:
 
     def draw_bb(self):
         if not self.object.exsist: return
+        if self.type != 'orb' and self.object.dying_effect : return
         self.object.draw_bb()
 
     def get_bb(self):

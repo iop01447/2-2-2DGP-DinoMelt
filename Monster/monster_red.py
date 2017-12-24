@@ -72,6 +72,12 @@ class MonsterRed:
         self.big_aabb = AABB(sx - 300, sy - h, sx + 300, sy + h)
 
     def update(self, frame_time):
+        if self.attacked_effect:
+            self.being_attacked(frame_time)
+        if self.dying_effect:
+            self.dying(frame_time)
+            return
+
         distance = self.WALK_SPEED_PPS * frame_time
 
         self.total_frames += self.FRAMES_PER_ACTION * self.ACTION_PER_TIME * frame_time
@@ -97,11 +103,6 @@ class MonsterRed:
                 self.state = self.RIGHT
                 self.x += distance*1.5
 
-        if self.attacked_effect:
-            self.being_attacked(frame_time)
-        if self.dying_effect:
-            self.dying(frame_time)
-
         self.update_aabb()
 
     def draw(self):
@@ -126,6 +127,7 @@ class MonsterRed:
         self.life -= 1
         if self.life <= 0:
             self.dying_effect = True
+            self.attacked_effect = False
             return
         self.attacked_effect = True
 
