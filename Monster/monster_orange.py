@@ -10,6 +10,8 @@ class MonsterOrange(MonsterRed):
     bullet_image = None
     type = 'orange'
 
+    dead_effect_img = None
+
     def __init__(self, x, y, width, height, state, bg):
         self.exsist = True
         self.width, self.height = width, height
@@ -31,6 +33,8 @@ class MonsterOrange(MonsterRed):
             self.image_load()
         if self.bullet_image == None:
             self.bullet_image = load_image('..\/Graphics\/Monster\/monster_bullet.png')
+        if self.dead_effect_img == None:
+            self.dead_effect_img = load_image('..\/Graphics\/monster\/dead_effect.png')
 
         # collide
         self.aabb = AABB(0, 0, 0, 0)
@@ -39,6 +43,13 @@ class MonsterOrange(MonsterRed):
         # attack
         self.bullet_active = False
         self.bullet = Bullet()
+
+        # dead
+        self.attacked_effect = False
+        self.being_attacked_time = 0
+        self.dying_effect = False
+        self.dying_time = 0
+        self.original_height = self.height
 
     def image_load(self):
         self.image[self.IDLE][self.LEFT] = load_image(
@@ -99,6 +110,11 @@ class MonsterOrange(MonsterRed):
             if int(self.total_frames) >= self.frame_cnt:
                 self.state[0] = self.IDLE
 
+        if self.attacked_effect:
+            self.being_attacked(frame_time)
+        if self.dying_effect:
+            self.dying(frame_time)
+
         self.update_aabb()
 
     def draw(self):
@@ -126,6 +142,11 @@ class MonsterOrange(MonsterRed):
             self.image[self.state[0]][self.state[1]].clip_draw(
                 col * self.img_w, self.img_h - row * self.img_h, self.img_w, self.img_h,
                 sx, sy, self.width, self.height)
+
+        if self.attacked_effect:
+            x = (self.aabb.min_x + self.aabb.max_x)/2
+            y = (self.aabb.min_y + self.aabb.max_y)/2 - 8
+            self.dead_effect_img.draw(x, y)
 
         if self.bullet_active:
             self.bullet.draw()

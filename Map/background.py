@@ -11,7 +11,7 @@ class TileBackground:
     background_image = None
 
     def __init__(self):
-        self.tile_map = load_tile_map('..\/Map.json')
+        self.tile_map = load_tile_map('..\/Map\/Map.json')
         self.canvas_width = get_canvas_width()
         self.canvas_height = get_canvas_height()
         self.window_left = 0
@@ -87,7 +87,7 @@ class TileBackground:
 
     def player_monster_collide_check(self):
         for o in self.objects:
-            if o.type != 'orb' and o.object.exsist:
+            if o.type != 'orb' and o.object.exsist and not o.object.dying_effect:
                 if collide(self.center_object.aabb, o.object.aabb):
                     return True
                 if o.type == 'orange' and o.object.bullet_active and collide(self.center_object.aabb, o.object.bullet.aabb):
@@ -100,6 +100,14 @@ class TileBackground:
             if o.type == 'orb' and o.object.exsist:
                 if collide(self.center_object.aabb, o.object.aabb):
                     o.object.exsist = False
+                    return True
+        return False
+
+    def player_bullet_monster_collide_check(self):
+        for o in self.objects:
+            if o.type != 'orb' and o.object.exsist:
+                if collide(self.center_object.bullet.aabb, o.object.aabb):
+                    o.object.be_attacked()
                     return True
         return False
 

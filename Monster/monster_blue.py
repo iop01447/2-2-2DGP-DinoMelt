@@ -8,6 +8,8 @@ class MonsterBlue(MonsterRed):
     image = [0, 0]
     type = 'blue'
 
+    dead_effect_img = None
+
     def __init__(self, x, y, width, height, x_limited, bg):
         self.exsist = True
         self.width, self.height = width, height
@@ -26,9 +28,17 @@ class MonsterBlue(MonsterRed):
         self.img_col = 4
         self.img_w = self.image[self.LEFT].w // 4
         self.img_h = self.image[self.LEFT].h // 2
+        if self.dead_effect_img == None:
+            self.dead_effect_img = load_image('..\/Graphics\/monster\/dead_effect.png')
         # collide
         self.aabb = AABB(0, 0, 0, 0)
         self.big_aabb = AABB(0, 0, 0, 0)
+        # dead
+        self.attacked_effect = False
+        self.being_attacked_time = 0
+        self.dying_effect = False
+        self.dying_time = 0
+        self.original_height = self.height
 
     def image_load(self):
         self.image[self.LEFT] = load_image('..\/Graphics\/Monster\/monster_blue_left.png')
@@ -58,6 +68,11 @@ class MonsterBlue(MonsterRed):
             else:
                 self.state = self.LEFT
             self.x = clamp(self.min_x, self.x, self.max_x)
+
+        if self.attacked_effect:
+            self.being_attacked(frame_time)
+        if self.dying_effect:
+            self.dying(frame_time)
 
         self.update_aabb()
 

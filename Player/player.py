@@ -118,6 +118,9 @@ class Player:
     def orb_collide_check(self):
         return self.bg.player_orb_collide_check()
 
+    def bullet_monster_collide_check(self):
+        return self.bg.player_bullet_monster_collide_check()
+
     # jump
     def jump_initialize(self):
         self.jump_direction = self.JUMPING_UP
@@ -242,6 +245,8 @@ class Player:
             self.bullet.update(frame_time)
             if self.bullet_tile_map_collide_check():
                 self.bullet_active = False
+            if self.bullet_monster_collide_check():
+                self.bullet_active = False
         if self.attack_active:
             if int(self.total_frames) ==  self.frame_cnt:
                 self.attack_active = False
@@ -249,7 +254,7 @@ class Player:
         # 몬스터와 부딪힐 때
         if self.monster_collide_check():
             if not self.dead_effect:
-                print('you dead')
+                print('player dead')
                 self.life -= 1
                 self.dead_effect = True
             if self.life < 1: self.life = 1
