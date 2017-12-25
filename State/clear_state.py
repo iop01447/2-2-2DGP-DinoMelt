@@ -1,22 +1,20 @@
 from pico2d import *
 
 from Framework import game_framework
-from State import main_state
 
 # enter exit pause resume handle_events update draw
 
-pause_img = None
-switch = True
-total_frame_time = 0.0
+clear_img = None
 
 def enter():
-    global pause_img
-    pause_img = load_image('..\/Graphics\/pause.png')
+    global clear_img
+    #clear_img = load_image('..\/Graphics\/game_clear.png')
+    clear_img = load_image('..\/Graphics\/game_clear.png')
     pass
 
 def exit():
-    global  pause_img
-    del(pause_img)
+    global clear_img
+    del(clear_img)
     pass
 
 def pause():
@@ -33,24 +31,17 @@ def handle_events():
         else:
             if event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
                 game_framework.quit()
-            elif event.type == SDL_KEYUP and event.key == SDLK_p:
-                game_framework.pop_state()
+            elif event.type == SDL_KEYUP and event.key == SDLK_SPACE:
+                game_framework.quit()
 
 def update(frame_time):
-    global total_frame_time
-    global switch
-    total_frame_time += frame_time
-    if total_frame_time > 1:
-        total_frame_time = 0
-        switch = not switch
+    pass
 
 def draw():
-    global pause_img
+    global clear_img
     cw = get_canvas_width()
     ch = get_canvas_height()
 
     clear_canvas()
-    main_state.draw_scene()
-    if switch:
-        pause_img.draw(cw/2, ch/2)
+    clear_img.draw(cw/2, ch/2, cw, ch)
     update_canvas()

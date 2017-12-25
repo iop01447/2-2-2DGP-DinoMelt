@@ -3,6 +3,8 @@ from pico2d import *
 from Object.clay_orb import ClayOrb_UI
 from SourceFiles.stdafx import *
 from SourceFiles.bullet import PlayerBullet as Bullet
+from Framework import game_framework
+from State import clear_state
 
 
 class Player:
@@ -86,11 +88,16 @@ class Player:
         # collide
         self.aabb = AABB(self.x - 25, self.y - 30, self.x + 25, self.y + 10)
 
-        # dead
-        self.dead_effect = False
-        self.dying_time = 0
-        self.total_dying_time = 0
+        # attacked
+        self.attacked_effect = False
+        self.being_attacked_time = 0
+        self.total_being_attacked_time = 0
         self.switch = True
+
+        # dead
+        self.dying_effect = False
+        self.dying_time = 0
+        self.original_height = 100
 
         # clay orb
         x = self.canvas_width - 80
@@ -184,12 +191,12 @@ class Player:
         self.bullet.initialize(self.x, self.y, self.direction, self.bg)
 
     # dead
-    def dying(self, frame_time):
-        self.dying_time += frame_time
-        self.total_dying_time += frame_time
+    def being_attacked(self, frame_time):
+        self.being_attacked_time += frame_time
+        self.total_being_attacked_time += frame_time
 
-        if self.dying_time > 0.1:
-            self.dying_time = 0
+        if self.being_attacked_time > 0.1:
+            self.being_attacked_time = 0
             self.switch = not self.switch
 
         if self.switch:
@@ -201,10 +208,10 @@ class Player:
                 for image in self.image[key].values():
                     image.opacify(1)
 
-        if self.total_dying_time > 2:
-            self.dying_time = 0
-            self.total_dying_time = 0
-            self.dead_effect = False
+        if self.total_being_attacked_time > 2:
+            self.being_attacked_time = 0
+            self.total_being_attacked_time = 0
+            self.attacked_effect = False
             for key in self.image.keys():
                 for image in self.image[key].values():
                     image.opacify(1)
@@ -227,6 +234,10 @@ class Player:
         self.aabb = AABB(sx - 25, sy- 30, sx + 25, sy + 20)
 
     def update(self, frame_time):
+        if self.dying_effect:
+            self.dying(frame_time)
+            return
+
         self.update_image_date() # 애니메이션 데이터
 
         distance = Player.RUN_SPEED_PPS * frame_time
@@ -265,23 +276,27 @@ class Player:
 
         # 몬스터와 부딪힐 때
         if self.monster_collide_check():
-            if not self.dead_effect:
+            if not self.attacked_effect:
                 print('player dead')
                 self.life -= 1
-                self.dead_effect = True
+                self.attacked_effect = True
             if self.life < 1:
                 if self.unbeatable: self.life = 1
                 else:
-                    self.life = 3
-                    self.x, self.y = self.check_point_x, self.check_point_y
+                    self.attacked_effect = False
+                    self.dying_effect = True
+                    self.original_height = self.height
 
-        if self.dead_effect:
-            self.dying(frame_time)
+        if self.attacked_effect:
+            self.being_attacked(frame_time)
 
         # clay orb
         # self.clay_orb.update(frame_time)
         if self.orb_collide_check():
             self.clay_orb_cnt += 1
+            if self.clay_orb_cnt >= 8:
+                game_framework.push_state(clear_state)
+
 
         if self.check_point_effect:
             self.check_point_effect_time += frame_time
@@ -291,6 +306,19 @@ class Player:
 
         self.x = clamp(0, self.x, self.bg.w)
         self.y = clamp(0, self.y, self.bg.h)
+
+    # effect
+    def dying(self, frame_time):
+        self.dying_time += frame_time
+        self.height = self.original_height * (1 - self.dying_time) + 0 * self.dying_time
+        self.height = int(self.height)
+
+        if self.height <= 1:
+            self.height = self.original_height
+            self.dying_time = 0
+            self.dying_effect = False
+            self.life = 3
+            self.x, self.y = self.check_point_x, self.check_point_y
 
     # draw
     def draw(self):
@@ -307,8 +335,12 @@ class Player:
 
       #  debug_print('State = %s, direction = %d, frame = %d, width = %d' % (State, self.direction, self.frame, self.width))
       #  print(State, self.direction, self.width, self.height, sx, sy)
-        Player.image[state][self.direction].clip_draw(
-            self.frame * self.width, 0, self.width, self.height, sx, sy)
+        if self.dying_effect:
+            Player.image[state][self.direction].clip_draw(
+                self.frame * self.width, 0, self.width, self.original_height, sx, sy, self.width, self.height)
+        else:
+            Player.image[state][self.direction].clip_draw(
+                self.frame * self.width, 0, self.width, self.height, sx, sy)
 
         if self.bullet_active:
             self.bullet.draw()
@@ -324,7 +356,7 @@ class Player:
     def draw_unbeatable(self):
         x = 40
         y = self.canvas_height - 50
-        self.font.draw(x, y, 'unbeatable', (255, 0, 0))
+        self.font.draw(x, y, 'UNBEATABLE', (255, 0, 0))
 
     def draw_life(self):
         # 362 x 131
@@ -343,9 +375,9 @@ class Player:
 
     def draw_clay_orb(self):
         self.clay_orb.draw()
-        x = self.canvas_width - 40
+        x = self.canvas_width - 50
         y = self.canvas_height - 65
-        self.font.draw(x, y, '%d' % (self.clay_orb_cnt), (255,255,255))
+        self.font.draw(x, y, '%d/8' % (self.clay_orb_cnt), (255,255,255))
 
     def draw_bb(self):
         draw_rectangle(*self.aabb.get_bb())
@@ -359,6 +391,8 @@ class Player:
 
     # handle_event
     def handle_event(self, event):
+        if self.dying_effect: return
+
         if event.type == SDL_KEYDOWN:
             if event.key == SDLK_LEFT: self.button['left'] = True
             elif event.key == SDLK_RIGHT: self.button['right'] = True
