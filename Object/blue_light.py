@@ -19,7 +19,7 @@ class BlueLight:
         self.frame = 0
         self.total_frames = 0.0
         self.frame_cnt = 4
-        self.name = name
+        self.name = int(name)
         self.light = False
         # image
         if self.image == None:
@@ -47,8 +47,17 @@ class BlueLight:
         self.total_frames += self.FRAMES_PER_ACTION * self.ACTION_PER_TIME * frame_time
         self.frame = int(self.total_frames) % self.frame_cnt
         self.update_aabb()
+        self.player_collide_check()
+
+    def player_collide_check(self):
+        if self.player == None: return
+        if self.light: return
+        if collide(self.player.aabb, self.aabb):
+            self.light = True
 
     def draw(self):
+        if not self.light: return
+
         sx = self.x - self.bg.window_left
         sy = self.y - self.bg.window_bottom
 

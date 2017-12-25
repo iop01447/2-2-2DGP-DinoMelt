@@ -1089,6 +1089,18 @@
                  "width":207,
                  "x":3857.60606060606,
                  "y":1783.21212121212
+                }, 
+                {
+                 "gid":27,
+                 "height":65,
+                 "id":150,
+                 "name":"",
+                 "rotation":0,
+                 "type":"orb",
+                 "visible":true,
+                 "width":75,
+                 "x":2496.33333333333,
+                 "y":4704.72727272727
                 }],
          "opacity":1,
          "properties":
@@ -1104,7 +1116,7 @@
          "x":0,
          "y":0
         }],
- "nextobjectid":150,
+ "nextobjectid":151,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.0.3",

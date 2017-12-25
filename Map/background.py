@@ -3,11 +3,11 @@ from pico2d import *
 from Map.TileMap import load_tile_map
 from Object.object import Object
 from SourceFiles.stdafx import *
+from Map.minimap import MiniMap
 
 
 class TileBackground:
     bgm = None
-    minimap_image = None
     background_image = None
 
     def __init__(self):
@@ -18,12 +18,12 @@ class TileBackground:
         self.window_bottom = 0
         self.w = self.tile_map.width * self.tile_map.tilewidth
         self.h = self.tile_map.height * self.tile_map.tileheight
+        self.minimap = MiniMap()
         # sound
         self.bgm = load_music('..\/Sound\/Plepur.mp3')
         self.bgm.set_volume(64)
         self.bgm.repeat_play()
         # image
-        self.minimap_image = load_image('..\/Graphics\/map\/Map.png')
         self.background_image = load_image('..\/Graphics\/background.png')
         # objects
         self.objects = []
@@ -59,9 +59,16 @@ class TileBackground:
         # x += self.canvas_width - self.w * 0.05
         # y += self.canvas_height - self.h * 0.05
         # draw_rectangle(x - 5, y - 5, x + 5, y + 5)
-        self.minimap_image.draw(self.canvas_width/2, self.canvas_height/2)
-        x = self.center_object.x * 0.05
-        y = self.center_object.y * 0.05
+
+        self.minimap.background_draw()
+        for o in self.objects:
+            if o.type in ('blue_light',) and o.object.light:
+                self.minimap.draw(o.object.name)
+
+        x = self.center_object.x * 0.2
+        x += (self.canvas_width - self.minimap.img_w)//2
+        y = self.center_object.y * 0.2
+
         draw_rectangle(x - 5, y - 5, x + 5, y + 5)
 
     def draw_bb(self):
