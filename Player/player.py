@@ -45,7 +45,7 @@ class Player:
         self.state = 'idle' # idle, walk
         self.direction = self.RIGHT
         self.button = {'left': False, 'right': False}
-        self.unbeatable = True
+        self.unbeatable = False
 
         # image
         with open("../data.json") as f:
@@ -100,6 +100,11 @@ class Player:
         self.clay_orb = ClayOrb_UI(x, y, int(w), int(h))
         self.clay_orb_cnt = 0
 
+        # check_point
+        self.check_point_effect = False
+        self.check_point_effect_time = 0
+        self.check_point_x, self.check_point_y = 100, 3250
+
     def set_background(self, bg):
         self.bg = bg
 
@@ -121,6 +126,12 @@ class Player:
 
     def bullet_monster_collide_check(self):
         return self.bg.player_bullet_monster_collide_check()
+
+    def green_light_collide_check(self):
+        x, y = self.bg.player_green_light_collide_check()
+        if x == 0 and y == 0: return
+        self.check_point_effect = True
+        self.check_point_x, self.check_point_y = x, y
 
     # jump
     def jump_initialize(self):
@@ -260,6 +271,9 @@ class Player:
                 self.dead_effect = True
             if self.life < 1:
                 if self.unbeatable: self.life = 1
+                else:
+                    self.life = 3
+                    self.x, self.y = self.check_point_x, self.check_point_y
 
         if self.dead_effect:
             self.dying(frame_time)
@@ -268,6 +282,12 @@ class Player:
         # self.clay_orb.update(frame_time)
         if self.orb_collide_check():
             self.clay_orb_cnt += 1
+
+        if self.check_point_effect:
+            self.check_point_effect_time += frame_time
+            if self.check_point_effect_time > 1.0:
+                self.check_point_effect_time = 0
+                self.check_point_effect = False
 
         self.x = clamp(0, self.x, self.bg.w)
         self.y = clamp(0, self.y, self.bg.h)
@@ -296,6 +316,8 @@ class Player:
     def draw_ui(self):
         if self.unbeatable:
             self.draw_unbeatable()
+        if self.check_point_effect:
+            self.draw_check_point()
         self.draw_life()
         self.draw_clay_orb()
 
@@ -330,6 +352,11 @@ class Player:
         if self.bullet_active:
             self.bullet.draw_bb()
 
+    def draw_check_point(self):
+        x = self.canvas_width/2 - 60
+        y = self.canvas_height - 100
+        self.font.draw(x, y, 'CHECK-POINT!', (175, 245, 68))
+
     # handle_event
     def handle_event(self, event):
         if event.type == SDL_KEYDOWN:
@@ -349,6 +376,7 @@ class Player:
         if event.type == SDL_KEYUP:
             if event.key == SDLK_LEFT: self.button['left'] = False
             elif event.key == SDLK_RIGHT: self.button['right'] = False
+            elif event.key == SDLK_UP: self.green_light_collide_check()
 
         if (self.button['left'] and self.button['right']) or (not self.button['left'] and not self.button['right']):
            self.state = 'idle'

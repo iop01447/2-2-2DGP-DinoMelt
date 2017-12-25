@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af0779c1-141e-459e-a4b9-ffd02ad2f6b8" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Map/background.py" afterPath="$PROJECT_DIR$/Map/background.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Map/map.json" afterPath="$PROJECT_DIR$/Map/map.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Object/green_light.py" afterPath="$PROJECT_DIR$/Object/green_light.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Object/object.py" afterPath="$PROJECT_DIR$/Object/object.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Player/player.py" afterPath="$PROJECT_DIR$/Player/player.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,7 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.46572828">
+    <splitter split-orientation="horizontal" split-proportion="0.47674417">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
           <file leaf-file-name="monster_blue.py" pinned="false" current-in-tab="false">
@@ -39,11 +43,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="player.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="player.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Player/player.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-2780">
-                  <caret line="119" column="49" lean-forward="true" selection-start-line="119" selection-start-column="49" selection-end-line="119" selection-end-column="49" />
+                <state relative-caret-position="460">
+                  <caret line="337" column="32" lean-forward="true" selection-start-line="337" selection-start-column="32" selection-end-line="337" selection-end-column="32" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
                   </folding>
@@ -54,8 +58,8 @@
           <file leaf-file-name="green_light.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Object/green_light.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="242">
-                  <caret line="41" column="43" lean-forward="false" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
+                <state relative-caret-position="438">
+                  <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
                   </folding>
@@ -66,7 +70,7 @@
           <file leaf-file-name="blue_light.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Object/blue_light.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="115">
+                <state relative-caret-position="126">
                   <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
@@ -87,10 +91,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="minimap.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="minimap.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Map/minimap.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="482">
+                <state relative-caret-position="770">
                   <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
@@ -117,15 +121,31 @@
                 <state relative-caret-position="-5962">
                   <caret line="790" column="19" lean-forward="false" selection-start-line="790" selection-start-column="19" selection-end-line="790" selection-end-column="19" />
                   <folding>
-                    <marker date="1514174832436" expanded="true" signature="55:44198" ph="[...]" />
-                    <marker date="1514174832436" expanded="true" signature="12784:44198" ph="{&quot;name&quot;: &quot;Object Layer 1&quot;...}" />
-                    <marker date="1514174832436" expanded="true" signature="12871:44198" ph="[...]" />
-                    <marker date="1514174832436" expanded="true" signature="44983:45050" ph="{&quot;firstgid&quot;: 1...}" />
-                    <marker date="1514174832436" expanded="true" signature="45138:45242" ph="{&quot;height&quot;: 1...}" />
-                    <marker date="1514174832436" expanded="true" signature="45430:45599" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/red.png&quot;...}" />
-                    <marker date="1514174832436" expanded="true" signature="45635:45805" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/blue.png&quot;...}" />
-                    <marker date="1514174832436" expanded="true" signature="45841:46019" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/orange_right.png&quot;...}" />
-                    <marker date="1514174832436" expanded="true" signature="46055:46232" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/orange_left.png&quot;...}" />
+                    <marker date="1514175404941" expanded="true" signature="0:46640" ph="{&quot;backgroundcolor&quot;: &quot;##000000&quot;...}" />
+                    <marker date="1514175404941" expanded="true" signature="55:44204" ph="[...]" />
+                    <marker date="1514175404941" expanded="true" signature="12784:44204" ph="{&quot;name&quot;: &quot;Object Layer 1&quot;...}" />
+                    <marker date="1514175404941" expanded="true" signature="12871:44204" ph="[...]" />
+                    <marker date="1514175404941" expanded="true" signature="34802:34914" ph="{&quot;id&quot;: 118...}" />
+                    <marker date="1514175404941" expanded="true" signature="41198:41415" ph="{&quot;id&quot;: 140...}" />
+                    <marker date="1514175404941" expanded="true" signature="41434:41762" ph="{&quot;id&quot;: 141...}" />
+                    <marker date="1514175404941" expanded="true" signature="41781:42109" ph="{&quot;id&quot;: 142...}" />
+                    <marker date="1514175404941" expanded="true" signature="42128:42456" ph="{&quot;id&quot;: 143...}" />
+                    <marker date="1514175404941" expanded="true" signature="42475:42803" ph="{&quot;id&quot;: 144...}" />
+                    <marker date="1514175404941" expanded="true" signature="42822:43151" ph="{&quot;id&quot;: 145...}" />
+                    <marker date="1514175404941" expanded="true" signature="43170:43499" ph="{&quot;id&quot;: 146...}" />
+                    <marker date="1514175404941" expanded="true" signature="43518:43847" ph="{&quot;id&quot;: 147...}" />
+                    <marker date="1514175404941" expanded="true" signature="43866:44204" ph="{&quot;id&quot;: 149...}" />
+                    <marker date="1514175404941" expanded="true" signature="44979:46578" ph="[...]" />
+                    <marker date="1514175404941" expanded="true" signature="44989:45056" ph="{&quot;firstgid&quot;: 1...}" />
+                    <marker date="1514175404941" expanded="true" signature="45067:46499" ph="{&quot;name&quot;: &quot;object&quot;...}" />
+                    <marker date="1514175404941" expanded="true" signature="45144:45248" ph="{&quot;height&quot;: 1...}" />
+                    <marker date="1514175404941" expanded="true" signature="45400:46463" ph="{...}" />
+                    <marker date="1514175404941" expanded="true" signature="45436:45605" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/red.png&quot;...}" />
+                    <marker date="1514175404941" expanded="true" signature="45641:45811" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/blue.png&quot;...}" />
+                    <marker date="1514175404941" expanded="true" signature="45847:46025" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/orange_right.png&quot;...}" />
+                    <marker date="1514175404941" expanded="true" signature="46061:46238" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/orange_left.png&quot;...}" />
+                    <marker date="1514175404941" expanded="true" signature="46274:46449" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/Frame7-crop.png&quot;...}" />
+                    <marker date="1514175404941" expanded="true" signature="46510:46577" ph="{&quot;firstgid&quot;: 28...}" />
                   </folding>
                 </state>
               </provider>
@@ -162,8 +182,8 @@
           <file leaf-file-name="object.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Object/object.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="639">
-                  <caret line="49" column="62" lean-forward="false" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
+                <state relative-caret-position="-94">
+                  <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
                   <folding>
                     <element signature="e#0#42#0" expanded="true" />
                   </folding>
@@ -174,8 +194,8 @@
           <file leaf-file-name="player.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Player/player.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="176">
-                  <caret line="301" column="20" lean-forward="true" selection-start-line="301" selection-start-column="20" selection-end-line="301" selection-end-column="20" />
+                <state relative-caret-position="154">
+                  <caret line="47" column="31" lean-forward="false" selection-start-line="47" selection-start-column="31" selection-end-line="47" selection-end-column="31" />
                   <folding />
                 </state>
               </provider>
@@ -184,8 +204,8 @@
           <file leaf-file-name="background.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Map/background.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="203">
-                  <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+                <state relative-caret-position="478">
+                  <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
                   </folding>
@@ -314,12 +334,12 @@
         <option value="$PROJECT_DIR$/Monster/monster_red.py" />
         <option value="$PROJECT_DIR$/SourceFiles/bullet.py" />
         <option value="$PROJECT_DIR$/Monster/monster_orange.py" />
-        <option value="$PROJECT_DIR$/Object/green_light.py" />
         <option value="$PROJECT_DIR$/Object/bramble.py" />
-        <option value="$PROJECT_DIR$/Object/object.py" />
         <option value="$PROJECT_DIR$/Object/blue_light.py" />
-        <option value="$PROJECT_DIR$/Map/background.py" />
         <option value="$PROJECT_DIR$/Map/minimap.py" />
+        <option value="$PROJECT_DIR$/Object/green_light.py" />
+        <option value="$PROJECT_DIR$/Object/object.py" />
+        <option value="$PROJECT_DIR$/Map/background.py" />
         <option value="$PROJECT_DIR$/Player/player.py" />
       </list>
     </option>
@@ -976,6 +996,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1078,16 +1099,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Object/green_light.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="41" column="43" lean-forward="false" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Object/bramble.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1103,15 +1114,31 @@
         <state relative-caret-position="-5962">
           <caret line="790" column="19" lean-forward="false" selection-start-line="790" selection-start-column="19" selection-end-line="790" selection-end-column="19" />
           <folding>
-            <marker date="1514174832436" expanded="true" signature="55:44198" ph="[...]" />
-            <marker date="1514174832436" expanded="true" signature="12784:44198" ph="{&quot;name&quot;: &quot;Object Layer 1&quot;...}" />
-            <marker date="1514174832436" expanded="true" signature="12871:44198" ph="[...]" />
-            <marker date="1514174832436" expanded="true" signature="44983:45050" ph="{&quot;firstgid&quot;: 1...}" />
-            <marker date="1514174832436" expanded="true" signature="45138:45242" ph="{&quot;height&quot;: 1...}" />
-            <marker date="1514174832436" expanded="true" signature="45430:45599" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/red.png&quot;...}" />
-            <marker date="1514174832436" expanded="true" signature="45635:45805" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/blue.png&quot;...}" />
-            <marker date="1514174832436" expanded="true" signature="45841:46019" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/orange_right.png&quot;...}" />
-            <marker date="1514174832436" expanded="true" signature="46055:46232" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/orange_left.png&quot;...}" />
+            <marker date="1514175404941" expanded="true" signature="0:46640" ph="{&quot;backgroundcolor&quot;: &quot;##000000&quot;...}" />
+            <marker date="1514175404941" expanded="true" signature="55:44204" ph="[...]" />
+            <marker date="1514175404941" expanded="true" signature="12784:44204" ph="{&quot;name&quot;: &quot;Object Layer 1&quot;...}" />
+            <marker date="1514175404941" expanded="true" signature="12871:44204" ph="[...]" />
+            <marker date="1514175404941" expanded="true" signature="34802:34914" ph="{&quot;id&quot;: 118...}" />
+            <marker date="1514175404941" expanded="true" signature="41198:41415" ph="{&quot;id&quot;: 140...}" />
+            <marker date="1514175404941" expanded="true" signature="41434:41762" ph="{&quot;id&quot;: 141...}" />
+            <marker date="1514175404941" expanded="true" signature="41781:42109" ph="{&quot;id&quot;: 142...}" />
+            <marker date="1514175404941" expanded="true" signature="42128:42456" ph="{&quot;id&quot;: 143...}" />
+            <marker date="1514175404941" expanded="true" signature="42475:42803" ph="{&quot;id&quot;: 144...}" />
+            <marker date="1514175404941" expanded="true" signature="42822:43151" ph="{&quot;id&quot;: 145...}" />
+            <marker date="1514175404941" expanded="true" signature="43170:43499" ph="{&quot;id&quot;: 146...}" />
+            <marker date="1514175404941" expanded="true" signature="43518:43847" ph="{&quot;id&quot;: 147...}" />
+            <marker date="1514175404941" expanded="true" signature="43866:44204" ph="{&quot;id&quot;: 149...}" />
+            <marker date="1514175404941" expanded="true" signature="44979:46578" ph="[...]" />
+            <marker date="1514175404941" expanded="true" signature="44989:45056" ph="{&quot;firstgid&quot;: 1...}" />
+            <marker date="1514175404941" expanded="true" signature="45067:46499" ph="{&quot;name&quot;: &quot;object&quot;...}" />
+            <marker date="1514175404941" expanded="true" signature="45144:45248" ph="{&quot;height&quot;: 1...}" />
+            <marker date="1514175404941" expanded="true" signature="45400:46463" ph="{...}" />
+            <marker date="1514175404941" expanded="true" signature="45436:45605" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/red.png&quot;...}" />
+            <marker date="1514175404941" expanded="true" signature="45641:45811" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/blue.png&quot;...}" />
+            <marker date="1514175404941" expanded="true" signature="45847:46025" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/orange_right.png&quot;...}" />
+            <marker date="1514175404941" expanded="true" signature="46061:46238" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/orange_left.png&quot;...}" />
+            <marker date="1514175404941" expanded="true" signature="46274:46449" ph="{&quot;image&quot;: &quot;..\/\uc6d0\uc791 \uc790\ub8cc\/object_tile\/Frame7-crop.png&quot;...}" />
+            <marker date="1514175404941" expanded="true" signature="46510:46577" ph="{&quot;firstgid&quot;: 28...}" />
           </folding>
         </state>
       </provider>
@@ -1124,10 +1151,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Map/minimap.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="770">
+          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Object/blue_light.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
+        <state relative-caret-position="126">
           <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Object/green_light.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="21" column="29" lean-forward="false" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -1136,8 +1183,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Object/object.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="639">
-          <caret line="49" column="62" lean-forward="false" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
+        <state relative-caret-position="-94">
+          <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
@@ -1146,18 +1193,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Map/background.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="61" column="0" lean-forward="false" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Map/minimap.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="35" column="9" lean-forward="true" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+        <state relative-caret-position="478">
+          <caret line="126" column="0" lean-forward="false" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
@@ -1166,9 +1203,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Player/player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="301" column="20" lean-forward="true" selection-start-line="301" selection-start-column="20" selection-end-line="301" selection-end-column="20" />
-          <folding />
+        <state relative-caret-position="460">
+          <caret line="337" column="32" lean-forward="true" selection-start-line="337" selection-start-column="32" selection-end-line="337" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

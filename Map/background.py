@@ -119,6 +119,13 @@ class TileBackground:
                     return True
         return False
 
+    def player_green_light_collide_check(self):
+        for o in self.objects:
+            if o.type == 'green_light':
+                if collide(self.center_object.aabb, o.object.aabb):
+                    return o.object.x, o.object.y
+        return 0,0
+
     def player_bullet_monster_collide_check(self):
         for o in self.objects:
             if o.type in ('red', 'blue', 'orange',) and o.object.exsist:

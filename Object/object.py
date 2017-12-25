@@ -23,7 +23,7 @@ class Object:
         elif type == 'bramble':
             self.object = Bramble(x, y, width, height, bg)
         elif type == 'green_light':
-            self.object = GreenLight(x, y, width, height, bg)
+            self.object = GreenLight(x, y, width, height, bg, name)
         elif type == 'blue_light':
             self.object = BlueLight(x, y, width, height, bg, name)
 

@@ -12,13 +12,14 @@ class GreenLight:
 
     player = None
 
-    def __init__(self, x, y, width, height, bg):
+    def __init__(self, x, y, width, height, bg, name):
         self.width, self.height = width, height
         self.x, self.y = x + width//2, y + width//2
         self.bg = bg
         self.frame = 0
         self.total_frames = 0.0
         self.frame_cnt = 4
+        self.name = int(name)
         # image
         if self.image == None:
             self.image_load()
