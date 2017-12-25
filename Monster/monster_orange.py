@@ -2,7 +2,7 @@ from pico2d import *
 
 from Monster.monster_red import MonsterRed
 from SourceFiles.stdafx import *
-from SourceFiles.bullet import Bullet
+from SourceFiles.bullet import MonsterBullet as Bullet
 
 class MonsterOrange(MonsterRed):
     IDLE, ATTACK = 0, 1

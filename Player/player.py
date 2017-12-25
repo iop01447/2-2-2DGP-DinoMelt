@@ -2,7 +2,7 @@ from pico2d import *
 
 from Object.clay_orb import ClayOrb_UI
 from SourceFiles.stdafx import *
-from SourceFiles.bullet import Bullet
+from SourceFiles.bullet import PlayerBullet as Bullet
 
 
 class Player:
