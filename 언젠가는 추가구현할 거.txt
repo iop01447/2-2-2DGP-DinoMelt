@@ -1,0 +1,4 @@
+- 몬스터 죽을 때 일정 확률로 목숨 드랍하기 + get_life sound
+- green 알갱이 배경 effect
+- orange_bullet 닿으면 터지는 effect draw
+- pause state sound

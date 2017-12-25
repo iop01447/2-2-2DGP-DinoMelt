@@ -5,6 +5,7 @@ from Object.clay_orb import ClayOrb
 from Object.bramble import Bramble
 from Object.green_light import GreenLight
 from Object.blue_light import BlueLight
+from Object.boss_space import BossSpace
 
 
 class Object:
@@ -26,6 +27,8 @@ class Object:
             self.object = GreenLight(x, y, width, height, bg, name)
         elif type == 'blue_light':
             self.object = BlueLight(x, y, width, height, bg, name)
+        elif type == 'boss_space':
+            self.object = BossSpace(x, y, width, height, bg)
 
     def update(self, frame_time):
         if self.type in ('orb', 'red', 'blue', 'orange',):

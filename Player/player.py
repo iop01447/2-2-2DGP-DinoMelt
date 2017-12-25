@@ -5,6 +5,7 @@ from SourceFiles.stdafx import *
 from SourceFiles.bullet import PlayerBullet as Bullet
 from Framework import game_framework
 from State import clear_state
+from State import boss_state
 from State import main_state
 
 
@@ -47,6 +48,7 @@ class Player:
     def __init__(self):
         # init
         self.x, self.y = 100, 3250
+        self.x, self.y = 869, 900
         self.canvas_width = get_canvas_width()
         self.canvas_height = get_canvas_height()
         self.life = 3
@@ -60,6 +62,7 @@ class Player:
         self.direction = self.RIGHT
         self.button = {'left': False, 'right': False}
         self.unbeatable = False
+        self.boss_clear = False
 
         # image
         with open("../data.json") as f:
@@ -115,7 +118,7 @@ class Player:
         # attack
         self.attack_active = False
         self.bullet_active = False
-        self.bullet = Bullet(True)
+        self.bullet = Bullet()
 
         # collide
         self.aabb = AABB(self.x - 25, self.y - 30, self.x + 25, self.y + 10)
@@ -145,6 +148,13 @@ class Player:
         self.check_point_effect_time = 0
         self.check_point_x, self.check_point_y = 100, 3250
 
+        # initialize
+        self.initialize()
+
+
+    def initialize(self):
+        pass
+
     def set_background(self, bg):
         self.bg = bg
 
@@ -173,6 +183,9 @@ class Player:
         self.check_point_effect = True
         self.check_point_x, self.check_point_y = x, y
         self.check_point_update_sound.play()
+
+    def boss_space_collide_check(self):
+        return self.bg.player_boss_space_collide_check()
 
     # jump
     def jump_initialize(self):
@@ -217,38 +230,6 @@ class Player:
 
         elif self.jump_direction == self.JUMPED:
             pass
-
-    # attack
-    def attack_initialize(self):
-        self.total_frames = 0
-        self.bullet_active = True
-        self.bullet.initialize(self.x, self.y, self.direction, self.bg)
-
-    # dead
-    def being_attacked(self, frame_time):
-        self.being_attacked_time += frame_time
-        self.total_being_attacked_time += frame_time
-
-        if self.being_attacked_time > 0.1:
-            self.being_attacked_time = 0
-            self.switch = not self.switch
-
-        if self.switch:
-            for key in self.image.keys():
-                for image in self.image[key].values():
-                    image.opacify(0.5)
-        else:
-            for key in self.image.keys():
-                for image in self.image[key].values():
-                    image.opacify(1)
-
-        if self.total_being_attacked_time > 2:
-            self.being_attacked_time = 0
-            self.total_being_attacked_time = 0
-            self.attacked_effect = False
-            for key in self.image.keys():
-                for image in self.image[key].values():
-                    image.opacify(1)
 
     # update
     def update_image_date(self):
@@ -344,10 +325,47 @@ class Player:
                 self.check_point_effect_time = 0
                 self.check_point_effect = False
 
+        # boss
+        if self.boss_space_collide_check() and not self.boss_clear:
+            boss_state.is_pop_state = False
+            game_framework.push_state(boss_state)
+
         self.x = clamp(0, self.x, self.bg.w)
         self.y = clamp(0, self.y, self.bg.h)
 
     # effect
+    # attack
+    def attack_initialize(self):
+        self.total_frames = 0
+        self.bullet_active = True
+        self.bullet.initialize(self.x, self.y, self.direction, self.bg)
+
+    def being_attacked(self, frame_time):
+        self.being_attacked_time += frame_time
+        self.total_being_attacked_time += frame_time
+
+        if self.being_attacked_time > 0.1:
+            self.being_attacked_time = 0
+            self.switch = not self.switch
+
+        if self.switch:
+            for key in self.image.keys():
+                for image in self.image[key].values():
+                    image.opacify(0.5)
+        else:
+            for key in self.image.keys():
+                for image in self.image[key].values():
+                    image.opacify(1)
+
+        if self.total_being_attacked_time > 2:
+            self.being_attacked_time = 0
+            self.total_being_attacked_time = 0
+            self.attacked_effect = False
+            for key in self.image.keys():
+                for image in self.image[key].values():
+                    image.opacify(1)
+
+    # dead
     def dying(self, frame_time):
         self.dying_time += frame_time
         t = self.dying_time / 2.4
@@ -358,10 +376,32 @@ class Player:
             self.height = self.original_height
             self.dying_time = 0
             self.dying_effect = False
-            self.life = 3
-            self.x, self.y = self.check_point_x, self.check_point_y
             main_state.bgm.resume()
             self.new_life_sound.play()
+            self.check_point_initialize()
+
+    def check_point_initialize(self):
+        self.life = 3
+        self.x, self.y = self.check_point_x, self.check_point_y
+        self.frame = 0
+        self.total_frames = 0.0
+        self.state = 'idle'  # idle, walk
+        self.direction = self.RIGHT
+        self.button = {'left': False, 'right': False}
+        self.jump_active = False
+        self.jump_direction = self.JUMPING_UP
+        self.jump_state = 'jump'
+        self.attack_active = False
+        self.bullet_active = False
+        self.attacked_effect = False
+        self.being_attacked_time = 0
+        self.total_being_attacked_time = 0
+        self.switch = True
+        self.dying_effect = False
+        self.dying_time = 0
+        self.original_height = 100
+        self.check_point_effect = False
+        self.check_point_effect_time = 0
 
     # draw
     def draw(self):
@@ -407,6 +447,8 @@ class Player:
         y = self.canvas_height - 50
         for i in range(3):
             Player.life_image.opacify(1)
+            if self.life == 0:
+                Player.life_image.opacify(0.5)
             if self.life == 1:
                 if i in range(1, 3):
                     Player.life_image.opacify(0.5)

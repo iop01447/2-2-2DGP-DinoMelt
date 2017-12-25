@@ -42,7 +42,7 @@ def destroy_world():
 
 
 def enter():
-    open_canvas(1280, 720, sync=True)
+    open_canvas(1280, 720)
     hide_cursor()
     game_framework.reset_time()
     create_world()
@@ -58,6 +58,9 @@ def pause():
 
 
 def resume():
+    global bgm, player
+    bgm.repeat_play()
+    player.check_point_initialize()
     pass
 
 

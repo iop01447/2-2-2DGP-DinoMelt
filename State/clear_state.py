@@ -4,11 +4,11 @@ from Framework import game_framework
 
 # enter exit pause resume handle_events update draw
 
-clear_img = None
+background_img = None
 bgm = None
 
 def enter():
-    global clear_img, bgm
+    global background_img, bgm
     clear_img = load_image('..\/Graphics\/game_clear.png')
     bgm = load_music('..\/Sound\/El Fin de la Era Plastozoica.mp3')
     bgm.set_volume(64)
@@ -16,7 +16,7 @@ def enter():
     pass
 
 def exit():
-    global clear_img, bgm
+    global background_img, bgm
     del(clear_img)
     del(bgm)
     pass
@@ -42,7 +42,7 @@ def update(frame_time):
     pass
 
 def draw():
-    global clear_img
+    global background_img
     cw = get_canvas_width()
     ch = get_canvas_height()
 

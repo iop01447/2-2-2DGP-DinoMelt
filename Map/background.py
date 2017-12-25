@@ -31,6 +31,8 @@ class TileBackground:
                 state = object['properties']['state']
             elif object['type'] in ('green_light', 'blue_light',):
                 object['y'] -= object['height']//6
+            elif object['type'] in ('boss_space',):
+                object['y'] += object['height']
             self.objects.append(Object(object['x'] // 2, (self.tile_map.height * self.tile_map.tileheight * 2 - object['y']) // 2
                                        , object['width'] // 2, object['height'] // 2, object['type'], x_limited, state, object['name'], self))
 
@@ -121,6 +123,13 @@ class TileBackground:
                 if collide(self.center_object.aabb, o.object.aabb):
                     return o.object.x, o.object.y
         return 0,0
+
+    def player_boss_space_collide_check(self):
+        for o in self.objects:
+            if o.type == 'boss_space':
+                if collide(self.center_object.aabb, o.object.aabb):
+                    return True
+        return False
 
     def player_bullet_monster_collide_check(self):
         for o in self.objects:
