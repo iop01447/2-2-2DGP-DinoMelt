@@ -294,8 +294,15 @@ class Player:
             self.bullet.draw()
 
     def draw_ui(self):
+        if self.unbeatable:
+            self.draw_unbeatable()
         self.draw_life()
         self.draw_clay_orb()
+
+    def draw_unbeatable(self):
+        x = 40
+        y = self.canvas_height - 50
+        self.font.draw(x, y, 'unbeatable', (255, 0, 0))
 
     def draw_life(self):
         # 362 x 131

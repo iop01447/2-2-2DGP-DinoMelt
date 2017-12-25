@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af0779c1-141e-459e-a4b9-ffd02ad2f6b8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Map/minimap.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Map/background.py" afterPath="$PROJECT_DIR$/Map/background.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Map/map.json" afterPath="$PROJECT_DIR$/Map/map.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Object/blue_light.py" afterPath="$PROJECT_DIR$/Object/blue_light.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Object/object.py" afterPath="$PROJECT_DIR$/Object/object.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Player/player.py" afterPath="$PROJECT_DIR$/Player/player.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -176,17 +171,17 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="player.py" pinned="false" current-in-tab="false">
+          <file leaf-file-name="player.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Player/player.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="115" column="29" lean-forward="false" selection-start-line="115" selection-start-column="29" selection-end-line="115" selection-end-column="29" />
+                <state relative-caret-position="176">
+                  <caret line="301" column="20" lean-forward="true" selection-start-line="301" selection-start-column="20" selection-end-line="301" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="background.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="background.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/Map/background.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="203">
@@ -319,13 +314,13 @@
         <option value="$PROJECT_DIR$/Monster/monster_red.py" />
         <option value="$PROJECT_DIR$/SourceFiles/bullet.py" />
         <option value="$PROJECT_DIR$/Monster/monster_orange.py" />
-        <option value="$PROJECT_DIR$/Player/player.py" />
         <option value="$PROJECT_DIR$/Object/green_light.py" />
         <option value="$PROJECT_DIR$/Object/bramble.py" />
         <option value="$PROJECT_DIR$/Object/object.py" />
         <option value="$PROJECT_DIR$/Object/blue_light.py" />
         <option value="$PROJECT_DIR$/Map/background.py" />
         <option value="$PROJECT_DIR$/Map/minimap.py" />
+        <option value="$PROJECT_DIR$/Player/player.py" />
       </list>
     </option>
   </component>
@@ -1083,16 +1078,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Player/player.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2780">
-          <caret line="119" column="49" lean-forward="true" selection-start-line="119" selection-start-column="49" selection-end-line="119" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Object/green_light.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
@@ -1176,6 +1161,14 @@
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Player/player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="301" column="20" lean-forward="true" selection-start-line="301" selection-start-column="20" selection-end-line="301" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
