@@ -12,6 +12,8 @@ class BlueLight:
 
     player = None
 
+    light_on_sound = None
+
     def __init__(self, x, y, width, height, bg, name):
         self.width, self.height = width, height
         self.x, self.y = x + width//2, y + width//2
@@ -26,6 +28,10 @@ class BlueLight:
             self.image_load()
         self.img_w = self.image.w//self.frame_cnt
         self.img_h = self.image.h
+        # sound
+        if self.light_on_sound == None:
+            self.light_on_sound = load_wav('..\/Sound\/blue_light_on.wav')
+            self.light_on_sound.set_volume(128)
         # collide
         self.aabb = AABB(0,0,0,0)
 
@@ -54,6 +60,7 @@ class BlueLight:
         if self.light: return
         if collide(self.player.aabb, self.aabb):
             self.light = True
+            self.light_on_sound.play()
 
     def draw(self):
         if not self.light: return

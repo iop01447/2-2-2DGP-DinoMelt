@@ -7,7 +7,6 @@ from Map.minimap import MiniMap
 
 
 class TileBackground:
-    bgm = None
     background_image = None
 
     def __init__(self):
@@ -19,10 +18,6 @@ class TileBackground:
         self.w = self.tile_map.width * self.tile_map.tilewidth
         self.h = self.tile_map.height * self.tile_map.tileheight
         self.minimap = MiniMap()
-        # sound
-        self.bgm = load_music('..\/Sound\/Plepur.mp3')
-        self.bgm.set_volume(64)
-        self.bgm.repeat_play()
         # image
         self.background_image = load_image('..\/Graphics\/background.png')
         # objects
@@ -105,6 +100,7 @@ class TileBackground:
                     return True
                 if o.type == 'orange' and o.object.bullet_active and collide(self.center_object.aabb, o.object.bullet.aabb):
                     o.object.bullet_active = False
+                    o.object.monster_attack_sound.play()
                     return True
             if o.type in ('bramble',):
                 if collide(self.center_object.aabb, o.object.aabb):

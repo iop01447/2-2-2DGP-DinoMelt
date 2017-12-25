@@ -5,16 +5,20 @@ from Framework import game_framework
 # enter exit pause resume handle_events update draw
 
 clear_img = None
+bgm = None
 
 def enter():
-    global clear_img
-    #clear_img = load_image('..\/Graphics\/game_clear.png')
+    global clear_img, bgm
     clear_img = load_image('..\/Graphics\/game_clear.png')
+    bgm = load_music('..\/Sound\/El Fin de la Era Plastozoica.mp3')
+    bgm.set_volume(64)
+    bgm.repeat_play()
     pass
 
 def exit():
-    global clear_img
+    global clear_img, bgm
     del(clear_img)
+    del(bgm)
     pass
 
 def pause():

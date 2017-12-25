@@ -5,6 +5,7 @@ from SourceFiles.stdafx import *
 from SourceFiles.bullet import PlayerBullet as Bullet
 from Framework import game_framework
 from State import clear_state
+from State import main_state
 
 
 class Player:
@@ -31,6 +32,17 @@ class Player:
 
     # font
     font = None
+
+    # sound
+    dead_sound = None
+    walk_sound = None
+    jump_sound = None
+    attack_sound = None
+    attacked_sound = None
+    shot_sound = None
+    check_point_update_sound = None
+    get_orb_sound = None
+    new_life_sound = None
 
     def __init__(self):
         # init
@@ -75,6 +87,26 @@ class Player:
         if self.font == None:
             self.font = load_font('..\/pingwing.ttf', 20)
 
+        # sound
+        self.dead_sound = load_wav('..\/Sound\/Ouch.wav')
+        self.dead_sound.set_volume(64)
+        self.walk_sound = load_wav('..\/Sound\/walk1.wav')
+        self.walk_sound.set_volume(128)
+        self.jump_sound = load_wav('..\/Sound\/jump.wav')
+        self.jump_sound.set_volume(128)
+        self.attack_sound = load_wav('..\/Sound\/attack.wav')
+        self.attack_sound.set_volume(128)
+        self.attacked_sound = load_wav('..\/Sound\/attacked.wav')
+        self.attacked_sound.set_volume(128)
+        self.shot_sound = load_wav('..\/Sound\/shot.wav')
+        self.shot_sound.set_volume(128)
+        self.check_point_update_sound = load_wav('..\/Sound\/check_point_update.wav')
+        self.check_point_update_sound.set_volume(128)
+        self.get_orb_sound = load_wav('..\/Sound\/get_orb.wav')
+        self.get_orb_sound.set_volume(128)
+        self.new_life_sound = load_wav('..\/Sound\/new_life.wav')
+        self.new_life_sound.set_volume(128)
+
         # jump
         self.jump_active = False
         self.jump_direction = self.JUMPING_UP
@@ -106,6 +138,7 @@ class Player:
         h = 64 * 0.6
         self.clay_orb = ClayOrb_UI(x, y, int(w), int(h))
         self.clay_orb_cnt = 0
+        self.clay_orb_total_cnt = 8
 
         # check_point
         self.check_point_effect = False
@@ -139,6 +172,7 @@ class Player:
         if x == 0 and y == 0: return
         self.check_point_effect = True
         self.check_point_x, self.check_point_y = x, y
+        self.check_point_update_sound.play()
 
     # jump
     def jump_initialize(self):
@@ -249,6 +283,7 @@ class Player:
         if self.jump_active:
             if self.jump_state == 'jumped' and int(self.total_frames) > self.frame_cnt:
                 self.jump_active = False
+                self.walk_sound.play()
             self.jump(frame_time)
 
         # 이동
@@ -267,8 +302,10 @@ class Player:
         if self.bullet_active:
             self.bullet.update(frame_time)
             if self.bullet_tile_map_collide_check():
+                self.attack_sound.play()
                 self.bullet_active = False
             if self.bullet_monster_collide_check():
+                self.attack_sound.play()
                 self.bullet_active = False
         if self.attack_active:
             if int(self.total_frames) ==  self.frame_cnt:
@@ -280,9 +317,12 @@ class Player:
                 print('player dead')
                 self.life -= 1
                 self.attacked_effect = True
+                self.attacked_sound.play()
             if self.life < 1:
                 if self.unbeatable: self.life = 1
                 else:
+                    main_state.bgm.pause()
+                    self.dead_sound.play()
                     self.attacked_effect = False
                     self.dying_effect = True
                     self.original_height = self.height
@@ -291,16 +331,16 @@ class Player:
             self.being_attacked(frame_time)
 
         # clay orb
-        # self.clay_orb.update(frame_time)
         if self.orb_collide_check():
             self.clay_orb_cnt += 1
-            if self.clay_orb_cnt >= 8:
+            self.get_orb_sound.play()
+            if self.clay_orb_cnt >= self.clay_orb_total_cnt:
                 game_framework.push_state(clear_state)
 
 
         if self.check_point_effect:
             self.check_point_effect_time += frame_time
-            if self.check_point_effect_time > 1.0:
+            if self.check_point_effect_time > 2.13:
                 self.check_point_effect_time = 0
                 self.check_point_effect = False
 
@@ -310,15 +350,18 @@ class Player:
     # effect
     def dying(self, frame_time):
         self.dying_time += frame_time
-        self.height = self.original_height * (1 - self.dying_time) + 0 * self.dying_time
+        t = self.dying_time / 2.4
+        self.height = self.original_height * (1 - t) + 0 * t
         self.height = int(self.height)
 
-        if self.height <= 1:
+        if self.height <= 2.4:
             self.height = self.original_height
             self.dying_time = 0
             self.dying_effect = False
             self.life = 3
             self.x, self.y = self.check_point_x, self.check_point_y
+            main_state.bgm.resume()
+            self.new_life_sound.play()
 
     # draw
     def draw(self):
@@ -377,7 +420,7 @@ class Player:
         self.clay_orb.draw()
         x = self.canvas_width - 50
         y = self.canvas_height - 65
-        self.font.draw(x, y, '%d/8' % (self.clay_orb_cnt), (255,255,255))
+        self.font.draw(x, y, '%d/%d' % (self.clay_orb_cnt, self.clay_orb_total_cnt), (255,255,255))
 
     def draw_bb(self):
         draw_rectangle(*self.aabb.get_bb())
@@ -394,14 +437,22 @@ class Player:
         if self.dying_effect: return
 
         if event.type == SDL_KEYDOWN:
-            if event.key == SDLK_LEFT: self.button['left'] = True
-            elif event.key == SDLK_RIGHT: self.button['right'] = True
+            if event.key == SDLK_LEFT:
+                self.button['left'] = True
+                if not self.jump_active:
+                    self.walk_sound.play()
+            elif event.key == SDLK_RIGHT:
+                self.button['right'] = True
+                if not self.jump_active:
+                    self.walk_sound.play()
             elif event.key == SDLK_a:
                 if not self.jump_active:
+                    self.jump_sound.play()
                     self.jump_active = True
                     self.jump_initialize()
             elif event.key == SDLK_s:
                 if not self.attack_active:
+                    self.shot_sound.play()
                     self.attack_active = True
                     self.attack_initialize()
             elif event.key == SDLK_u:

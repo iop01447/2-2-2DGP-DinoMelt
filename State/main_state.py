@@ -16,20 +16,29 @@ player = None
 background = None
 debugging_draw = False
 minimap_draw = False
+bgm = None
+minimap_sound = None
 
 
 def create_world():
-    global player, background
+    global player, background, bgm, minimap_sound
     player = Player()
     background = Background()
     background.set_center_object(player)
     player.set_background(background)
+    # sound
+    bgm = load_music('..\/Sound\/Plepur.mp3')
+    bgm.set_volume(64)
+    bgm.repeat_play()
+    minimap_sound = load_wav('..\/Sound\/minimap.wav')
+    minimap_sound.set_volume(128)
 
 
 def destroy_world():
-    global player, background
+    global player, background, minimap_sound
     del(player)
     del(background)
+    del(minimap_sound)
 
 
 def enter():
@@ -69,6 +78,7 @@ def handle_events():
                 debugging_draw = not debugging_draw
             elif event.type == SDL_KEYUP and event.key == SDLK_m:
                 minimap_draw = not minimap_draw
+                minimap_sound.play()
             else:
                 player.handle_event(event)
                 background.handle_event(event)

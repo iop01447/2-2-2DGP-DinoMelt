@@ -12,6 +12,9 @@ class MonsterOrange(MonsterRed):
 
     dead_effect_img = None
 
+    monster_attack_sound = None
+    monster_shot_sound = None
+
     def __init__(self, x, y, width, height, state, bg):
         self.exsist = True
         self.width, self.height = width, height
@@ -35,6 +38,14 @@ class MonsterOrange(MonsterRed):
             self.bullet_image = load_image('..\/Graphics\/Monster\/monster_bullet.png')
         if self.dead_effect_img == None:
             self.dead_effect_img = load_image('..\/Graphics\/monster\/dead_effect.png')
+
+        # sound
+        if self.monster_attack_sound == None:
+            self.monster_attack_sound = load_wav('..\/Sound\/monster_attack.wav')
+            self.monster_attack_sound.set_volume(128)
+        if self.monster_shot_sound == None:
+            self.monster_shot_sound = load_wav('..\/Sound\/monster_shot.wav')
+            self.monster_shot_sound.set_volume(128)
 
         # collide
         self.aabb = AABB(0, 0, 0, 0)
@@ -70,6 +81,7 @@ class MonsterOrange(MonsterRed):
         self.total_frames = 0
         self.bullet_active = True
         self.state[0] = self.ATTACK
+        self.monster_shot_sound.play()
         if self.state[1] == self.LEFT:
             direction = -1
         else:
@@ -112,6 +124,7 @@ class MonsterOrange(MonsterRed):
                     or self.bullet.x < self.bg.window_left\
                     or self.bullet.x > self.bg.window_left + self.canvas_width:
                 self.bullet_active = False
+                self.monster_attack_sound.play()
         if self.state[0] == self.ATTACK:
             if int(self.total_frames) >= self.frame_cnt:
                 self.state[0] = self.IDLE
