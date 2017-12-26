@@ -27,10 +27,10 @@ def create_world():
     background.set_center_object(player)
     player.set_background(background)
     # sound
-    bgm = load_music('..\/Sound\/Plepur.mp3')
+    bgm = load_music('Sound\/Plepur.mp3')
     bgm.set_volume(64)
     bgm.repeat_play()
-    minimap_sound = load_wav('..\/Sound\/minimap.wav')
+    minimap_sound = load_wav('Sound\/minimap.wav')
     minimap_sound.set_volume(128)
 
 
@@ -54,14 +54,20 @@ def exit():
 
 
 def pause():
-    pass
+    global bgm
+    bgm.pause()
+    if player.meet_boss:
+        player.original_initialize()
 
 
 def resume():
     global bgm, player
-    bgm.repeat_play()
-    player.check_point_initialize()
-    pass
+    bgm.resume()
+    if player.meet_boss:
+        bgm.repeat_play()
+        if not player.boss_clear:
+            player.new_life_sound.play()
+            player.check_point_initialize()
 
 
 def handle_events():

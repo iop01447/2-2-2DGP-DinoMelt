@@ -34,7 +34,7 @@ class ClayOrb:
             self.player = player
 
     def image_load(self):
-        self.image = load_image('..\/Graphics\/clay_orb.png')
+        self.image = load_image('Graphics\/clay_orb.png')
 
     def update_aabb(self):
         sx = self.x - self.bg.window_left
@@ -83,7 +83,7 @@ class ClayOrb_UI:
         self.aabb = AABB(0,0,0,0)
 
     def image_load(self):
-        self.image = load_image('..\/Graphics\/clay_orb.png')
+        self.image = load_image('Graphics\/clay_orb.png')
 
     def update(self, frame_time):
         self.total_frames += self.FRAMES_PER_ACTION * self.ACTION_PER_TIME * frame_time

@@ -19,8 +19,8 @@ is_pop_state = False
 
 def enter():
     global background_img, bgm, player, boss
-    background_img = load_image('..\/Graphics\/boss_background.png')
-    bgm = load_music('..\/Sound\/Batalla de Plasticina.mp3')
+    background_img = load_image('Graphics\/boss_background.png')
+    bgm = load_music('Sound\/Batalla de Plasticina.mp3')
     bgm.set_volume(64)
     bgm.repeat_play()
     player = Player()
@@ -30,6 +30,7 @@ def enter():
 
 def exit():
     global background_img, bgm, player, boss
+    bgm.stop()
     del(background_img)
     del(bgm)
     del(player)
@@ -37,10 +38,12 @@ def exit():
     pass
 
 def pause():
-    pass
+    global bgm
+    bgm.pause()
 
 def resume():
-    pass
+    global bgm
+    bgm.resume()
 
 def handle_events():
     global debugging_draw

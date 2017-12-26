@@ -47,8 +47,8 @@ class Player:
 
     def __init__(self):
         # init
-        self.x, self.y = 100, 3250
-        self.x, self.y = 869, 900
+        self.x, self.y = 100, 3250 # 100, 3250
+        #self.x, self.y = 869, 900 # 보스 바로 전 check point 위치
         self.canvas_width = get_canvas_width()
         self.canvas_height = get_canvas_height()
         self.life = 3
@@ -63,9 +63,10 @@ class Player:
         self.button = {'left': False, 'right': False}
         self.unbeatable = False
         self.boss_clear = False
+        self.meet_boss = False
 
         # image
-        with open("../data.json") as f:
+        with open("data.json") as f:
             self.data = json.load(f)
         self.data = self.data['player']
 
@@ -84,30 +85,30 @@ class Player:
                                       self.RIGHT: load_image(self.data['attack']['image']['right'])}
 
         if not Player.life_image:
-            Player.life_image = load_image('..\/Graphics\/life.png')
+            Player.life_image = load_image('Graphics\/life.png')
 
         # font
         if self.font == None:
-            self.font = load_font('..\/pingwing.ttf', 20)
+            self.font = load_font('pingwing.ttf', 20)
 
         # sound
-        self.dead_sound = load_wav('..\/Sound\/Ouch.wav')
+        self.dead_sound = load_wav('Sound\/Ouch.wav')
         self.dead_sound.set_volume(64)
-        self.walk_sound = load_wav('..\/Sound\/walk1.wav')
+        self.walk_sound = load_wav('Sound\/walk1.wav')
         self.walk_sound.set_volume(128)
-        self.jump_sound = load_wav('..\/Sound\/jump.wav')
+        self.jump_sound = load_wav('Sound\/jump.wav')
         self.jump_sound.set_volume(128)
-        self.attack_sound = load_wav('..\/Sound\/attack.wav')
+        self.attack_sound = load_wav('Sound\/attack.wav')
         self.attack_sound.set_volume(128)
-        self.attacked_sound = load_wav('..\/Sound\/attacked.wav')
+        self.attacked_sound = load_wav('Sound\/attacked.wav')
         self.attacked_sound.set_volume(128)
-        self.shot_sound = load_wav('..\/Sound\/shot.wav')
+        self.shot_sound = load_wav('Sound\/shot.wav')
         self.shot_sound.set_volume(128)
-        self.check_point_update_sound = load_wav('..\/Sound\/check_point_update.wav')
+        self.check_point_update_sound = load_wav('Sound\/check_point_update.wav')
         self.check_point_update_sound.set_volume(128)
-        self.get_orb_sound = load_wav('..\/Sound\/get_orb.wav')
+        self.get_orb_sound = load_wav('Sound\/get_orb.wav')
         self.get_orb_sound.set_volume(128)
-        self.new_life_sound = load_wav('..\/Sound\/new_life.wav')
+        self.new_life_sound = load_wav('Sound\/new_life.wav')
         self.new_life_sound.set_volume(128)
 
         # jump
@@ -141,7 +142,7 @@ class Player:
         h = 64 * 0.6
         self.clay_orb = ClayOrb_UI(x, y, int(w), int(h))
         self.clay_orb_cnt = 0
-        self.clay_orb_total_cnt = 8
+        self.clay_orb_total_cnt = 10
 
         # check_point
         self.check_point_effect = False
@@ -194,18 +195,16 @@ class Player:
         self.total_frames = 0
         self.y_base = self.y
         # jump with gravity
-        self.a0 = -500
+        self.a0 = -600 # -500이었는데 타일을 못 올라가서 줄임
         self.v0 = 400
         self.y0 = self.y
-        self.jump_time = 0.0
 
     def jump(self, frame_time):
         # jump with gravity
-        self.jump_time = frame_time
-        self.a1 = self.a0 - self.gravity
+        self.a1 = self.a0 - self.gravity * frame_time
         self.a0 = self.a1
-        self.v1 = self.v0 + self.a1 * self.jump_time
-        height = (self.v0 + self.v1) / 2 * self.jump_time
+        self.v1 = self.v0 + self.a1 * frame_time
+        height = (self.v0 + self.v1) / 2 * frame_time
         self.v0 = self.v1
         self.y0 = self.y
 
@@ -327,8 +326,11 @@ class Player:
 
         # boss
         if self.boss_space_collide_check() and not self.boss_clear:
+            self.meet_boss = True
             boss_state.is_pop_state = False
+            self.original_initialize()
             game_framework.push_state(boss_state)
+        else: self.meet_boss = False
 
         self.x = clamp(0, self.x, self.bg.w)
         self.y = clamp(0, self.y, self.bg.h)
@@ -383,6 +385,9 @@ class Player:
     def check_point_initialize(self):
         self.life = 3
         self.x, self.y = self.check_point_x, self.check_point_y
+        self.original_initialize()
+
+    def original_initialize(self): # 원래대로 초기화
         self.frame = 0
         self.total_frames = 0.0
         self.state = 'idle'  # idle, walk

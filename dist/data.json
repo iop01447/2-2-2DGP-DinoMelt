@@ -44,6 +44,15 @@
         "width": 118,
         "height": 102
       }
+    },
+    "attack": {
+      "image": {
+        "left": "Graphics\/player\/attack\/attack_left.png",
+        "right": "Graphics\/player\/attack\/attack_right.png",
+        "frame_cnt": 3,
+        "width": 361,
+        "height": 91
+      }
     }
   }
 }

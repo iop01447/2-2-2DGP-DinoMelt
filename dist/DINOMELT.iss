@@ -5,18 +5,18 @@
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{1F635114-0AD0-462A-86A8-EC8E4EE2A258}
-AppName=DINOMELT
+AppId={{BBF7976B-27EE-4CE2-A748-17626022221D}
+AppName=Game_2016182042
 AppVersion=1.5
-;AppVerName=DINOMELT 1.5
+;AppVerName=Game_2016182042 1.5
 AppPublisher=My Company, Inc.
 AppPublisherURL=http://www.example.com/
 AppSupportURL=http://www.example.com/
 AppUpdatesURL=http://www.example.com/
-DefaultDirName={pf}\DINOMELT
+DefaultDirName={pf}\Game_2016182042
 DisableProgramGroupPage=yes
 OutputDir=C:\Users\aa\Desktop
-OutputBaseFilename=DINOMELT_setup
+OutputBaseFilename=Game_2016180033_Setup
 Compression=lzma
 SolidCompression=yes
 
@@ -32,9 +32,9 @@ Source: "C:\Users\aa\Desktop\조윤영\대학교\2-2\2DGP\DinoMelt\dist\*"; DestDir: "
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]
-Name: "{commonprograms}\DINOMELT"; Filename: "{app}\mygame.exe"
-Name: "{commondesktop}\DINOMELT"; Filename: "{app}\mygame.exe"; Tasks: desktopicon
+Name: "{commonprograms}\Game_2016182042"; Filename: "{app}\mygame.exe"
+Name: "{commondesktop}\Game_2016182042"; Filename: "{app}\mygame.exe"; Tasks: desktopicon
 
 [Run]
-Filename: "{app}\mygame.exe"; Description: "{cm:LaunchProgram,DINOMELT}"; Flags: nowait postinstall skipifsilent
+Filename: "{app}\mygame.exe"; Description: "{cm:LaunchProgram,Game_2016182042}"; Flags: nowait postinstall skipifsilent
 

@@ -18,6 +18,12 @@
 imports:
     <a href="#'java.lang'">'java.lang'</a>
  &#8226;   <a href="#'org.python'">'org.python'</a>
+ &#8226;   <a href="#Framework">Framework</a>
+ &#8226;   <a href="#Framework.game_framework">Framework.game_framework</a>
+ &#8226;   <a href="#State">State</a>
+ &#8226;   <a href="#State.boss_state">State.boss_state</a>
+ &#8226;   <a href="#State.main_state">State.main_state</a>
+ &#8226;   <a href="#State.start_state">State.start_state</a>
  &#8226;   <a href="#__future__">__future__</a>
  &#8226;   <a href="#_ast">_ast</a>
  &#8226;   <a href="#_bisect">_bisect</a>
@@ -248,7 +254,6 @@ imports:
  &#8226;   <a href="#errno">errno</a>
  &#8226;   <a href="#fnmatch">fnmatch</a>
  &#8226;   <a href="#functools">functools</a>
- &#8226;   <a href="#game_framework">game_framework</a>
  &#8226;   <a href="#gc">gc</a>
  &#8226;   <a href="#genericpath">genericpath</a>
  &#8226;   <a href="#getopt">getopt</a>
@@ -279,7 +284,6 @@ imports:
  &#8226;   <a href="#locale">locale</a>
  &#8226;   <a href="#logging">logging</a>
  &#8226;   <a href="#lzma">lzma</a>
- &#8226;   <a href="#main_state">main_state</a>
  &#8226;   <a href="#marshal">marshal</a>
  &#8226;   <a href="#math">math</a>
  &#8226;   <a href="#mimetypes">mimetypes</a>
@@ -294,6 +298,7 @@ imports:
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#pdb">pdb</a>
  &#8226;   <a href="#pickle">pickle</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
  &#8226;   <a href="#pkgutil">pkgutil</a>
  &#8226;   <a href="#platform">platform</a>
  &#8226;   <a href="#plistlib">plistlib</a>
@@ -323,7 +328,6 @@ imports:
  &#8226;   <a href="#sre_constants">sre_constants</a>
  &#8226;   <a href="#sre_parse">sre_parse</a>
  &#8226;   <a href="#ssl">ssl</a>
- &#8226;   <a href="#start_state">start_state</a>
  &#8226;   <a href="#stat">stat</a>
  &#8226;   <a href="#string">string</a>
  &#8226;   <a href="#stringprep">stringprep</a>
@@ -389,8 +393,8 @@ imported by:
   <a target="code" href="" type="text/plain"><tt>'org.python'</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
 imported by:
-    <a href="#copy">copy</a>
- &#8226;   <a href="#mygame.py">mygame.py</a>
+    <a href="#mygame.py">mygame.py</a>
+ &#8226;   <a href="#pickle">pickle</a>
  &#8226;   <a href="#xml.sax">xml.sax</a>
 
   </div>
@@ -398,36 +402,697 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="TileMap"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/TileMap.py" type="text/plain"><tt>TileMap</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
+  <a name="Framework"></a>
+  <a target="code" href="-" type="text/plain"><tt>Framework</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
 imports:
-    <a href="#TileSet">TileSet</a>
- &#8226;   <a href="#json">json</a>
- &#8226;   <a href="#pico2d">pico2d</a>
- &#8226;   <a href="#stdafx">stdafx</a>
+    <a href="#Framework.game_framework">Framework.game_framework</a>
 
   </div>
   <div class="import">
 imported by:
-    <a href="#background">background</a>
+    <a href="#Framework.game_framework">Framework.game_framework</a>
+ &#8226;   <a href="#Monster.boss">Monster.boss</a>
+ &#8226;   <a href="#Object.boss_space">Object.boss_space</a>
+ &#8226;   <a href="#Player.boss_state_player">Player.boss_state_player</a>
+ &#8226;   <a href="#Player.player">Player.player</a>
+ &#8226;   <a href="#State.boss_pause_state">State.boss_pause_state</a>
+ &#8226;   <a href="#State.boss_state">State.boss_state</a>
+ &#8226;   <a href="#State.clear_state">State.clear_state</a>
+ &#8226;   <a href="#State.main_state">State.main_state</a>
+ &#8226;   <a href="#State.pause_state">State.pause_state</a>
+ &#8226;   <a href="#State.start_state">State.start_state</a>
+ &#8226;   <a href="#State.title_state">State.title_state</a>
+ &#8226;   <a href="#mygame.py">mygame.py</a>
 
   </div>
 
 </div>
 
 <div class="node">
-  <a name="TileSet"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/TileSet.py" type="text/plain"><tt>TileSet</tt></a>
+  <a name="Framework.game_framework"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Framework/game_framework.py" type="text/plain"><tt>Framework.game_framework</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#json">json</a>
+    <a href="#Framework">Framework</a>
+ &#8226;   <a href="#time">time</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Framework">Framework</a>
+ &#8226;   <a href="#Monster.boss">Monster.boss</a>
+ &#8226;   <a href="#Object.boss_space">Object.boss_space</a>
+ &#8226;   <a href="#Player.boss_state_player">Player.boss_state_player</a>
+ &#8226;   <a href="#Player.player">Player.player</a>
+ &#8226;   <a href="#State.boss_pause_state">State.boss_pause_state</a>
+ &#8226;   <a href="#State.boss_state">State.boss_state</a>
+ &#8226;   <a href="#State.clear_state">State.clear_state</a>
+ &#8226;   <a href="#State.main_state">State.main_state</a>
+ &#8226;   <a href="#State.pause_state">State.pause_state</a>
+ &#8226;   <a href="#State.start_state">State.start_state</a>
+ &#8226;   <a href="#State.title_state">State.title_state</a>
+ &#8226;   <a href="#mygame.py">mygame.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Map"></a>
+  <a target="code" href="-" type="text/plain"><tt>Map</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
+imported by:
+    <a href="#Map.TileMap">Map.TileMap</a>
+ &#8226;   <a href="#Map.TileSet">Map.TileSet</a>
+ &#8226;   <a href="#Map.background">Map.background</a>
+ &#8226;   <a href="#Map.minimap">Map.minimap</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Map.TileMap"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Map/TileMap.py" type="text/plain"><tt>Map.TileMap</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Map">Map</a>
+ &#8226;   <a href="#Map.TileSet">Map.TileSet</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
  &#8226;   <a href="#pico2d">pico2d</a>
 
   </div>
   <div class="import">
 imported by:
-    <a href="#TileMap">TileMap</a>
+    <a href="#Map.background">Map.background</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Map.TileSet"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Map/TileSet.py" type="text/plain"><tt>Map.TileSet</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Map">Map</a>
+ &#8226;   <a href="#json">json</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Map.TileMap">Map.TileMap</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Map.background"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Map/background.py" type="text/plain"><tt>Map.background</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Map">Map</a>
+ &#8226;   <a href="#Map.TileMap">Map.TileMap</a>
+ &#8226;   <a href="#Map.minimap">Map.minimap</a>
+ &#8226;   <a href="#Object.object">Object.object</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#State.main_state">State.main_state</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Map.minimap"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Map/minimap.py" type="text/plain"><tt>Map.minimap</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Map">Map</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Map.background">Map.background</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Monster"></a>
+  <a target="code" href="-" type="text/plain"><tt>Monster</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
+imported by:
+    <a href="#Monster.boss">Monster.boss</a>
+ &#8226;   <a href="#Monster.monster_blue">Monster.monster_blue</a>
+ &#8226;   <a href="#Monster.monster_orange">Monster.monster_orange</a>
+ &#8226;   <a href="#Monster.monster_red">Monster.monster_red</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Monster.boss"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Monster/boss.py" type="text/plain"><tt>Monster.boss</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Framework">Framework</a>
+ &#8226;   <a href="#Framework.game_framework">Framework.game_framework</a>
+ &#8226;   <a href="#Monster">Monster</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+ &#8226;   <a href="#State">State</a>
+ &#8226;   <a href="#State.boss_state">State.boss_state</a>
+ &#8226;   <a href="#State.main_state">State.main_state</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#State.boss_state">State.boss_state</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Monster.monster_blue"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Monster/monster_blue.py" type="text/plain"><tt>Monster.monster_blue</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Monster">Monster</a>
+ &#8226;   <a href="#Monster.monster_red">Monster.monster_red</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Object.object">Object.object</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Monster.monster_orange"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Monster/monster_orange.py" type="text/plain"><tt>Monster.monster_orange</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Monster">Monster</a>
+ &#8226;   <a href="#Monster.monster_red">Monster.monster_red</a>
+ &#8226;   <a href="#SourceFiles.bullet">SourceFiles.bullet</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Object.object">Object.object</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Monster.monster_red"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Monster/monster_red.py" type="text/plain"><tt>Monster.monster_red</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Monster">Monster</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Monster.monster_blue">Monster.monster_blue</a>
+ &#8226;   <a href="#Monster.monster_orange">Monster.monster_orange</a>
+ &#8226;   <a href="#Object.object">Object.object</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Object"></a>
+  <a target="code" href="-" type="text/plain"><tt>Object</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
+imported by:
+    <a href="#Object.blue_light">Object.blue_light</a>
+ &#8226;   <a href="#Object.boss_space">Object.boss_space</a>
+ &#8226;   <a href="#Object.bramble">Object.bramble</a>
+ &#8226;   <a href="#Object.clay_orb">Object.clay_orb</a>
+ &#8226;   <a href="#Object.green_light">Object.green_light</a>
+ &#8226;   <a href="#Object.object">Object.object</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Object.blue_light"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Object/blue_light.py" type="text/plain"><tt>Object.blue_light</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Object">Object</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Object.object">Object.object</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Object.boss_space"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Object/boss_space.py" type="text/plain"><tt>Object.boss_space</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Framework">Framework</a>
+ &#8226;   <a href="#Framework.game_framework">Framework.game_framework</a>
+ &#8226;   <a href="#Object">Object</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+ &#8226;   <a href="#State">State</a>
+ &#8226;   <a href="#State.boss_state">State.boss_state</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Object.object">Object.object</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Object.bramble"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Object/bramble.py" type="text/plain"><tt>Object.bramble</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Object">Object</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Object.object">Object.object</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Object.clay_orb"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Object/clay_orb.py" type="text/plain"><tt>Object.clay_orb</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Object">Object</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Object.object">Object.object</a>
+ &#8226;   <a href="#Player.player">Player.player</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Object.green_light"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Object/green_light.py" type="text/plain"><tt>Object.green_light</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Object">Object</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Object.object">Object.object</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Object.object"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Object/object.py" type="text/plain"><tt>Object.object</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Monster.monster_blue">Monster.monster_blue</a>
+ &#8226;   <a href="#Monster.monster_orange">Monster.monster_orange</a>
+ &#8226;   <a href="#Monster.monster_red">Monster.monster_red</a>
+ &#8226;   <a href="#Object">Object</a>
+ &#8226;   <a href="#Object.blue_light">Object.blue_light</a>
+ &#8226;   <a href="#Object.boss_space">Object.boss_space</a>
+ &#8226;   <a href="#Object.bramble">Object.bramble</a>
+ &#8226;   <a href="#Object.clay_orb">Object.clay_orb</a>
+ &#8226;   <a href="#Object.green_light">Object.green_light</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Map.background">Map.background</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Player"></a>
+  <a target="code" href="-" type="text/plain"><tt>Player</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
+imported by:
+    <a href="#Player.boss_state_player">Player.boss_state_player</a>
+ &#8226;   <a href="#Player.player">Player.player</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Player.boss_state_player"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Player/boss_state_player.py" type="text/plain"><tt>Player.boss_state_player</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Framework">Framework</a>
+ &#8226;   <a href="#Framework.game_framework">Framework.game_framework</a>
+ &#8226;   <a href="#Player">Player</a>
+ &#8226;   <a href="#Player.player">Player.player</a>
+ &#8226;   <a href="#SourceFiles.bullet">SourceFiles.bullet</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+ &#8226;   <a href="#State">State</a>
+ &#8226;   <a href="#State.boss_state">State.boss_state</a>
+ &#8226;   <a href="#State.main_state">State.main_state</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#State.boss_state">State.boss_state</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="Player.player"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/Player/player.py" type="text/plain"><tt>Player.player</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Framework">Framework</a>
+ &#8226;   <a href="#Framework.game_framework">Framework.game_framework</a>
+ &#8226;   <a href="#Object.clay_orb">Object.clay_orb</a>
+ &#8226;   <a href="#Player">Player</a>
+ &#8226;   <a href="#SourceFiles.bullet">SourceFiles.bullet</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+ &#8226;   <a href="#State">State</a>
+ &#8226;   <a href="#State.boss_state">State.boss_state</a>
+ &#8226;   <a href="#State.clear_state">State.clear_state</a>
+ &#8226;   <a href="#State.main_state">State.main_state</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Player.boss_state_player">Player.boss_state_player</a>
+ &#8226;   <a href="#State.main_state">State.main_state</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="SourceFiles"></a>
+  <a target="code" href="-" type="text/plain"><tt>SourceFiles</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
+imported by:
+    <a href="#SourceFiles.bullet">SourceFiles.bullet</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="SourceFiles.bullet"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/SourceFiles/bullet.py" type="text/plain"><tt>SourceFiles.bullet</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#SourceFiles">SourceFiles</a>
+ &#8226;   <a href="#SourceFiles.stdafx">SourceFiles.stdafx</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Monster.monster_orange">Monster.monster_orange</a>
+ &#8226;   <a href="#Player.boss_state_player">Player.boss_state_player</a>
+ &#8226;   <a href="#Player.player">Player.player</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="SourceFiles.stdafx"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/SourceFiles/stdafx.py" type="text/plain"><tt>SourceFiles.stdafx</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#SourceFiles">SourceFiles</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Map.TileMap">Map.TileMap</a>
+ &#8226;   <a href="#Map.background">Map.background</a>
+ &#8226;   <a href="#Map.minimap">Map.minimap</a>
+ &#8226;   <a href="#Monster.boss">Monster.boss</a>
+ &#8226;   <a href="#Monster.monster_blue">Monster.monster_blue</a>
+ &#8226;   <a href="#Monster.monster_orange">Monster.monster_orange</a>
+ &#8226;   <a href="#Monster.monster_red">Monster.monster_red</a>
+ &#8226;   <a href="#Object.blue_light">Object.blue_light</a>
+ &#8226;   <a href="#Object.boss_space">Object.boss_space</a>
+ &#8226;   <a href="#Object.bramble">Object.bramble</a>
+ &#8226;   <a href="#Object.clay_orb">Object.clay_orb</a>
+ &#8226;   <a href="#Object.green_light">Object.green_light</a>
+ &#8226;   <a href="#Player.boss_state_player">Player.boss_state_player</a>
+ &#8226;   <a href="#Player.player">Player.player</a>
+ &#8226;   <a href="#SourceFiles.bullet">SourceFiles.bullet</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="State"></a>
+  <a target="code" href="-" type="text/plain"><tt>State</tt></a>
+<span class="moduletype">NamespacePackage</span>  <div class="import">
+imports:
+    <a href="#State.boss_pause_state">State.boss_pause_state</a>
+ &#8226;   <a href="#State.boss_state">State.boss_state</a>
+ &#8226;   <a href="#State.clear_state">State.clear_state</a>
+ &#8226;   <a href="#State.main_state">State.main_state</a>
+ &#8226;   <a href="#State.pause_state">State.pause_state</a>
+ &#8226;   <a href="#State.start_state">State.start_state</a>
+ &#8226;   <a href="#State.title_state">State.title_state</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Monster.boss">Monster.boss</a>
+ &#8226;   <a href="#Object.boss_space">Object.boss_space</a>
+ &#8226;   <a href="#Player.boss_state_player">Player.boss_state_player</a>
+ &#8226;   <a href="#Player.player">Player.player</a>
+ &#8226;   <a href="#State.boss_pause_state">State.boss_pause_state</a>
+ &#8226;   <a href="#State.boss_state">State.boss_state</a>
+ &#8226;   <a href="#State.clear_state">State.clear_state</a>
+ &#8226;   <a href="#State.main_state">State.main_state</a>
+ &#8226;   <a href="#State.pause_state">State.pause_state</a>
+ &#8226;   <a href="#State.start_state">State.start_state</a>
+ &#8226;   <a href="#State.title_state">State.title_state</a>
+ &#8226;   <a href="#mygame.py">mygame.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="State.boss_pause_state"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/State/boss_pause_state.py" type="text/plain"><tt>State.boss_pause_state</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Framework">Framework</a>
+ &#8226;   <a href="#Framework.game_framework">Framework.game_framework</a>
+ &#8226;   <a href="#State">State</a>
+ &#8226;   <a href="#State.boss_state">State.boss_state</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#State">State</a>
+ &#8226;   <a href="#State.boss_state">State.boss_state</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="State.boss_state"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/State/boss_state.py" type="text/plain"><tt>State.boss_state</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Framework">Framework</a>
+ &#8226;   <a href="#Framework.game_framework">Framework.game_framework</a>
+ &#8226;   <a href="#Monster.boss">Monster.boss</a>
+ &#8226;   <a href="#Player.boss_state_player">Player.boss_state_player</a>
+ &#8226;   <a href="#State">State</a>
+ &#8226;   <a href="#State.boss_pause_state">State.boss_pause_state</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Monster.boss">Monster.boss</a>
+ &#8226;   <a href="#Object.boss_space">Object.boss_space</a>
+ &#8226;   <a href="#Player.boss_state_player">Player.boss_state_player</a>
+ &#8226;   <a href="#Player.player">Player.player</a>
+ &#8226;   <a href="#State">State</a>
+ &#8226;   <a href="#State.boss_pause_state">State.boss_pause_state</a>
+ &#8226;   <a href="#mygame.py">mygame.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="State.clear_state"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/State/clear_state.py" type="text/plain"><tt>State.clear_state</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Framework">Framework</a>
+ &#8226;   <a href="#Framework.game_framework">Framework.game_framework</a>
+ &#8226;   <a href="#State">State</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Player.player">Player.player</a>
+ &#8226;   <a href="#State">State</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="State.main_state"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/State/main_state.py" type="text/plain"><tt>State.main_state</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Framework">Framework</a>
+ &#8226;   <a href="#Framework.game_framework">Framework.game_framework</a>
+ &#8226;   <a href="#Map.background">Map.background</a>
+ &#8226;   <a href="#Player.player">Player.player</a>
+ &#8226;   <a href="#State">State</a>
+ &#8226;   <a href="#State.pause_state">State.pause_state</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#Monster.boss">Monster.boss</a>
+ &#8226;   <a href="#Player.boss_state_player">Player.boss_state_player</a>
+ &#8226;   <a href="#Player.player">Player.player</a>
+ &#8226;   <a href="#State">State</a>
+ &#8226;   <a href="#State.pause_state">State.pause_state</a>
+ &#8226;   <a href="#State.title_state">State.title_state</a>
+ &#8226;   <a href="#mygame.py">mygame.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="State.pause_state"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/State/pause_state.py" type="text/plain"><tt>State.pause_state</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Framework">Framework</a>
+ &#8226;   <a href="#Framework.game_framework">Framework.game_framework</a>
+ &#8226;   <a href="#State">State</a>
+ &#8226;   <a href="#State.main_state">State.main_state</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#State">State</a>
+ &#8226;   <a href="#State.main_state">State.main_state</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="State.start_state"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/State/start_state.py" type="text/plain"><tt>State.start_state</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Framework">Framework</a>
+ &#8226;   <a href="#Framework.game_framework">Framework.game_framework</a>
+ &#8226;   <a href="#State">State</a>
+ &#8226;   <a href="#State.title_state">State.title_state</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#State">State</a>
+ &#8226;   <a href="#mygame.py">mygame.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="State.title_state"></a>
+  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/State/title_state.py" type="text/plain"><tt>State.title_state</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#Framework">Framework</a>
+ &#8226;   <a href="#Framework.game_framework">Framework.game_framework</a>
+ &#8226;   <a href="#State">State</a>
+ &#8226;   <a href="#State.main_state">State.main_state</a>
+ &#8226;   <a href="#pico2d">pico2d</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#State">State</a>
+ &#8226;   <a href="#State.start_state">State.start_state</a>
 
   </div>
 
@@ -1349,25 +2014,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="background"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/background.py" type="text/plain"><tt>background</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#TileMap">TileMap</a>
- &#8226;   <a href="#object">object</a>
- &#8226;   <a href="#pico2d">pico2d</a>
- &#8226;   <a href="#stdafx">stdafx</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#main_state">main_state</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="base64"></a>
   <a target="code" href="///C:/Python36/lib/base64.py" type="text/plain"><tt>base64</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -1527,23 +2173,6 @@ imported by:
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
  &#8226;   <a href="#mygame.py">mygame.py</a>
  &#8226;   <a href="#ssl">ssl</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="clay_orb"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/clay_orb.py" type="text/plain"><tt>clay_orb</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#pico2d">pico2d</a>
- &#8226;   <a href="#stdafx">stdafx</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#object">object</a>
 
   </div>
 
@@ -1865,8 +2494,8 @@ imported by:
   <a target="code" href="///C:/Python36/lib/copy.py" type="text/plain"><tt>copy</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#'org.python'">'org.python'</a>
- &#8226;   <a href="#copyreg">copyreg</a>
+    <a href="#copyreg">copyreg</a>
+ &#8226;   <a href="#org">org</a>
  &#8226;   <a href="#types">types</a>
  &#8226;   <a href="#weakref">weakref</a>
 
@@ -5397,25 +6026,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="game_framework"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/game_framework.py" type="text/plain"><tt>game_framework</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#time">time</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#main_state">main_state</a>
- &#8226;   <a href="#mygame.py">mygame.py</a>
- &#8226;   <a href="#start_state">start_state</a>
- &#8226;   <a href="#title_state">title_state</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="gc"></a>
   <tt>gc</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imports:
@@ -6094,8 +6704,7 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#TileMap">TileMap</a>
- &#8226;   <a href="#TileSet">TileSet</a>
+    <a href="#Map.TileSet">Map.TileSet</a>
  &#8226;   <a href="#json.decoder">json.decoder</a>
  &#8226;   <a href="#json.encoder">json.encoder</a>
  &#8226;   <a href="#json.scanner">json.scanner</a>
@@ -6288,29 +6897,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="main_state"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/main_state.py" type="text/plain"><tt>main_state</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#background">background</a>
- &#8226;   <a href="#game_framework">game_framework</a>
- &#8226;   <a href="#pause_state">pause_state</a>
- &#8226;   <a href="#pico2d">pico2d</a>
- &#8226;   <a href="#player">player</a>
- &#8226;   <a href="#stdafx">stdafx</a>
- &#8226;   <a href="#title_state">title_state</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#mygame.py">mygame.py</a>
- &#8226;   <a href="#title_state">title_state</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="marshal"></a>
   <tt>marshal</tt> <span class="moduletype"><i>(builtin module)</i></span>  <div class="import">
 imported by:
@@ -6328,7 +6914,6 @@ imported by:
     <a href="#datetime">datetime</a>
  &#8226;   <a href="#mygame.py">mygame.py</a>
  &#8226;   <a href="#pico2d.pico2d">pico2d.pico2d</a>
- &#8226;   <a href="#player">player</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#selectors">selectors</a>
 
@@ -6354,61 +6939,6 @@ imported by:
     <a href="#http.server">http.server</a>
  &#8226;   <a href="#mygame.py">mygame.py</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="monster_blue"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/monster_blue.py" type="text/plain"><tt>monster_blue</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#monster_red">monster_red</a>
- &#8226;   <a href="#pico2d">pico2d</a>
- &#8226;   <a href="#stdafx">stdafx</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#object">object</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="monster_orange"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/monster_orange.py" type="text/plain"><tt>monster_orange</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#monster_red">monster_red</a>
- &#8226;   <a href="#pico2d">pico2d</a>
- &#8226;   <a href="#stdafx">stdafx</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#object">object</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="monster_red"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/monster_red.py" type="text/plain"><tt>monster_red</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#pico2d">pico2d</a>
- &#8226;   <a href="#stdafx">stdafx</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#monster_blue">monster_blue</a>
- &#8226;   <a href="#monster_orange">monster_orange</a>
- &#8226;   <a href="#object">object</a>
 
   </div>
 
@@ -6523,27 +7053,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="object"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/object.py" type="text/plain"><tt>object</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#clay_orb">clay_orb</a>
- &#8226;   <a href="#monster_blue">monster_blue</a>
- &#8226;   <a href="#monster_orange">monster_orange</a>
- &#8226;   <a href="#monster_red">monster_red</a>
- &#8226;   <a href="#pico2d">pico2d</a>
- &#8226;   <a href="#stdafx">stdafx</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#background">background</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="opcode"></a>
   <a target="code" href="///C:/Python36/lib/opcode.py" type="text/plain"><tt>opcode</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -6607,8 +7116,8 @@ imported by:
   <a target="code" href="" type="text/plain"><tt>org</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
 imported by:
-    <a href="#mygame.py">mygame.py</a>
- &#8226;   <a href="#pickle">pickle</a>
+    <a href="#copy">copy</a>
+ &#8226;   <a href="#mygame.py">mygame.py</a>
 
   </div>
 
@@ -6699,17 +7208,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="pause_state"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/pause_state.py" type="text/plain"><tt>pause_state</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imported by:
-    <a href="#main_state">main_state</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="pdb"></a>
   <a target="code" href="///C:/Python36/lib/pdb.py" type="text/plain"><tt>pdb</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -6749,7 +7247,8 @@ imported by:
   <a target="code" href="///C:/Python36/lib/pickle.py" type="text/plain"><tt>pickle</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#_compat_pickle">_compat_pickle</a>
+    <a href="#'org.python'">'org.python'</a>
+ &#8226;   <a href="#_compat_pickle">_compat_pickle</a>
  &#8226;   <a href="#_pickle">_pickle</a>
  &#8226;   <a href="#argparse">argparse</a>
  &#8226;   <a href="#codecs">codecs</a>
@@ -6758,7 +7257,6 @@ imports:
  &#8226;   <a href="#functools">functools</a>
  &#8226;   <a href="#io">io</a>
  &#8226;   <a href="#itertools">itertools</a>
- &#8226;   <a href="#org">org</a>
  &#8226;   <a href="#pprint">pprint</a>
  &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#struct">struct</a>
@@ -6785,19 +7283,31 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#TileMap">TileMap</a>
- &#8226;   <a href="#TileSet">TileSet</a>
- &#8226;   <a href="#background">background</a>
- &#8226;   <a href="#clay_orb">clay_orb</a>
- &#8226;   <a href="#main_state">main_state</a>
- &#8226;   <a href="#monster_blue">monster_blue</a>
- &#8226;   <a href="#monster_orange">monster_orange</a>
- &#8226;   <a href="#monster_red">monster_red</a>
- &#8226;   <a href="#object">object</a>
+    <a href="#Map.TileMap">Map.TileMap</a>
+ &#8226;   <a href="#Map.TileSet">Map.TileSet</a>
+ &#8226;   <a href="#Map.background">Map.background</a>
+ &#8226;   <a href="#Map.minimap">Map.minimap</a>
+ &#8226;   <a href="#Monster.boss">Monster.boss</a>
+ &#8226;   <a href="#Monster.monster_blue">Monster.monster_blue</a>
+ &#8226;   <a href="#Monster.monster_orange">Monster.monster_orange</a>
+ &#8226;   <a href="#Monster.monster_red">Monster.monster_red</a>
+ &#8226;   <a href="#Object.blue_light">Object.blue_light</a>
+ &#8226;   <a href="#Object.boss_space">Object.boss_space</a>
+ &#8226;   <a href="#Object.bramble">Object.bramble</a>
+ &#8226;   <a href="#Object.clay_orb">Object.clay_orb</a>
+ &#8226;   <a href="#Object.green_light">Object.green_light</a>
+ &#8226;   <a href="#Player.boss_state_player">Player.boss_state_player</a>
+ &#8226;   <a href="#Player.player">Player.player</a>
+ &#8226;   <a href="#SourceFiles.bullet">SourceFiles.bullet</a>
+ &#8226;   <a href="#State.boss_pause_state">State.boss_pause_state</a>
+ &#8226;   <a href="#State.boss_state">State.boss_state</a>
+ &#8226;   <a href="#State.clear_state">State.clear_state</a>
+ &#8226;   <a href="#State.main_state">State.main_state</a>
+ &#8226;   <a href="#State.pause_state">State.pause_state</a>
+ &#8226;   <a href="#State.start_state">State.start_state</a>
+ &#8226;   <a href="#State.title_state">State.title_state</a>
+ &#8226;   <a href="#mygame.py">mygame.py</a>
  &#8226;   <a href="#pico2d.pico2d">pico2d.pico2d</a>
- &#8226;   <a href="#player">player</a>
- &#8226;   <a href="#start_state">start_state</a>
- &#8226;   <a href="#title_state">title_state</a>
 
   </div>
 
@@ -6884,25 +7394,6 @@ imports:
 imported by:
     <a href="#mygame.py">mygame.py</a>
  &#8226;   <a href="#pydoc">pydoc</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="player"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/player.py" type="text/plain"><tt>player</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#math">math</a>
- &#8226;   <a href="#pico2d">pico2d</a>
- &#8226;   <a href="#random">random</a>
- &#8226;   <a href="#stdafx">stdafx</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#main_state">main_state</a>
 
   </div>
 
@@ -7174,7 +7665,6 @@ imported by:
     <a href="#email.generator">email.generator</a>
  &#8226;   <a href="#email.utils">email.utils</a>
  &#8226;   <a href="#mygame.py">mygame.py</a>
- &#8226;   <a href="#player">player</a>
  &#8226;   <a href="#tempfile">tempfile</a>
 
   </div>
@@ -8530,24 +9020,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="start_state"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/start_state.py" type="text/plain"><tt>start_state</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#game_framework">game_framework</a>
- &#8226;   <a href="#pico2d">pico2d</a>
- &#8226;   <a href="#title_state">title_state</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#mygame.py">mygame.py</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="stat"></a>
   <a target="code" href="///C:/Python36/lib/stat.py" type="text/plain"><tt>stat</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -8566,25 +9038,6 @@ imported by:
  &#8226;   <a href="#shutil">shutil</a>
  &#8226;   <a href="#tarfile">tarfile</a>
  &#8226;   <a href="#zipfile">zipfile</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="stdafx"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/stdafx.py" type="text/plain"><tt>stdafx</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imported by:
-    <a href="#TileMap">TileMap</a>
- &#8226;   <a href="#background">background</a>
- &#8226;   <a href="#clay_orb">clay_orb</a>
- &#8226;   <a href="#main_state">main_state</a>
- &#8226;   <a href="#monster_blue">monster_blue</a>
- &#8226;   <a href="#monster_orange">monster_orange</a>
- &#8226;   <a href="#monster_red">monster_red</a>
- &#8226;   <a href="#object">object</a>
- &#8226;   <a href="#player">player</a>
 
   </div>
 
@@ -8931,14 +9384,14 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#_datetime">_datetime</a>
+    <a href="#Framework.game_framework">Framework.game_framework</a>
+ &#8226;   <a href="#_datetime">_datetime</a>
  &#8226;   <a href="#_dummy_thread">_dummy_thread</a>
  &#8226;   <a href="#_strptime">_strptime</a>
  &#8226;   <a href="#datetime">datetime</a>
  &#8226;   <a href="#email._parseaddr">email._parseaddr</a>
  &#8226;   <a href="#email.generator">email.generator</a>
  &#8226;   <a href="#email.utils">email.utils</a>
- &#8226;   <a href="#game_framework">game_framework</a>
  &#8226;   <a href="#gc">gc</a>
  &#8226;   <a href="#gzip">gzip</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
@@ -8956,25 +9409,6 @@ imported by:
  &#8226;   <a href="#unittest.runner">unittest.runner</a>
  &#8226;   <a href="#urllib.request">urllib.request</a>
  &#8226;   <a href="#zipfile">zipfile</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="title_state"></a>
-  <a target="code" href="///C:/Users/aa/Desktop/%EC%A1%B0%EC%9C%A4%EC%98%81/%EB%8C%80%ED%95%99%EA%B5%90/2-2/2DGP/DinoMelt/title_state.py" type="text/plain"><tt>title_state</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#game_framework">game_framework</a>
- &#8226;   <a href="#main_state">main_state</a>
- &#8226;   <a href="#pico2d">pico2d</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#main_state">main_state</a>
- &#8226;   <a href="#start_state">start_state</a>
 
   </div>
 

@@ -33,7 +33,7 @@ if __name__ =='__main__':
     # fill here
     open_canvas(800, 600)
 
-    tile_set = load_tile_set('..\/tileset.json')
+    tile_set = load_tile_set('Map\/tileset.json')
     columns = 5
 
     for i in range(tile_set.tilecount):

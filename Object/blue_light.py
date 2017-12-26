@@ -30,7 +30,7 @@ class BlueLight:
         self.img_h = self.image.h
         # sound
         if self.light_on_sound == None:
-            self.light_on_sound = load_wav('..\/Sound\/blue_light_on.wav')
+            self.light_on_sound = load_wav('Sound\/blue_light_on.wav')
             self.light_on_sound.set_volume(128)
         # collide
         self.aabb = AABB(0,0,0,0)
@@ -40,7 +40,7 @@ class BlueLight:
             self.player = player
 
     def image_load(self):
-        self.image = load_image('..\/Graphics\/blue_light.png')
+        self.image = load_image('Graphics\/blue_light.png')
 
     def update_aabb(self):
         sx = self.x - self.bg.window_left

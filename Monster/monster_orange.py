@@ -35,16 +35,16 @@ class MonsterOrange(MonsterRed):
         if self.image == [[0,0],[0,0]]:
             self.image_load()
         if self.bullet_image == None:
-            self.bullet_image = load_image('..\/Graphics\/Monster\/monster_bullet.png')
+            self.bullet_image = load_image('Graphics\/Monster\/monster_bullet.png')
         if self.dead_effect_img == None:
-            self.dead_effect_img = load_image('..\/Graphics\/monster\/dead_effect.png')
+            self.dead_effect_img = load_image('Graphics\/monster\/dead_effect.png')
 
         # sound
         if self.monster_attack_sound == None:
-            self.monster_attack_sound = load_wav('..\/Sound\/monster_attack.wav')
+            self.monster_attack_sound = load_wav('Sound\/monster_attack.wav')
             self.monster_attack_sound.set_volume(128)
         if self.monster_shot_sound == None:
-            self.monster_shot_sound = load_wav('..\/Sound\/monster_shot.wav')
+            self.monster_shot_sound = load_wav('Sound\/monster_shot.wav')
             self.monster_shot_sound.set_volume(128)
 
         # collide
@@ -64,13 +64,13 @@ class MonsterOrange(MonsterRed):
 
     def image_load(self):
         self.image[self.IDLE][self.LEFT] = load_image(
-            '..\/Graphics\/Monster\/monster_orange_idle_left.png')
+            'Graphics\/Monster\/monster_orange_idle_left.png')
         self.image[self.IDLE][self.RIGHT] = load_image(
-            '..\/Graphics\/Monster\/monster_orange_idle_right.png')
+            'Graphics\/Monster\/monster_orange_idle_right.png')
         self.image[self.ATTACK][self.LEFT] = load_image(
-            '..\/Graphics\/Monster\/monster_orange_attack_left.png')
+            'Graphics\/Monster\/monster_orange_attack_left.png')
         self.image[self.ATTACK][self.RIGHT] = load_image(
-            '..\/Graphics\/Monster\/monster_orange_attack_right.png')
+            'Graphics\/Monster\/monster_orange_attack_right.png')
 
     def bullet_tile_map_collide_check(self):
         return self.bg.tile_map.collide_check(self.bg.window_left, self.bg.window_bottom,

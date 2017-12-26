@@ -19,7 +19,7 @@ class PlayerBullet:
         self.bg = None
         self.direction = 0
         if self.image == None:
-            self.image = load_image('..\/Graphics\/Player\/bullet.png')
+            self.image = load_image('Graphics\/Player\/bullet.png')
 
     def initialize(self, x, y, direction, bg):
         self.x, self.y = x, y
@@ -66,7 +66,7 @@ class MonsterBullet:
         self.bg = None
         self.direction = 0
         if self.image == None:
-            self.image = load_image('..\/Graphics\/Monster\/monster_bullet.png')
+            self.image = load_image('Graphics\/Monster\/monster_bullet.png')
 
     def initialize(self, x, y, direction, bg):
         self.x, self.y = x, y
@@ -113,7 +113,7 @@ class BossState_PlayerBullet:
         self.bg = None
         self.direction = 0
         if self.image == None:
-            self.image = load_image('..\/Graphics\/Player\/bullet.png')
+            self.image = load_image('Graphics\/Player\/bullet.png')
 
     def initialize(self, x, y, direction):
         self.x, self.y = x, y

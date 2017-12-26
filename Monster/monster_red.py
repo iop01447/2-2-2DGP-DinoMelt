@@ -41,7 +41,7 @@ class MonsterRed:
         if self.image == [0,0]:
             self.image_load()
         if self.dead_effect_img == None:
-            self.dead_effect_img = load_image('..\/Graphics\/monster\/dead_effect.png')
+            self.dead_effect_img = load_image('Graphics\/monster\/dead_effect.png')
         self.img_col = 4
         self.img_w = self.image[self.LEFT].w//4
         self.img_h = self.image[self.LEFT].h//2
@@ -60,8 +60,8 @@ class MonsterRed:
             self.player = player
 
     def image_load(self):
-        self.image[self.LEFT] = load_image('..\/Graphics\/Monster\/monster_red_left.png')
-        self.image[self.RIGHT] = load_image('..\/Graphics\/Monster\/monster_red_right.png')
+        self.image[self.LEFT] = load_image('Graphics\/Monster\/monster_red_left.png')
+        self.image[self.RIGHT] = load_image('Graphics\/Monster\/monster_red_right.png')
 
     def update_aabb(self):
         sx = self.x - self.bg.window_left

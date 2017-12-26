@@ -10,7 +10,7 @@ class TileBackground:
     background_image = None
 
     def __init__(self):
-        self.tile_map = load_tile_map('..\/Map\/Map.json')
+        self.tile_map = load_tile_map('map.json')
         self.canvas_width = get_canvas_width()
         self.canvas_height = get_canvas_height()
         self.window_left = 0
@@ -19,7 +19,7 @@ class TileBackground:
         self.h = self.tile_map.height * self.tile_map.tileheight
         self.minimap = MiniMap()
         # image
-        self.background_image = load_image('..\/Graphics\/background.png')
+        self.background_image = load_image('Graphics\/background.png')
         # objects
         self.objects = []
         for object in self.tile_map.object_data:

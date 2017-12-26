@@ -30,7 +30,7 @@ class GreenLight:
         self.img_h = self.image.h
         # sound
         if self.check_point_sound == None:
-            self.check_point_sound = load_wav('..\/Sound\/check_point.wav')
+            self.check_point_sound = load_wav('Sound\/check_point.wav')
             self.check_point_sound.set_volume(128)
 
     def set_player(self, player):
@@ -38,7 +38,7 @@ class GreenLight:
             self.player = player
 
     def image_load(self):
-        self.image = load_image('..\/Graphics\/green_light.png')
+        self.image = load_image('Graphics\/green_light.png')
 
     def update_aabb(self):
         sx = self.x - self.bg.window_left

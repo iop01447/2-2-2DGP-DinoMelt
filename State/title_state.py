@@ -24,11 +24,11 @@ def enter():
     global background_img
     global logo_img
     global font
-    background_img = load_image('..\/Graphics\/title\/title_background.png')
-    logo_img.append(load_image('..\/Graphics\/title\/Frame1.png'))
-    logo_img.append(load_image('..\/Graphics\/title\/Frame2.png'))
-    logo_img.append(load_image('..\/Graphics\/title\/Frame3.png'))
-    font = load_font('..\/pingwing.ttf', 30)
+    background_img = load_image('Graphics\/title\/title_background.png')
+    logo_img.append(load_image('Graphics\/title\/Frame1.png'))
+    logo_img.append(load_image('Graphics\/title\/Frame2.png'))
+    logo_img.append(load_image('Graphics\/title\/Frame3.png'))
+    font = load_font('pingwing.ttf', 30)
 
 
 def exit():
@@ -52,7 +52,7 @@ def handle_events():
                 running = False
                 # game_framework.quit()
             elif(event.type, event.key)==(SDL_KEYDOWN, SDLK_SPACE):
-                game_framework.change_state(main_state)
+                game_framework.push_state(main_state)
 
 
 def draw():
@@ -60,9 +60,11 @@ def draw():
     global logo_img
     global font
     clear_canvas()
-    background_img.draw(400,300)
-    logo_img[frame].draw(400,300)
-    font.draw(230, 100, 'PRESS SPACE TO START...', (255,255,255))
+    cw = get_canvas_width()
+    ch = get_canvas_height()
+    background_img.draw(cw/2,ch/2, cw, ch)
+    logo_img[frame].draw(cw/2,ch/2)
+    font.draw(cw/2 - 170, 100, 'PRESS SPACE TO START...', (255,255,255))
     update_canvas()
 
 

@@ -14,121 +14,121 @@
     {
      "1":
         {
-         "image":"..\/Graphics\/tile\/down1.png",
+         "image":"Graphics\/tile\/down1.png",
          "imageheight":130,
          "imagewidth":130
         },
      "10":
         {
-         "image":"..\/Graphics\/tile\/up5.png",
+         "image":"Graphics\/tile\/up5.png",
          "imageheight":130,
          "imagewidth":130
         },
      "11":
         {
-         "image":"..\/Graphics\/tile\/updown1.png",
+         "image":"Graphics\/tile\/updown1.png",
          "imageheight":130,
          "imagewidth":130
         },
      "12":
         {
-         "image":"..\/Graphics\/tile\/updown2.png",
+         "image":"Graphics\/tile\/updown2.png",
          "imageheight":129,
          "imagewidth":130
         },
      "13":
         {
-         "image":"..\/Graphics\/tile\/updown3.png",
+         "image":"Graphics\/tile\/updown3.png",
          "imageheight":129,
          "imagewidth":130
         },
      "14":
         {
-         "image":"..\/Graphics\/tile\/updown4.png",
+         "image":"Graphics\/tile\/updown4.png",
          "imageheight":129,
          "imagewidth":130
         },
      "15":
         {
-         "image":"..\/Graphics\/tile\/updown5.png",
+         "image":"Graphics\/tile\/updown5.png",
          "imageheight":129,
          "imagewidth":130
         },
      "16":
         {
-         "image":"..\/Graphics\/tile\/updown6.png",
+         "image":"Graphics\/tile\/updown6.png",
          "imageheight":130,
          "imagewidth":130
         },
      "17":
         {
-         "image":"..\/Graphics\/tile\/updown7.png",
+         "image":"Graphics\/tile\/updown7.png",
          "imageheight":130,
          "imagewidth":130
         },
      "18":
         {
-         "image":"..\/Graphics\/tile\/updown8.png",
+         "image":"Graphics\/tile\/updown8.png",
          "imageheight":130,
          "imagewidth":130
         },
      "19":
         {
-         "image":"..\/Graphics\/tile\/updown9.png",
+         "image":"Graphics\/tile\/updown9.png",
          "imageheight":130,
          "imagewidth":130
         },
      "2":
         {
-         "image":"..\/Graphics\/tile\/down2.png",
+         "image":"Graphics\/tile\/down2.png",
          "imageheight":130,
          "imagewidth":130
         },
      "20":
         {
-         "image":"..\/Graphics\/tile\/updown10.png",
+         "image":"Graphics\/tile\/updown10.png",
          "imageheight":130,
          "imagewidth":130
         },
      "3":
         {
-         "image":"..\/Graphics\/tile\/down3.png",
+         "image":"Graphics\/tile\/down3.png",
          "imageheight":130,
          "imagewidth":130
         },
      "4":
         {
-         "image":"..\/Graphics\/tile\/in1.png",
+         "image":"Graphics\/tile\/in1.png",
          "imageheight":130,
          "imagewidth":130
         },
      "5":
         {
-         "image":"..\/Graphics\/tile\/in2.png",
+         "image":"Graphics\/tile\/in2.png",
          "imageheight":130,
          "imagewidth":130
         },
      "6":
         {
-         "image":"..\/Graphics\/tile\/up1.png",
+         "image":"Graphics\/tile\/up1.png",
          "imageheight":130,
          "imagewidth":130
         },
      "7":
         {
-         "image":"..\/Graphics\/tile\/up2.png",
+         "image":"Graphics\/tile\/up2.png",
          "imageheight":130,
          "imagewidth":130
         },
      "8":
         {
-         "image":"..\/Graphics\/tile\/up3.png",
+         "image":"Graphics\/tile\/up3.png",
          "imageheight":130,
          "imagewidth":130
         },
      "9":
         {
-         "image":"..\/Graphics\/tile\/up4.png",
+         "image":"Graphics\/tile\/up4.png",
          "imageheight":130,
          "imagewidth":130
         }

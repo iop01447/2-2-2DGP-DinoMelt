@@ -11,7 +11,7 @@ total_frame_time = 0.0
 
 def enter():
     global pause_img
-    pause_img = load_image('..\/Graphics\/pause.png')
+    pause_img = load_image('Graphics\/pause.png')
     pass
 
 def exit():

@@ -12,9 +12,9 @@ logo_time = 0.0
 def enter():
     global background_img
     global image
-    open_canvas()
-    background_img = load_image('..\/Graphics\/background.png')
-    image = load_image('..\/Graphics\/logo.png')
+    open_canvas(1280, 720)
+    background_img = load_image('Graphics\/background.png')
+    image = load_image('Graphics\/logo.png')
 
 # push_state가 아닌 change_state로 하면 여기 exit()부터 실행됨.
 def exit():
@@ -42,8 +42,8 @@ def draw():
     clear_canvas()
     cw = get_canvas_width()
     ch = get_canvas_height()
-    background_img.draw(400, 300, cw, ch)
-    image.draw(400, 300, 533, 562)
+    background_img.draw(cw/2, ch/2, cw, ch)
+    image.draw(cw/2, ch/2, 533, 562)
     update_canvas()
 
 

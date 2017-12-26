@@ -17,7 +17,7 @@ class TileMap:
         self.__dict__.update(info)
         print(self.tilesets[0])
         #self.tile_set = load_tile_set(self.tilesets[0]['source'])
-        self.tile_set = load_tile_set('..\/Map\/tileset.json')
+        self.tile_set = load_tile_set('tileset.json')
         self.firstgid = self.tilesets[0]['firstgid']
         self.data = self.layers[0]['data']
         self.object_data = self.layers[1]['objects']

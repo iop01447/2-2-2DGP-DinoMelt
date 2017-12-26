@@ -29,7 +29,7 @@ class MonsterBlue(MonsterRed):
         self.img_w = self.image[self.LEFT].w // 4
         self.img_h = self.image[self.LEFT].h // 2
         if self.dead_effect_img == None:
-            self.dead_effect_img = load_image('..\/Graphics\/monster\/dead_effect.png')
+            self.dead_effect_img = load_image('Graphics\/monster\/dead_effect.png')
         # collide
         self.aabb = AABB(0, 0, 0, 0)
         self.big_aabb = AABB(0, 0, 0, 0)
@@ -41,8 +41,8 @@ class MonsterBlue(MonsterRed):
         self.original_height = self.height
 
     def image_load(self):
-        self.image[self.LEFT] = load_image('..\/Graphics\/Monster\/monster_blue_left.png')
-        self.image[self.RIGHT] = load_image('..\/Graphics\/Monster\/monster_blue_right.png')
+        self.image[self.LEFT] = load_image('Graphics\/Monster\/monster_blue_left.png')
+        self.image[self.RIGHT] = load_image('Graphics\/Monster\/monster_blue_right.png')
 
     def update_aabb(self):
         sx = self.x - self.bg.window_left

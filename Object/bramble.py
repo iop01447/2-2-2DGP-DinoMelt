@@ -32,7 +32,7 @@ class Bramble:
             self.player = player
 
     def image_load(self):
-        self.image = load_image('..\/Graphics\/bramble.png')
+        self.image = load_image('Graphics\/bramble.png')
 
     def update_aabb(self):
         sx = self.x - self.bg.window_left
