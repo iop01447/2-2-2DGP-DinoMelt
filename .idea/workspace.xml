@@ -2,60 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="af0779c1-141e-459e-a4b9-ffd02ad2f6b8" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/Graphics/life_level1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/Graphics/life_level2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/Graphics/life_level3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dist/Graphics/map.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/원작 자료/object_tile/Frame7-crop.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/원작 자료/object_tile/blue.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/원작 자료/object_tile/blue_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/원작 자료/object_tile/bramble.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/원작 자료/object_tile/green_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/원작 자료/object_tile/orange_left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/원작 자료/object_tile/orange_right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/원작 자료/object_tile/red.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Map/boss_map.json" afterPath="$PROJECT_DIR$/boss_map.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Map/map.json" afterPath="$PROJECT_DIR$/map.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Map/object.json" afterPath="$PROJECT_DIR$/object.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/Map/tileset.json" afterPath="$PROJECT_DIR$/tileset.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/SourceFiles/mygame.py" afterPath="$PROJECT_DIR$/mygame.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/mygame/base_library.zip" afterPath="$PROJECT_DIR$/build/mygame/base_library.zip" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/mygame/out00-PKG.pkg" afterPath="$PROJECT_DIR$/build/mygame/out00-PKG.pkg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/mygame/out00-PYZ.pyz" afterPath="$PROJECT_DIR$/build/mygame/out00-PYZ.pyz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/DINOMELT.iss" afterPath="$PROJECT_DIR$/dist/DINOMELT.iss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/Graphics/photothumb.db" afterPath="$PROJECT_DIR$/dist/Graphics/photothumb.db" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Map/TileMap.py" afterPath="$PROJECT_DIR$/Map/TileMap.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Map/TileSet.py" afterPath="$PROJECT_DIR$/Map/TileSet.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Map/background.py" afterPath="$PROJECT_DIR$/Map/background.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Map/minimap.py" afterPath="$PROJECT_DIR$/Map/minimap.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Monster/boss.py" afterPath="$PROJECT_DIR$/Monster/boss.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Monster/monster_blue.py" afterPath="$PROJECT_DIR$/Monster/monster_blue.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Monster/monster_orange.py" afterPath="$PROJECT_DIR$/Monster/monster_orange.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Monster/monster_red.py" afterPath="$PROJECT_DIR$/Monster/monster_red.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Object/blue_light.py" afterPath="$PROJECT_DIR$/Object/blue_light.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Object/bramble.py" afterPath="$PROJECT_DIR$/Object/bramble.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Object/clay_orb.py" afterPath="$PROJECT_DIR$/Object/clay_orb.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Object/green_light.py" afterPath="$PROJECT_DIR$/Object/green_light.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Player/player.py" afterPath="$PROJECT_DIR$/Player/player.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SourceFiles/bullet.py" afterPath="$PROJECT_DIR$/SourceFiles/bullet.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/State/boss_pause_state.py" afterPath="$PROJECT_DIR$/State/boss_pause_state.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/State/boss_state.py" afterPath="$PROJECT_DIR$/State/boss_state.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/State/clear_state.py" afterPath="$PROJECT_DIR$/State/clear_state.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/State/main_state.py" afterPath="$PROJECT_DIR$/State/main_state.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/State/pause_state.py" afterPath="$PROJECT_DIR$/State/pause_state.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/State/start_state.py" afterPath="$PROJECT_DIR$/State/start_state.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/State/title_state.py" afterPath="$PROJECT_DIR$/State/title_state.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/mygame/out00-Analysis.toc" afterPath="$PROJECT_DIR$/build/mygame/out00-Analysis.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/mygame/out00-EXE.toc" afterPath="$PROJECT_DIR$/build/mygame/out00-EXE.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/mygame/out00-PKG.toc" afterPath="$PROJECT_DIR$/build/mygame/out00-PKG.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/mygame/out00-PYZ.toc" afterPath="$PROJECT_DIR$/build/mygame/out00-PYZ.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/mygame/warnmygame.txt" afterPath="$PROJECT_DIR$/build/mygame/warnmygame.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/mygame/xref-mygame.html" afterPath="$PROJECT_DIR$/build/mygame/xref-mygame.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data.json" afterPath="$PROJECT_DIR$/data.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/data.json" afterPath="$PROJECT_DIR$/dist/data.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/map.json" afterPath="$PROJECT_DIR$/dist/map.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/object.json" afterPath="$PROJECT_DIR$/dist/object.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,8 +18,8 @@
           <file leaf-file-name="player.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Player/player.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="352">
-                  <caret line="63" column="31" lean-forward="true" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+                <state relative-caret-position="132">
+                  <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
                   <folding>
                     <element signature="e#0#20#0" expanded="true" />
                   </folding>
@@ -850,7 +797,7 @@
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1768868" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16863208" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16863208" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3254717" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1219,8 +1166,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Player/player.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="63" column="31" lean-forward="true" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+        <state relative-caret-position="132">
+          <caret line="50" column="9" lean-forward="false" selection-start-line="50" selection-start-column="9" selection-end-line="50" selection-end-column="9" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
